@@ -17,8 +17,12 @@ describe 'Jenkins job changes state', type: :request do
   end
 
   context 'and there is PR' do
+    let(:job_name)      { "job-name-for-existant-pr" }
+
+    before              { decline_all_pull_requests }
     let!(:pull_request) { create_pull_request }
-    let(:comments)      { comments_for(pull_request) }
+
+    let(:comments) { comments_for(pull_request) }
 
     context 'and there is no comment on it' do
       it 'leaves a comment on it' do
@@ -74,35 +78,74 @@ describe 'Jenkins job changes state', type: :request do
   end
 
   let(:bitbucket) do
-    BitBucket.new(
-      'jenkins-bitbucket',
-      'NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3'
-    )
   end
 
   class BitBucket
-    include HTTParty
-    format :json
-    base_uri "https://api.bitbucket.org/2.0"
+    PRS = "/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests"
 
-    def initialize(login, password)
-      self.class.basic_auth login, password
+    def initialize
+      @conn = Faraday.new(:url => 'https://api.bitbucket.org') do |faraday|
+        faraday.request :basic_auth, 'jenkins-bitbucket', 'NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3'
+        faraday.request :json
+        faraday.response :json
+        faraday.adapter  Faraday.default_adapter
+      end
+    end
+
+    def create_pr
+      post(PRS,
+        "source" => { "branch" => { "name" => "my-branch" }, },
+        "title" => "my-pr",
+        "description" => "it's a pr"
+      )
+    end
+
+    def post(url, body = nil)
+      @conn.post do |req|
+        req.url url
+        if body.present?
+          req.headers['Content-Type'] = 'application/json'
+          req.body = body.to_json
+        end
+      end.body
+    end
+
+    def get(str)
+      @conn.get(str).body
     end
 
     def prs
-      self.class.get(PRS)
+      get(PRS)['values']
     end
 
-    PRS = "/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests"
+    def comments(id)
+      get("#{PRS}/#{id}/comments")['values']
+    end
 
-    def comments_for_pr(id)
-      self.class.get("#{PRS}/#{id}/comments")
+    def decline_pr(id)
+      post("#{PRS}/#{id}/decline")
     end
   end
 
+  let(:bitbucket) { BitBucket.new }
+
+  def create_pull_request
+    bitbucket.create_pr
+  end
+
+  def decline_all_pull_requests
+    bitbucket.prs.each do |pr|
+      bitbucket.decline_pr pr['id']
+    end
+  end
+
+  def comments_for(pr)
+    bitbucket.comments(pr['id'])
+  end
+
   def all_comments_on_all_prs
-    bitbucket.prs['values'].map do |pr|
-      bitbucket.comments_for_pr(pr['id'])['values']
+    bitbucket.prs.map do |pr|
+      bitbucket.comments(pr['id'])
     end.reduce(&:+)
   end
 end

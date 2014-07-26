@@ -8,7 +8,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'pg'
-gem 'httparty'
+gem 'faraday'
+gem 'faraday_middleware'
 
 group :development, :test do
   gem 'spring'
