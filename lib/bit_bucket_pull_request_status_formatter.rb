@@ -7,7 +7,7 @@ class BitBucketPullRequestStatusFormatter
 
   def call(job_status)
     [
-      "# #{job_status.status} (#{job_status.phase}) on Jenkins",
+      "# #{job_status.status} #{job_status.phase} on Jenkins",
       "",
       "[#{job_status.job_name} on Jenkins](#{job_status.url})",
       "",

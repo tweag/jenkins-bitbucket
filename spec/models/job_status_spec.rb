@@ -27,4 +27,9 @@ describe JobStatus do
   its(:phase) { should eq "the-phase" }
   its(:status) { should eq "the-status" }
   its(:url) { should eq  "http://example.com/the-full-url"}
+
+  context "when it has no status" do
+    subject { JobStatus.new("build" => {}) }
+    its(:status) { should be nil }
+  end
 end

@@ -8,7 +8,7 @@ class JobStatus < Struct.new(:data)
   end
 
   def status
-    build('status')
+    build('status', nil)
   end
 
   def phase
@@ -17,7 +17,7 @@ class JobStatus < Struct.new(:data)
 
   private
 
-  def build(key)
-    data.fetch('build').fetch(key)
+  def build(*args)
+    data.fetch('build').fetch(*args)
   end
 end
