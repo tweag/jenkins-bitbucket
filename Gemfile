@@ -10,6 +10,7 @@ gem 'unicorn'
 gem 'pg'
 gem 'faraday'
 gem 'faraday_middleware'
+gem 'hashie'
 
 group :development, :test do
   gem 'spring'

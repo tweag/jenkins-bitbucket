@@ -1,16 +1,5 @@
 require 'spec_helper'
-
-class JenkinsHandler
-  def initialize(jenkins:, bitbucket:)
-    @jenkins   = jenkins
-    @bitbucket = bitbucket
-  end
-
-  def handle(params)
-    @jenkins.upsert_job params
-    @bitbucket.comment params
-  end
-end
+require 'jenkins_handler'
 
 describe JenkinsHandler, '.handle' do
   let(:params) do
@@ -38,21 +27,21 @@ describe JenkinsHandler, '.handle' do
 
   subject { JenkinsHandler.new(jenkins: jenkins, bitbucket: bitbucket) }
   let(:jenkins)   { double upsert_job: nil }
-  let(:bitbucket) { double comment: nil }
+  let(:bitbucket) { double update_status: nil }
 
   before do
-    subject.handle(params)
+    subject.call(params)
   end
 
   describe "a job started" do
     let(:phase) { "STARTED" }
 
     it 'upserts the job' do
-      expect(jenkins).to have_received(:upsert_job).with(params)
+      expect(jenkins).to have_received(:upsert_job)
     end
 
-    it 'add the comment on bitbuket' do
-      expect(bitbucket).to have_received(:comment).with(params)
+    it 'add the update_status on bitbuket' do
+      expect(bitbucket).to have_received(:update_status)
     end
   end
 
