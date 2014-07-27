@@ -1,9 +1,9 @@
 module JobFactory
   def job_params(
     job_name: "the-job-name",
-    url: "http://example.com/the-job",
-    status: "ABOTRED",
-    phase: "COMPLETED"
+    url:      "http://example.com/the-job",
+    status:   "ABORTED",
+    phase:    "COMPLETED"
   )
     {
       "name"  => job_name,
