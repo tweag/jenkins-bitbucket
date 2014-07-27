@@ -17,14 +17,14 @@ class BitBucketPullRequestMessageAdjuster
     {
       title: pull_request.title,
       description: [
-        description_withou_status(pull_request.description),
+        description_without_status(pull_request.description),
         separator,
         formatter.call(job_status)
       ].join("\n")
     }
   end
 
-  def description_withou_status(description)
+  def description_without_status(description)
     index = description.index(separator.reverse)
     if index
       description[0, index].strip
