@@ -1,5 +1,4 @@
 require 'jenkins_handler'
-require 'bit_bucket_client'
 require 'bit_bucket_pull_request_adjuster'
 
 class ApplicationController < ActionController::Base

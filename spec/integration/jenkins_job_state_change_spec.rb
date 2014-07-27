@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'bit_bucket_client'
 
 describe 'Jenkins job changes state', type: :request do
   let(:status) { "NEW-STATUS" }

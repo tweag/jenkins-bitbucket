@@ -1,7 +1,20 @@
 class BitBucketClient
+
+  # TODO: put this somewhere else
+  ATTRIBUTES = %i[user password repo]
+  class << self
+    attr_accessor(*ATTRIBUTES)
+  end
+  attr_writer(*ATTRIBUTES)
+  ATTRIBUTES.each do |attr|
+    define_method attr do
+      instance_variable_get("@#{attr}") || self.class.public_send(attr)
+    end
+  end
+
   def initialize
     @conn = Faraday.new(:url => 'https://api.bitbucket.org') do |faraday|
-      faraday.request :basic_auth, 'jenkins-bitbucket', 'NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3'
+      faraday.request :basic_auth, user, password
       faraday.request :json
       faraday.response :json
       faraday.adapter  Faraday.default_adapter
@@ -12,7 +25,7 @@ class BitBucketClient
     post(prs_path,
          "source" => { "branch" => { "name" => "my-branch" }, },
          "title" => title,
-         "description" => "it's a pr"
+         "description" => "Test Pull Request"
         )
   end
 
@@ -54,7 +67,7 @@ class BitBucketClient
 
 
   def prs_path
-    "/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests"
+    "/2.0/repositories/#{repo}/pullrequests"
   end
 
   def pr_path(id)
@@ -68,7 +81,6 @@ class BitBucketClient
   def path(*parts)
     parts.join('/')
   end
-
 
   class PullRequest < Hashie::Mash
   end
