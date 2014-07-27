@@ -12,6 +12,7 @@ gem 'faraday'
 gem 'faraday_middleware'
 gem 'hashie'
 gem 'slim-rails'
+gem 'memoist'
 
 group :development, :test do
   gem 'spring'
