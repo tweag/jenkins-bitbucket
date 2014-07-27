@@ -28,7 +28,6 @@ describe 'Jenkins job changes state', type: :request do
         act
         expect(updated_description).to include '* * *'
         expect(updated_description).to include status
-        expect(updated_description).to include phase
         expect(updated_description).to include url
       end
     end
@@ -39,7 +38,6 @@ describe 'Jenkins job changes state', type: :request do
         act status: 'new-status'
 
         expect(updated_description).to include '* * *'
-        expect(updated_description).to include phase
         expect(updated_description).to include url
         expect(updated_description).to include 'new-status'
         expect(updated_description).not_to include 'old-status'
