@@ -13,15 +13,16 @@ class JenkinsHooksController < ApplicationController
   private
 
   def jenkins_handler
-    @jenkins_handler ||= JenkinsHandler.new(bitbucket: bit_bucket_manipulator)
-  end
-
-  def bit_bucket_manipulator
-    @bitbucket_manipulator ||= BitBucketPullRequestAdjuster.new(bit_bucket_client)
-  end
-
-  def bit_bucket_client
-    @bitbucket ||= BitBucketClient.new
+    @_handler ||= JenkinsHandler.new(
+      bitbucket: BitBucketPullRequestAdjuster.new(
+        BitBucketClient.new,
+        message_adjuster: BitBucketPullRequestMessageAdjuster.new(
+          formatter: BitBucketPullRequestStatusFormatter.new(
+            brought_to_you_by_url: root_url
+          )
+        )
+      )
+    )
   end
 end
 
