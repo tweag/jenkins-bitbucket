@@ -11,6 +11,7 @@ gem 'pg'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'hashie'
+gem 'slim-rails'
 
 group :development, :test do
   gem 'spring'
