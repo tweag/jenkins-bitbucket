@@ -1,9 +1,14 @@
-class BitBucketPullRequestAdjuster
-  attr_accessor :client, :status_renderer
+require 'bit_bucket_pull_request_message_adjuster'
 
-  def initialize(client)
-    self.client          = client
-    self.status_renderer = self.class.method(:job_status_markdown)
+class BitBucketPullRequestAdjuster
+  attr_accessor :client, :message_adjuster
+
+  def initialize(
+    client,
+    message_adjuster: BitBucketPullRequestMessageAdjuster.new
+  )
+    self.client           = client
+    self.message_adjuster = message_adjuster
   end
 
   def update_status(job_status)
@@ -12,23 +17,13 @@ class BitBucketPullRequestAdjuster
     end
 
     prs.each do |pr|
-      new_description = pr.description + "\n" + status_renderer.call(job_status)
-      client.update_pr pr.id, pr.title, new_description
+      adjusted_pr = message_adjuster.call(pr, job_status)
+      client.update_pr pr.id, adjusted_pr.fetch(:title), adjusted_pr.fetch(:description)
     end
   end
 
   def self.match(pr_title, job_name)
     extract_id(pr_title) == extract_id(job_name)
-  end
-
-  def self.job_status_markdown(job_status)
-    [
-      "* * * * * * * * * * * * * * *",
-      job_status.job_name,
-      job_status.status,
-      job_status.phase,
-      job_status.url
-    ].join("\n")
   end
 
   def self.extract_id(str)

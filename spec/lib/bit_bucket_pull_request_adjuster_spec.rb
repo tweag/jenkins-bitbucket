@@ -36,62 +36,59 @@ describe BitBucketPullRequestAdjuster do
   end
 
   describe "#update_status" do
-    subject { described_class.new(client) }
+    subject do
+      described_class.new(client, message_adjuster: message_adjuster)
+    end
+    let(:message_adjuster) do
+      double(call: {
+        title: "adjusted title",
+        description: "adjusted description"
+      })
+    end
     let(:client) { double(prs: pull_requests, update_pr: nil) }
 
-    def act
-      subject.update_status job_status
-    end
-
     let(:story_id) { "123" }
-    let(:job_status) do
-      double(job_name: "job-name-#{story_id}")
-    end
+    let(:job_status) { double(job_name: "job-name-#{story_id}") }
 
     context 'when a pull request exists for the story' do
+      let(:pull_request) do
+        double(id: 2, title: "pr #{story_id}" , description: "this is my pr")
+      end
       let(:pull_requests) do
         [
           double(id: 1, title: "pr 012"),
-          double(id: 2, title: title, description: description),
+          pull_request,
           double(id: 3, title: "pr 234")
         ]
       end
-      let(:title) { "pr #{story_id}" }
 
-      context 'and the description does not contain the status' do
-        let(:description) { "this is my pr" }
-        before { subject.status_renderer = proc { "this is the status" } }
-        let(:expected_description) { "this is my pr\nthis is the status" }
+      it "updates the pull request description with the status" do
+        subject.update_status job_status
 
-        it "updates the pull request description with the status" do
-          act
-          expect(client).to have_received(:update_pr)
-            .with(2, title, expected_description)
-        end
+        expect(client).to have_received(:update_pr)
+          .with(2, "adjusted title", "adjusted description")
+      end
+
+      it "uses the pr and job status to generate the new message and title" do
+        subject.update_status job_status
+
+        expect(message_adjuster).to have_received(:call)
+          .with(pull_request, job_status)
       end
     end
-  end
 
-  context 'when a pull request does not exist for the story' do
+    context 'when a pull request does not exist for the story' do
+      let(:pull_requests) do
+        [
+          double(id: 1, title: "pr 012"),
+          double(id: 3, title: "pr 234")
+        ]
+      end
+      it 'does not update any pr' do
+        subject.update_status job_status
 
-  end
-
-  describe ".job_status_markdown" do
-    let(:job_status) do
-      double(
-        job_name: "my-job",
-        status:   "the-status",
-        phase:    "the-phase",
-        url:      "http://example.com"
-      )
+        expect(client).to_not have_received(:update_pr)
+      end
     end
-
-    subject { described_class.job_status_markdown(job_status) }
-
-    it { should include "* * *" }
-    it { should include job_status.job_name }
-    it { should include job_status.phase }
-    it { should include job_status.status }
-    it { should include job_status.url }
   end
 end
