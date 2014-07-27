@@ -1,9 +1,17 @@
 doctype html
 html
   head
-    title JenkinsBitbucket
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    title CEBACCUS Jenkins Bitbucket
+    -# stylesheet_link_tag    'application', media: 'all'
+    -# javascript_include_tag 'application'
     = csrf_meta_tags
   body
+    h1 CEBACCUS Jenkins Bitbucket
+    table
+      tr
+        th Jenkins Hook URL:
+        td: code: a href=jenkins_hook_url = jenkins_hook_url
+      tr
+        th Test BitBucket configuration:
+        td: a href=test_url Run test
     = yield
