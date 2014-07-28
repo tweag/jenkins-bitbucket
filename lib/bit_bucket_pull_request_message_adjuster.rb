@@ -19,7 +19,7 @@ class BitBucketPullRequestMessageAdjuster
       description: [
         description_without_status(pull_request.description),
         separator,
-        formatter.call(job_status)
+        formatter.call(pull_request, job_status)
       ].join("\n")
     }
   end

@@ -26,6 +26,10 @@ module BitBucketHelpers
   def reload_pull_request(pr)
     bitbucket.pr(pr['id'])
   end
+
+  def update_pull_request_description(pr, new_description)
+    bitbucket.update_pr(pr['id'], pr['title'], new_description)
+  end
 end
 
 RSpec.configure do |config|

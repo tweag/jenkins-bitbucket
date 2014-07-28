@@ -19,7 +19,8 @@ gem 'rack-timeout', group: :production
 
 group :development, :test do
   gem 'spring'
-  gem 'pry'
+  gem 'pry-rails'
+  gem 'pry-nav'
   gem 'rspec-rails'
   gem 'dotenv-rails'
 end

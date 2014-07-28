@@ -9,4 +9,13 @@ class BitbucketHooksController < ApplicationController
   def index
     render text: 'Point Bitbucket\'s "POST Pull Request" hook to this URL'
   end
+
+  def refresh
+    bitbucket_hook_handler.refresh(params[:id])
+    render text: "Updated"
+  end
+
+  def refresh_button
+    render layout: false
+  end
 end

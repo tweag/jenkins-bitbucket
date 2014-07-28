@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
       bitbucket_client,
       message_adjuster: BitBucketPullRequestMessageAdjuster.new(
         formatter: BitBucketPullRequestStatusFormatter.new(
-          brought_to_you_by_url: root_url
+          root_url: root_url
         )
       )
     )

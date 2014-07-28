@@ -26,6 +26,10 @@ class BitBucketPullRequestAdjuster
     update_pr_with_job_status(pr, job_status)
   end
 
+  def update_status_from_pull_request_id(id)
+    update_status_from_pull_request client.pr(id)
+  end
+
   private \
   def update_pr_with_job_status(pr, job_status)
     adjusted_pr = message_adjuster.call(pr, job_status)

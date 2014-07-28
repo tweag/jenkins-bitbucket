@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   post '/hooks/bitbucket', to: 'bitbucket_hooks#create', as: :bitbucket_hook
   get  '/hooks/bitbucket', to: 'bitbucket_hooks#index'
 
+  post '/bitbucket/refresh/:id', to: 'bitbucket_hooks#refresh'
+  get  '/bitbucket/refresh/:id', to: 'bitbucket_hooks#refresh_button'
+
   resource :test, only: :show
   root to: 'home#index'
 end
