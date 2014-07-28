@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'bit_bucket_pull_request_message_adjuster'
+require 'bitbucket_pull_request_message_adjuster'
 
-describe BitBucketPullRequestMessageAdjuster do
+describe BitbucketPullRequestMessageAdjuster do
   let(:message_adjuster) do
     described_class.new(
       separator: "xxx",

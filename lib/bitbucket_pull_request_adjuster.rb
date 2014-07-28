@@ -1,12 +1,12 @@
-require 'bit_bucket_pull_request_message_adjuster'
+require 'bitbucket_pull_request_message_adjuster'
 require 'util'
 
-class BitBucketPullRequestAdjuster
+class BitbucketPullRequestAdjuster
   attr_accessor :client, :message_adjuster, :jenkins_jobs
 
   def initialize(
     client,
-    message_adjuster: BitBucketPullRequestMessageAdjuster.new,
+    message_adjuster: BitbucketPullRequestMessageAdjuster.new,
     jenkins_jobs:     JenkinsJob
   )
     self.client           = client

@@ -1,6 +1,6 @@
 require 'jenkins_handler'
 require 'bitbucket_hook_handler'
-require 'bit_bucket_pull_request_adjuster'
+require 'bitbucket_pull_request_adjuster'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
@@ -16,10 +16,10 @@ class ApplicationController < ActionController::Base
 
   memoize \
   def bitbucket_pull_request_adjuster
-    BitBucketPullRequestAdjuster.new(
+    BitbucketPullRequestAdjuster.new(
       bitbucket_client,
-      message_adjuster: BitBucketPullRequestMessageAdjuster.new(
-        formatter: BitBucketPullRequestStatusFormatter.new(
+      message_adjuster: BitbucketPullRequestMessageAdjuster.new(
+        formatter: BitbucketPullRequestStatusFormatter.new(
           root_url: root_url
         )
       )
@@ -33,6 +33,6 @@ class ApplicationController < ActionController::Base
 
   memoize \
   def bitbucket_client
-    BitBucketClient.new
+    BitbucketClient.new
   end
 end

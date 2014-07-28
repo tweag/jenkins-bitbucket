@@ -1,13 +1,13 @@
-require 'bit_bucket_pull_request_status_formatter'
+require 'bitbucket_pull_request_status_formatter'
 
-class BitBucketPullRequestMessageAdjuster
+class BitbucketPullRequestMessageAdjuster
   DEFAULT_SEPARATOR = "* * * * * * * * * * * * * * *"
 
   attr_accessor :separator, :formatter
 
   def initialize(
     separator: DEFAULT_SEPARATOR,
-    formatter: BitBucketPullRequestStatusFormatter.new
+    formatter: BitbucketPullRequestStatusFormatter.new
   )
     self.separator = separator
     self.formatter = formatter

@@ -1,4 +1,4 @@
-class BitBucketPullRequestStatusFormatter
+class BitbucketPullRequestStatusFormatter
   attr_accessor :root_url
 
   def initialize(root_url: "http://example.com")

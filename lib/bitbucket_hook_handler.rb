@@ -5,7 +5,7 @@ class BitbucketHookHandler
 
   def call(params)
     pull_request_params = params["pullrequest_created"] or return
-    pull_request = BitBucketClient::PullRequest.new(pull_request_params)
+    pull_request = BitbucketClient::PullRequest.new(pull_request_params)
     @bitbucket.update_status_from_pull_request pull_request
   end
 

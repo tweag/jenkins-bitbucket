@@ -1,4 +1,4 @@
-class BitBucketClient
+class BitbucketClient
 
   # TODO: put this somewhere else
   ATTRIBUTES = %i[user password repo]

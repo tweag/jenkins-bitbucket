@@ -19,7 +19,7 @@ describe BitbucketHookHandler, '.call' do
     it "add the status to the pull request" do
       subject.call(params)
       expect(bitbucket).to have_received(:update_status_from_pull_request)
-        .with(BitBucketClient::PullRequest.new("id" => 42))
+        .with(BitbucketClient::PullRequest.new("id" => 42))
     end
   end
 

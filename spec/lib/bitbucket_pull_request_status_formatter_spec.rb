@@ -1,6 +1,6 @@
-require 'bit_bucket_pull_request_status_formatter'
+require 'bitbucket_pull_request_status_formatter'
 
-describe BitBucketPullRequestStatusFormatter do
+describe BitbucketPullRequestStatusFormatter do
   let(:formatter) { described_class.new(root_url: 'http://jbb.com') }
 
   describe "#call" do

@@ -1,6 +1,6 @@
-module BitBucketHelpers
+module BitbucketHelpers
   def bitbucket
-    @bitbucket ||= BitBucketClient.new
+    @bitbucket ||= BitbucketClient.new
   end
 
   def create_pull_request(title)
@@ -33,5 +33,5 @@ module BitBucketHelpers
 end
 
 RSpec.configure do |config|
-  config.include BitBucketHelpers
+  config.include BitbucketHelpers
 end
