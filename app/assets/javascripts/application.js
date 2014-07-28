@@ -1,3 +1,3 @@
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
+//x= require jquery
+//x= require jquery_ujs
+//x= require_tree .
