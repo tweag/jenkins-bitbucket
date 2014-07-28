@@ -6,12 +6,8 @@ describe BitbucketHookHandler, '.call' do
     { action => { "id" => 42 } }
   end
 
-  subject { described_class.new(jenkins: jenkins, bitbucket: bitbucket) }
-  let(:jenkins)   { double }
+  subject { described_class.new(bitbucket: bitbucket) }
   let(:bitbucket) { double }
-
-  before do
-  end
 
   describe "a pull request created" do
     let(:action) { "pullrequest_created" }
@@ -23,14 +19,14 @@ describe BitbucketHookHandler, '.call' do
     it "add the status to the pull request" do
       subject.call(params)
       expect(bitbucket).to have_received(:update_status_from_pull_request)
-        .with(nil, BitBucketClient::PullRequest.new("id" => 42))
+        .with(BitBucketClient::PullRequest.new("id" => 42))
     end
   end
 
   describe "a pull request edited" do
     let(:action) { "pullrequest_edited" }
 
-    it "does nothing" do
+    it "does nothing and does it without exploding" do
       subject.call(params)
     end
   end

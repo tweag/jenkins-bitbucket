@@ -1,9 +1,11 @@
 require 'spec_helper'
 
 describe JobStatus do
-  subject do
-    JobStatus.new(
-      "name"  => "the-name",
+  subject { JobStatus.new(params) }
+
+  let(:params) do
+    {
+      "name"  => "the-name-123",
       "url"   => "job/test-job-for-webhooks/",
       "build" =>
       {
@@ -20,16 +22,23 @@ describe JobStatus do
         },
         "artifacts"  => {}
       }
-    )
+    }
   end
 
-  its(:job_name) { should eq "the-name" }
-  its(:phase) { should eq "the-phase" }
-  its(:status) { should eq "the-status" }
-  its(:url) { should eq  "http://example.com/the-full-url"}
+  its(:job_name)   { should eq "the-name-123" }
+  its(:job_number) { should eq 123 }
+  its(:phase)      { should eq "the-phase" }
+  its(:status)     { should eq "the-status" }
+  its(:url)        { should eq  "http://example.com/the-full-url"}
+  its(:as_json)    { should eq params }
 
   context "when it has no status" do
     subject { JobStatus.new("build" => {}) }
     its(:status) { should be nil }
+  end
+
+  context "when it has no job number" do
+    subject { JobStatus.new("name" => 'the-name') }
+    its(:job_number) { should be nil }
   end
 end
