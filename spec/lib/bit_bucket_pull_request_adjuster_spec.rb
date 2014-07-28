@@ -2,6 +2,14 @@ require 'spec_helper'
 require 'bit_bucket_pull_request_adjuster'
 
 describe BitBucketPullRequestAdjuster do
+  describe ".match" do
+    it { expect(described_class.match(123, 123)).to be_true }
+    it { expect(described_class.match(123, nil)).to be_false }
+    it { expect(described_class.match(nil, nil)).to be_false }
+  end
+end
+
+describe BitBucketPullRequestAdjuster do
   subject do
     described_class.new(client,
                         message_adjuster: message_adjuster,

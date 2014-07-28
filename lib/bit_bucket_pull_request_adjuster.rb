@@ -33,6 +33,6 @@ class BitBucketPullRequestAdjuster
   end
 
   def self.match(pr_title, job_number)
-    pr_title == job_number
+    pr_title and pr_title == job_number
   end
 end
