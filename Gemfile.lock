@@ -35,6 +35,7 @@ GEM
     dotenv-rails (0.9.0)
       dotenv (= 0.9.0)
     erubis (2.7.0)
+    execjs (2.2.1)
     faraday (0.8.9)
       multipart-post (~> 1.2.0)
     faraday_middleware (0.9.1)
@@ -119,6 +120,9 @@ GEM
       polyglot (>= 0.3.1)
     tzinfo (1.2.1)
       thread_safe (~> 0.1)
+    uglifier (2.5.3)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
     unicorn (4.8.2)
       kgio (~> 2.6)
       rack
@@ -139,4 +143,5 @@ DEPENDENCIES
   rspec-rails
   slim-rails
   spring
+  uglifier (>= 1.3.0)
   unicorn
