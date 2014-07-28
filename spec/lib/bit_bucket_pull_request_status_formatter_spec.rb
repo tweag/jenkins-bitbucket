@@ -7,10 +7,12 @@ describe BitBucketPullRequestStatusFormatter do
     subject { formatter.call(job_status) }
 
     let(:job_status) do
-      double(
-        job_name: "my-job",
-        status:   "the-status",
-        url:      "http://example.com"
+      JobStatus.new(
+        'name' => "my-job",
+        'build' => {
+          'status' => "the-status",
+          'full_url' => "http://example.com"
+        }
       )
     end
 
