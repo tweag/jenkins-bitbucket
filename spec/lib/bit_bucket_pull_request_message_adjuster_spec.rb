@@ -33,5 +33,9 @@ describe BitBucketPullRequestMessageAdjuster do
       its([:title])       { should eq "original title" }
       its([:description]) { should eq "my pr\nxxx\nTHE-JOB-NAME" }
     end
+
+    context "when there is no job status" do
+      let(:job_status) {}
+    end
   end
 end

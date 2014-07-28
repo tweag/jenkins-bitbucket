@@ -52,31 +52,4 @@ describe 'Jenkins job changes state', type: :request do
       url:      url
     }.merge(options))
   end
-
-  # TODO: move all this somewhere else
-  let(:bitbucket) { BitBucketClient.new }
-
-  def create_pull_request(title)
-    bitbucket.create_pr(title)
-  end
-
-  def decline_all_pull_requests
-    bitbucket.prs.each do |pr|
-      bitbucket.decline_pr pr['id']
-    end
-  end
-
-  def comments_for(pr)
-    bitbucket.comments(pr['id'])
-  end
-
-  def all_comments_on_all_prs
-    bitbucket.prs.map do |pr|
-      bitbucket.comments(pr['id'])
-    end.reduce(&:+)
-  end
-
-  def reload_pull_request(pr)
-    bitbucket.pr(pr['id'])
-  end
 end

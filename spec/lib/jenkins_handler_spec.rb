@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'jenkins_handler'
 
-describe JenkinsHandler, '.handle' do
+describe JenkinsHandler, '.call' do
   let(:params) do
     {
       "name"  => "test-job-for-webhooks",

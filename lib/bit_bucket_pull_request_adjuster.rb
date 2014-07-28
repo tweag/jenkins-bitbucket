@@ -12,14 +12,14 @@ class BitBucketPullRequestAdjuster
   end
 
   def update_status(job_status)
-    prs = client.prs.select do |pr|
-      self.class.match(pr.title, job_status.job_name)
-    end
+    client.prs
+      .select { |pr| self.class.match(pr.title, job_status.job_name) }
+      .each   { |pr| update_status_from_pull_request(job_status, pr) }
+  end
 
-    prs.each do |pr|
-      adjusted_pr = message_adjuster.call(pr, job_status)
-      client.update_pr pr.id, adjusted_pr.fetch(:title), adjusted_pr.fetch(:description)
-    end
+  def update_status_from_pull_request(job_status, pr)
+    adjusted_pr = message_adjuster.call(pr, job_status)
+    client.update_pr pr.id, adjusted_pr.fetch(:title), adjusted_pr.fetch(:description)
   end
 
   def self.match(pr_title, job_name)

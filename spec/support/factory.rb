@@ -1,4 +1,4 @@
-module JobFactory
+module Factory
   def job_params(
     job_name: "the-job-name",
     url:      "http://example.com/the-job",
@@ -26,5 +26,5 @@ module JobFactory
 end
 
 RSpec.configure do |config|
-  config.include JobFactory
+  config.include Factory
 end

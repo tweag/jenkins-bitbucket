@@ -10,20 +10,28 @@ class ApplicationController < ActionController::Base
 
   memoize \
   def jenkins_handler
-    JenkinsHandler.new(
-      bitbucket: BitBucketPullRequestAdjuster.new(
-        bit_bucket_client,
-        message_adjuster: BitBucketPullRequestMessageAdjuster.new(
-          formatter: BitBucketPullRequestStatusFormatter.new(
-            brought_to_you_by_url: root_url
-          )
+    JenkinsHandler.new(bitbucket: bitbucket_pull_request_adjuster)
+  end
+
+  memoize \
+  def bitbucket_pull_request_adjuster
+    BitBucketPullRequestAdjuster.new(
+      bitbucket_client,
+      message_adjuster: BitBucketPullRequestMessageAdjuster.new(
+        formatter: BitBucketPullRequestStatusFormatter.new(
+          brought_to_you_by_url: root_url
         )
       )
     )
   end
 
   memoize \
-  def bit_bucket_client
+  def bitbucket_hook_handler
+    BitbucketHookHandler.new(bitbucket: bitbucket_pull_request_adjuster)
+  end
+
+  memoize \
+  def bitbucket_client
     BitBucketClient.new
   end
 end
