@@ -8,13 +8,14 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'jquery-rails'
 # gem 'jbuilder', '~> 2.0'
 
-gem 'unicorn'
 gem 'pg'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'hashie'
 gem 'slim-rails'
 gem 'memoist'
+gem 'puma'
+gem 'rack-timeout', group: :production
 
 group :development, :test do
   gem 'spring'
