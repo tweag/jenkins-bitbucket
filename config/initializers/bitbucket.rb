@@ -1,7 +1,7 @@
 require 'bitbucket_client'
 
 BitbucketClient.tap do |config|
-  config.user     = ENV['BIT_BUCKET_USER']
-  config.password = ENV['BIT_BUCKET_PASSWORD']
-  config.repo     = ENV['BIT_BUCKET_REPO']
+  config.user     = ENV.fetch('BIT_BUCKET_USER')
+  config.password = ENV.fetch('BIT_BUCKET_PASSWORD')
+  config.repo     = ENV.fetch('BIT_BUCKET_REPO')
 end
