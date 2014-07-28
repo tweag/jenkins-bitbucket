@@ -1,9 +1,16 @@
 h2 Pull Requests I can see:
 table
+  thead
+    tr
+      th Pull Request
+      th Story Number
+      th Job Status
   - @pull_requests.each do |pull_request|
     tr
       td= pull_request.title
-      td= JenkinsJob.get_job_status(pull_request.job_number).try(:job_name)
-      td= form_tag "/bitbucket/refresh/#{pull_request.id}", method: :post do
-        button Refresh
+      td= pull_request.story_number
+      td= JenkinsJob.get_job_status(pull_request.story_number).try(:job_name)
+      td
+        = form_tag "/bitbucket/refresh/#{pull_request.id}", method: :post do
+          button Refresh
 
