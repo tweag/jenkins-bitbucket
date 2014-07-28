@@ -1,0 +1,432 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Mon, 28 Jul 2014 23:54:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.0486569404602'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '155'
+      X-Served-By:
+      - app22
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - dc0888f9cc4d
+      X-Version:
+      - ad6ebb1412c0
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"pagelen": 10, "values": [{"description": "Test Pull Request\n* *
+        * * * * * * * * * * * * *\n# new-status on Jenkins\n[refresh this message](http://www.example.com//bitbucket/refresh/203)\n\n[job-4958
+        on Jenkins](http://example.com/jenkins/jobs/42)\n\nBrought to you by [Jenkins-Bitbucket](http://www.example.com/)",
+        "links": {"decline": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/decline"},
+        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/commits"},
+        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/comments"},
+        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/merge"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/203"},
+        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/activity"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/diff"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/approve"}},
+        "author": {"username": "jenkins-bitbucket", "display_name": "jenkins-bitbucket
+        jenkins-bitbucket", "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
+        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fdc0888f9cc4d%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "close_source_branch": false, "title": "pr  4958", "destination": {"commit":
+        {"hash": "737d9d141ccb", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "master"}}, "reason": "", "closed_by": null, "source":
+        {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "my-branch"}}, "state": "OPEN", "created_on": "2014-07-28T23:53:57.686306+00:00",
+        "updated_on": "2014-07-28T23:53:59.182218+00:00", "merge_commit": null, "id":
+        203}], "page": 1, "size": 1}'
+    http_version: 
+  recorded_at: Mon, 28 Jul 2014 23:54:47 GMT
+- request:
+    method: post
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/decline
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Mon, 28 Jul 2014 23:54:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.176799058914'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '140'
+      X-Served-By:
+      - app18
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - dc0888f9cc4d
+      X-Version:
+      - ad6ebb1412c0
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"description": "Test Pull Request\n* * * * * * * * * * * * * * *\n#
+        new-status on Jenkins\n[refresh this message](http://www.example.com//bitbucket/refresh/203)\n\n[job-4958
+        on Jenkins](http://example.com/jenkins/jobs/42)\n\nBrought to you by [Jenkins-Bitbucket](http://www.example.com/)",
+        "links": {"decline": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/decline"},
+        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/commits"},
+        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/comments"},
+        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/merge"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/203"},
+        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/activity"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/diff"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/203/approve"}},
+        "title": "pr  4958", "close_source_branch": false, "reviewers": [], "destination":
+        {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "master"}}, "reason": "", "closed_by": {"username": "jenkins-bitbucket",
+        "display_name": "jenkins-bitbucket jenkins-bitbucket", "links": {"self": {"href":
+        "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"}, "avatar": {"href":
+        "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fdc0888f9cc4d%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "source": {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "my-branch"}}, "state": "DECLINED", "author": {"username":
+        "jenkins-bitbucket", "display_name": "jenkins-bitbucket jenkins-bitbucket",
+        "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
+        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fdc0888f9cc4d%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "created_on": "2014-07-28T23:53:57.686306+00:00", "participants": [], "updated_on":
+        "2014-07-28T23:54:48.268000+00:00", "merge_commit": null, "id": 203}'
+    http_version: 
+  recorded_at: Mon, 28 Jul 2014 23:54:48 GMT
+- request:
+    method: post
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests
+    body:
+      encoding: UTF-8
+      string: '{"source":{"branch":{"name":"my-branch"}},"title":"My Pull Request
+        PR-123","description":"Test Pull Request"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Mon, 28 Jul 2014 23:54:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2892'
+      Connection:
+      - keep-alive
+      Etag:
+      - '"13f5a448384782586e572766ad74654f"'
+      X-Render-Time:
+      - '0.237529039383'
+      Content-Language:
+      - en
+      Location:
+      - https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204
+      X-Request-Count:
+      - '415'
+      X-Served-By:
+      - app18
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - dc0888f9cc4d
+      X-Version:
+      - ad6ebb1412c0
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"description": "Test Pull Request", "links": {"decline": {"href":
+        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/decline"},
+        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/commits"},
+        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/comments"},
+        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/merge"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/204"},
+        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/activity"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/diff"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/approve"}},
+        "title": "My Pull Request PR-123", "close_source_branch": false, "reviewers":
+        [], "destination": {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href":
+        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "master"}}, "reason": "", "closed_by": null, "source":
+        {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "my-branch"}}, "state": "OPEN", "author": {"username":
+        "jenkins-bitbucket", "display_name": "jenkins-bitbucket jenkins-bitbucket",
+        "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
+        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fdc0888f9cc4d%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "created_on": "2014-07-28T23:54:48.741315+00:00", "participants": [], "updated_on":
+        "2014-07-28T23:54:48.769867+00:00", "merge_commit": null, "id": 204}'
+    http_version: 
+  recorded_at: Mon, 28 Jul 2014 23:54:48 GMT
+- request:
+    method: put
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204
+    body:
+      encoding: UTF-8
+      string: '{"title":"My Pull Request PR-123","description":"Test Pull Request\n*
+        * * * * * * * * * * * * * *\n# UNKNOWN on Jenkins\n\nI don''t recall Jenkins
+        ever telling me about a matching job.\n\n- Perhaps there isn''t a job on Jenkins
+        that has started running.\n- Perhaps the job doesn''t have a number in its
+        name.\n- Perhaps this pull request doesn''t have a number in its title.\n\nOnce
+        you fix the problem, you can [refresh this message](http://www.example.com//bitbucket/refresh/204)\n\nBrought
+        to you by [Jenkins-Bitbucket](http://www.example.com/)"}'
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Mon, 28 Jul 2014 23:54:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.234272956848'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '60'
+      X-Served-By:
+      - app18
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - dc0888f9cc4d
+      X-Version:
+      - ad6ebb1412c0
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"description": "Test Pull Request\n* * * * * * * * * * * * * * *\n#
+        UNKNOWN on Jenkins\n\nI don''t recall Jenkins ever telling me about a matching
+        job.\n\n- Perhaps there isn''t a job on Jenkins that has started running.\n-
+        Perhaps the job doesn''t have a number in its name.\n- Perhaps this pull request
+        doesn''t have a number in its title.\n\nOnce you fix the problem, you can
+        [refresh this message](http://www.example.com//bitbucket/refresh/204)\n\nBrought
+        to you by [Jenkins-Bitbucket](http://www.example.com/)", "links": {"decline":
+        {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/decline"},
+        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/commits"},
+        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/comments"},
+        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/merge"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/204"},
+        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/activity"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/diff"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/approve"}},
+        "title": "My Pull Request PR-123", "close_source_branch": false, "reviewers":
+        [], "destination": {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href":
+        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "master"}}, "reason": "", "closed_by": null, "source":
+        {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "my-branch"}}, "state": "OPEN", "author": {"username":
+        "jenkins-bitbucket", "display_name": "jenkins-bitbucket jenkins-bitbucket",
+        "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
+        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fdc0888f9cc4d%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "created_on": "2014-07-28T23:54:48.741315+00:00", "participants": [], "updated_on":
+        "2014-07-28T23:54:49.341397+00:00", "merge_commit": null, "id": 204}'
+    http_version: 
+  recorded_at: Mon, 28 Jul 2014 23:54:49 GMT
+- request:
+    method: get
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Mon, 28 Jul 2014 23:54:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.0610959529877'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '365'
+      X-Served-By:
+      - app22
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - dc0888f9cc4d
+      X-Version:
+      - ad6ebb1412c0
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"description": "Test Pull Request\n* * * * * * * * * * * * * * *\n#
+        UNKNOWN on Jenkins\n\nI don''t recall Jenkins ever telling me about a matching
+        job.\n\n- Perhaps there isn''t a job on Jenkins that has started running.\n-
+        Perhaps the job doesn''t have a number in its name.\n- Perhaps this pull request
+        doesn''t have a number in its title.\n\nOnce you fix the problem, you can
+        [refresh this message](http://www.example.com//bitbucket/refresh/204)\n\nBrought
+        to you by [Jenkins-Bitbucket](http://www.example.com/)", "links": {"decline":
+        {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/decline"},
+        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/commits"},
+        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/comments"},
+        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/merge"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/204"},
+        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/activity"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/diff"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/204/approve"}},
+        "title": "My Pull Request PR-123", "close_source_branch": false, "reviewers":
+        [], "destination": {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href":
+        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "master"}}, "reason": "", "closed_by": null, "source":
+        {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/dc0888f9cc4d/img/language-avatars/default_16.png"}},
+        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
+        "branch": {"name": "my-branch"}}, "state": "OPEN", "author": {"username":
+        "jenkins-bitbucket", "display_name": "jenkins-bitbucket jenkins-bitbucket",
+        "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
+        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fdc0888f9cc4d%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "created_on": "2014-07-28T23:54:48.741315+00:00", "participants": [], "updated_on":
+        "2014-07-28T23:54:49.341397+00:00", "merge_commit": null, "id": 204}'
+    http_version: 
+  recorded_at: Mon, 28 Jul 2014 23:54:49 GMT
+recorded_with: VCR 2.9.2

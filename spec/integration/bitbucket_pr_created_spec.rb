@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Bitbucket PR is made' do
+describe 'Bitbucket PR is made', vcr: true do
   before { decline_all_pull_requests }
 
   def pull_request_notification_of(pr)
