@@ -21,8 +21,8 @@ class BitbucketPullRequestAdjuster
   end
 
   def update_status_from_pull_request(pr)
-    job_number = Util.extract_id(pr.title) or return
-    job_status = jenkins_jobs.get_job_status(Integer(job_number))
+    job_number = Util.extract_id(pr.title)
+    job_status = jenkins_jobs.get_job_status(Integer(job_number)) if job_number
     update_pr_with_job_status(pr, job_status)
   end
 

@@ -17,7 +17,7 @@ class BitbucketPullRequestStatusFormatter
     if job_status
       job_status_message(pull_request, job_status)
     else
-      no_job_status_message(pull_request, job_status)
+      no_job_status_message(pull_request)
     end
   end
 
@@ -30,7 +30,7 @@ class BitbucketPullRequestStatusFormatter
     ]
   end
 
-  def no_job_status_message(pull_request, job_status)
+  def no_job_status_message(pull_request)
     [
       "# UNKNOWN on Jenkins",
       "",

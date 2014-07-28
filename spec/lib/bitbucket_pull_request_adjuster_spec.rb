@@ -97,5 +97,19 @@ describe BitbucketPullRequestAdjuster do
           .with(42, "adjusted title", "adjusted description")
       end
     end
+
+    context "when there is no story number in the title" do
+      let(:pull_request) { double(id: 42, title: "My PR") }
+      let(:job_status)   { }
+
+      it "updates the status of the pull request" do
+        subject.update_status_from_pull_request pull_request
+
+        expect(client).to have_received(:update_pr)
+          .with(42, "adjusted title", "adjusted description")
+      end
+    end
   end
+
+  describe "#update_status_from_pull_request_id"
 end
