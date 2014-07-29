@@ -16,9 +16,9 @@ describe 'Bitbucket pull request is made', vcr: true do
   end
 
   def associated_job_exists
-    post '/hooks/jenkins', job_params(
-      job_name: "job-#{story_number}",
-      status:   'ABORTED'
+    post '/hooks/jenkins', JenkinsJobExample.attributes(
+      'name' => "job-#{story_number}",
+      'build' => { 'status' => 'ABORTED' }
     )
   end
 

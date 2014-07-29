@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe 'Jenkins job changes state', vcr: true do
-  let(:status) { 'NEW-STATUS' }
-  let(:phase)  { 'STARTED' }
-  let(:url)    { 'http://example.com/jenkins/jobs/42' }
+  let(:url) { 'http://example.com/jenkins/jobs/42' }
 
   context 'and there is no pull request' do
     let(:job_name) { 'job-name-for-non-existant-pull-request' }
@@ -24,32 +22,33 @@ describe 'Jenkins job changes state', vcr: true do
 
     context 'and there is no jenkins status in it' do
       it 'leaves a comment on it' do
-        job_changes_state
+        job_changes_state 'SUCCESS'
         expect(updated_description).to include '* * *'
-        expect(updated_description).to include status
+        expect(updated_description).to include 'SUCCESS'
         expect(updated_description).to include url
       end
     end
 
     context 'and there is a jenkins status in it' do
-      before { job_changes_state status: 'old-status' }
+      before { job_changes_state 'FAILURE' }
       it 'updates the pull request with the status' do
-        job_changes_state status: 'new-status'
+        job_changes_state status: 'SUCCESS'
 
         expect(updated_description).to include '* * *'
         expect(updated_description).to include url
-        expect(updated_description).to include 'new-status'
-        expect(updated_description).not_to include 'old-status'
+        expect(updated_description).to include 'SUCCESS'
+        expect(updated_description).not_to include 'FAILURE'
       end
     end
   end
 
-  def job_changes_state(options = {})
-    post '/hooks/jenkins', job_params({
-      job_name: job_name,
-      status:   status,
-      phase:    phase,
-      url:      url
-    }.merge(options))
+  def job_changes_state(status = "SUCCESS")
+    post '/hooks/jenkins', JenkinsJobExample.attributes(
+      'name' => job_name,
+      'build' => {
+        'status' => status,
+        'full_url' => url
+      }
+    )
   end
 end
