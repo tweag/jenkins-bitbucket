@@ -1,0 +1,36 @@
+require: rubocop-rspec
+
+AllCops:
+  RunRailsCops: true
+
+  Include:
+    - '**/config.ru'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/**/*'
+
+Documentation:
+  Enabled: false
+
+DoubleNegation:
+  Enabled: false
+
+Style/AlignHash:
+  EnforcedColonStyle: table
+
+Style/Encoding:
+  EnforcedStyle: when_needed
+
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+RSpec/DescribeClass:
+  Enabled: false
+
+RSpec/MultipleDescribes:
+  Enabled: false
+
+RSpec/DescribeMethod:
+  Enabled: false

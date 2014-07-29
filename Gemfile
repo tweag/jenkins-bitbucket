@@ -23,6 +23,8 @@ group :development, :test do
   gem 'pry-nav'
   gem 'rspec-rails'
   gem 'dotenv-rails'
+  gem 'rubocop'
+  gem 'rubocop-rspec'
 end
 
 group :test do
