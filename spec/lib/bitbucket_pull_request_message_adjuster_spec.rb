@@ -21,17 +21,17 @@ describe BitbucketPullRequestMessageAdjuster do
     end
 
     context "when a status is not already in the message" do
-      let(:original_description) { "my pr" }
+      let(:original_description) { "my pull request" }
 
       its([:title])       { should eq "original title" }
-      its([:description]) { should eq "my pr\nxxx\nTHE-JOB-NAME" }
+      its([:description]) { should eq "my pull request\nxxx\nTHE-JOB-NAME" }
     end
 
     context "when a status is already in the message" do
-      let(:original_description) { "my pr\nxxx\nOLD STATUS" }
+      let(:original_description) { "my pull request\nxxx\nOLD STATUS" }
 
       its([:title])       { should eq "original title" }
-      its([:description]) { should eq "my pr\nxxx\nTHE-JOB-NAME" }
+      its([:description]) { should eq "my pull request\nxxx\nTHE-JOB-NAME" }
     end
 
     context "when there is no job" do

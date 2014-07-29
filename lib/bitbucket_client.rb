@@ -14,35 +14,36 @@ class BitbucketClient
 
   def initialize
     @conn = Faraday.new(:url => 'https://api.bitbucket.org') do |faraday|
-      faraday.request :basic_auth, user, password
-      faraday.request :json
+      faraday.request  :basic_auth, user, password
+      faraday.request  :json
       faraday.response :json
       faraday.adapter  Faraday.default_adapter
     end
   end
 
-  def create_pr(title)
-    post(prs_path,
-         "source" => { "branch" => { "name" => "my-branch" }, },
-         "title" => title,
-         "description" => "Test Pull Request"
-        )
+  def create_pull_request(title)
+    post(
+      pull_requests_path,
+      "source" => { "branch" => { "name" => "my-branch" }, },
+      "title" => title,
+      "description" => "Test Pull Request"
+    )
   end
 
-  def update_pr(id, title, description)
-    put(pr_path(id), title: title, description: description)
+  def update_pull_request(id, title, description)
+    put(pull_request_path(id), title: title, description: description)
   end
 
-  def prs
-    get(prs_path)['values'].map{|pr| PullRequest.new(pr) }
+  def pull_requests
+    get(pull_requests_path)['values'].map{|pull_request| PullRequest.new(pull_request) }
   end
 
-  def pr(id)
-    PullRequest.new(get(pr_path(id)))
+  def pull_request(id)
+    PullRequest.new(get(pull_request_path(id)))
   end
 
-  def decline_pr(id)
-    post(decline_pr_path(id))
+  def decline_pull_request(id)
+    post(decline_pull_request_path(id))
   end
 
   private
@@ -66,16 +67,16 @@ class BitbucketClient
   end
 
 
-  def prs_path
+  def pull_requests_path
     "/2.0/repositories/#{repo}/pullrequests"
   end
 
-  def pr_path(id)
-    path(prs_path, id)
+  def pull_request_path(id)
+    path(pull_requests_path, id)
   end
 
-  def decline_pr_path(id)
-    path(pr_path(id), "decline")
+  def decline_pull_request_path(id)
+    path(pull_request_path(id), "decline")
   end
 
   def path(*parts)

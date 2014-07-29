@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe 'Bitbucket PR is made', vcr: true do
+describe 'Bitbucket pull request is made', vcr: true do
   before { decline_all_pull_requests }
 
-  def pull_request_notification_of(pr)
-    post '/hooks/bitbucket', pullrequest_created: pr
+  def pull_request_notification_of(pull_request)
+    post '/hooks/bitbucket', pullrequest_created: pull_request
   end
 
   let(:pull_request)         { create_pull_request(title) }
@@ -45,7 +45,7 @@ describe 'Bitbucket PR is made', vcr: true do
   describe "and then edited" do
     before { associated_job_exists }
 
-    it 'can be updated by clicking a link in the PR' do
+    it 'can be updated by clicking a link in the pull request' do
       pull_request_notification_of(pull_request)
 
       updated_pull_request = reload_pull_request(pull_request)

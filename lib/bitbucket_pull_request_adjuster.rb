@@ -15,28 +15,28 @@ class BitbucketPullRequestAdjuster
   end
 
   def update_status(job)
-    client.prs
-      .select { |pr| self.class.match(Util.extract_id(pr.title), job.number) }
-      .each   { |pr| update_pr_with_job_status(pr, job) }
+    client.pull_requests
+      .select { |pull_request| self.class.match(Util.extract_id(pull_request.title), job.number) }
+      .each   { |pull_request| update_pull_request_with_job_status(pull_request, job) }
   end
 
-  def update_status_from_pull_request(pr)
-    job_number = Util.extract_id(pr.title)
+  def update_status_from_pull_request(pull_request)
+    job_number = Util.extract_id(pull_request.title)
     job = jenkins_jobs.fetch(Integer(job_number)) if job_number
-    update_pr_with_job_status(pr, job)
+    update_pull_request_with_job_status(pull_request, job)
   end
 
   def update_status_from_pull_request_id(id)
-    update_status_from_pull_request client.pr(id)
+    update_status_from_pull_request client.pull_request(id)
   end
 
   private \
-  def update_pr_with_job_status(pr, job)
-    adjusted_pr = message_adjuster.call(pr, job)
-    client.update_pr pr.id, adjusted_pr.fetch(:title), adjusted_pr.fetch(:description)
+  def update_pull_request_with_job_status(pull_request, job)
+    adjusted_pull_request = message_adjuster.call(pull_request, job)
+    client.update_pull_request pull_request.id, adjusted_pull_request.fetch(:title), adjusted_pull_request.fetch(:description)
   end
 
-  def self.match(pr_title, job_number)
-    pr_title and pr_title == job_number
+  def self.match(pull_request_title, job_number)
+    pull_request_title and pull_request_title == job_number
   end
 end
