@@ -8,7 +8,7 @@ describe 'Jenkins job changes state', vcr: true do
   context 'and there is no pull request' do
     let(:job_name) { "job-name-for-non-existant-pull-request" }
     it 'does nothing' do
-      act
+      job_changes_state
     end
   end
 
@@ -24,7 +24,7 @@ describe 'Jenkins job changes state', vcr: true do
 
     context 'and there is no jenkins status in it' do
       it 'leaves a comment on it' do
-        act
+        job_changes_state
         expect(updated_description).to include '* * *'
         expect(updated_description).to include status
         expect(updated_description).to include url
@@ -32,9 +32,9 @@ describe 'Jenkins job changes state', vcr: true do
     end
 
     context 'and there is a jenkins status in it' do
-      before { act status: 'old-status' }
+      before { job_changes_state status: 'old-status' }
       it 'updates the pull request with the status' do
-        act status: 'new-status'
+        job_changes_state status: 'new-status'
 
         expect(updated_description).to include '* * *'
         expect(updated_description).to include url
@@ -44,7 +44,7 @@ describe 'Jenkins job changes state', vcr: true do
     end
   end
 
-  def act(options = {})
+  def job_changes_state(options = {})
     post '/hooks/jenkins', job_params({
       job_name: job_name,
       status:   status,
