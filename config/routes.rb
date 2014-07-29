@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   get  '/bitbucket/refresh/:id', to: 'bitbucket_hooks#refresh_button'
 
   resource :test, only: :show
+
+  get '/test/messages', to: 'tests#messages', as: 'test_messages'
+
   root to: 'home#index'
 end
