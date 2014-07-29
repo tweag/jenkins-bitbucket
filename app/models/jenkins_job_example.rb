@@ -1,6 +1,6 @@
 class JenkinsJobExample
   # rubocop:disable Style/MethodLength
-  def self.attributes(attrs)
+  def self.attributes(attrs = {})
     {
       'name'  => 'test-job-for-webhooks-123',
       'url'   => 'job/test-job-for-webhooks/',

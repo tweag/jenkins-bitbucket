@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe JenkinsJob do
-  subject { build_job(params) }
+  subject { JenkinsJobExample.build(params) }
 
   let(:params) do
     {
@@ -33,12 +33,18 @@ describe JenkinsJob do
   its(:as_json)  { should eq params }
 
   context 'when it has no status' do
-    subject { build_job('build' => {}) }
+    subject { described_class.new_from_jenkins(attrs_with_no_status) }
+    let(:attrs_with_no_status) do
+      JenkinsJobExample.attributes.tap do |attrs|
+        attrs['build'].delete('status')
+      end
+    end
+
     its(:status) { should be nil }
   end
 
   context 'when it has no job number' do
-    subject { build_job('name' => 'the-name') }
+    subject { JenkinsJobExample.build('name' => 'the-name') }
     its(:number) { should be nil }
   end
 end

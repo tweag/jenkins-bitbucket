@@ -1,7 +1,7 @@
 # rubocop:disable Style/ClassLength
 class PullRequestExample
   # rubocop:disable Style/MethodLength
-  def self.attributes(attrs)
+  def self.attributes(attrs = {})
     {
       'description' => 'This is my pull request',
       'links' => {

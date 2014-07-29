@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe JenkinsJob do
   describe '.store' do
-    let(:job) { build_job('name' => 'job-123') }
+    let(:job) { JenkinsJobExample.build('name' => 'job-123') }
 
     context "when a job with that number doesn't exist" do
       it 'saves the job' do
@@ -12,7 +12,7 @@ describe JenkinsJob do
     end
 
     context 'when a job with that number does exist' do
-      before { described_class.store(build_job('name' => 'XXX-123')) }
+      before { described_class.store(JenkinsJobExample.build('name' => 'XXX-123')) }
       it 'upserts the job' do
         described_class.store(job)
         expect(described_class.fetch(123)).to eq job

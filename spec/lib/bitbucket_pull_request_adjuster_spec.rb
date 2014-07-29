@@ -35,7 +35,7 @@ describe BitbucketPullRequestAdjuster do
 
   describe '#update_status' do
     let(:story_id) { '123' }
-    let(:job) { build_job('name' => "job-name-#{story_id}") }
+    let(:job) { JenkinsJobExample.build('name' => "job-name-#{story_id}") }
 
     context 'when a pull request exists for the story' do
       let(:pull_request) do

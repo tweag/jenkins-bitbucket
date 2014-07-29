@@ -14,7 +14,7 @@ describe BitbucketPullRequestMessageAdjuster do
       message_adjuster.call(pull_request, job)
     end
 
-    let(:job) { build_job('name' => 'THE-JOB-NAME') }
+    let(:job) { JenkinsJobExample.build('name' => 'THE-JOB-NAME') }
 
     let(:pull_request) do
       double(title: 'original title', description: original_description)
