@@ -3,9 +3,7 @@ module BitbucketHelpers
     @bitbucket ||= BitbucketClient.new
   end
 
-  def create_pull_request(title)
-    bitbucket.create_pull_request(title)
-  end
+  delegate :create_pull_request, to: :bitbucket
 
   def decline_all_pull_requests
     bitbucket.pull_requests.each do |pull_request|
@@ -28,7 +26,11 @@ module BitbucketHelpers
   end
 
   def update_pull_request_description(pull_request, new_description)
-    bitbucket.update_pull_request(pull_request['id'], pull_request['title'], new_description)
+    bitbucket.update_pull_request(
+      pull_request['id'],
+      pull_request['title'],
+      new_description
+    )
   end
 end
 

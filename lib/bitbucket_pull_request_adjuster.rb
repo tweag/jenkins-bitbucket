@@ -15,9 +15,13 @@ class BitbucketPullRequestAdjuster
   end
 
   def update_status(job)
-    client.pull_requests
-      .select { |pull_request| self.class.match(Util.extract_id(pull_request.title), job.number) }
-      .each   { |pull_request| update_pull_request_with_job_status(pull_request, job) }
+    pull_requests = client.pull_requests.select do |pull_request|
+      self.class.match(Util.extract_id(pull_request.title), job.number)
+    end
+
+    pull_requests.each do |pull_request|
+      update_pull_request_with_job_status(pull_request, job)
+    end
   end
 
   def update_status_from_pull_request(pull_request)
@@ -30,13 +34,16 @@ class BitbucketPullRequestAdjuster
     update_status_from_pull_request client.pull_request(id)
   end
 
-  private \
   def update_pull_request_with_job_status(pull_request, job)
     adjusted_pull_request = message_adjuster.call(pull_request, job)
-    client.update_pull_request pull_request.id, adjusted_pull_request.fetch(:title), adjusted_pull_request.fetch(:description)
+    client.update_pull_request \
+      pull_request.id,
+      adjusted_pull_request.fetch(:title),
+      adjusted_pull_request.fetch(:description)
   end
+  private :update_pull_request_with_job_status
 
   def self.match(pull_request_title, job_number)
-    pull_request_title and pull_request_title == job_number
+    pull_request_title && pull_request_title == job_number
   end
 end

@@ -1,7 +1,7 @@
 require 'bitbucket_pull_request_status_formatter'
 
 class BitbucketPullRequestMessageAdjuster
-  DEFAULT_SEPARATOR = "* * * * * * * * * * * * * * *"
+  DEFAULT_SEPARATOR = '* * * * * * * * * * * * * * *'
 
   attr_accessor :separator, :formatter
 
@@ -15,7 +15,7 @@ class BitbucketPullRequestMessageAdjuster
 
   def call(pull_request, job)
     {
-      title: pull_request.title,
+      title:       pull_request.title,
       description: [
         description_without_status(pull_request.description),
         separator,

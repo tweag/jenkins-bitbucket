@@ -1,7 +1,6 @@
 class BitbucketClient
-
   # TODO: put this somewhere else
-  ATTRIBUTES = %i[user password repo]
+  ATTRIBUTES = %i(user password repo)
   class << self
     attr_accessor(*ATTRIBUTES)
   end
@@ -13,7 +12,7 @@ class BitbucketClient
   end
 
   def initialize
-    @conn = Faraday.new(:url => 'https://api.bitbucket.org') do |faraday|
+    @conn = Faraday.new(url: 'https://api.bitbucket.org') do |faraday|
       faraday.request  :basic_auth, user, password
       faraday.request  :json
       faraday.response :json
@@ -24,9 +23,9 @@ class BitbucketClient
   def create_pull_request(title)
     post(
       pull_requests_path,
-      "source" => { "branch" => { "name" => "my-branch" }, },
-      "title" => title,
-      "description" => "Test Pull Request"
+      'source' => { 'branch' => { 'name' => 'my-branch' } },
+      'title' => title,
+      'description' => 'Test Pull Request'
     )
   end
 
@@ -35,7 +34,9 @@ class BitbucketClient
   end
 
   def pull_requests
-    get(pull_requests_path)['values'].map{|pull_request| PullRequest.new(pull_request) }
+    get(pull_requests_path)['values'].map do |pull_request|
+      PullRequest.new(pull_request)
+    end
   end
 
   def pull_request(id)
@@ -66,7 +67,6 @@ class BitbucketClient
     @conn.get(str).body
   end
 
-
   def pull_requests_path
     "/2.0/repositories/#{repo}/pullrequests"
   end
@@ -76,7 +76,7 @@ class BitbucketClient
   end
 
   def decline_pull_request_path(id)
-    path(pull_request_path(id), "decline")
+    path(pull_request_path(id), 'decline')
   end
 
   def path(*parts)
@@ -89,4 +89,3 @@ class BitbucketClient
     end
   end
 end
-

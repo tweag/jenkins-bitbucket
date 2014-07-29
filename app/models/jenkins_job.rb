@@ -7,7 +7,7 @@ class JenkinsJob < ActiveRecord::Base
   end
 
   def self.fetch(job_number)
-    jenkins_job = find_by_id(job_number) or return
+    jenkins_job = find_by_id(job_number) || return
     new_from_jenkins(jenkins_job.data)
   end
 
