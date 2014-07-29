@@ -3,8 +3,9 @@ class TestsController < ApplicationController
     @pull_requests = bitbucket_client.pull_requests
   end
 
+  # rubocop:disable Style/MethodLength
   def messages
-    @messages = {
+    job_and_pull_request_data = {
       'No story number in pull request' => [
         'My pull request', nil
       ],
@@ -45,13 +46,16 @@ class TestsController < ApplicationController
             'status' => 'FAILURE',
             'scm' => { 'commit' => 'differentsha' }
           } }
-      ],
-    }.map do |example_name, (pull_request_title, job_attrs)|
-        pull_request = PullRequestExample.build('title' => pull_request_title)
-        job = JenkinsJobExample.build(job_attrs) if job_attrs
+      ]
+    }
+    @messages = job_and_pull_request_data.map do |example_name, data|
+      pull_request_title, job_attrs = *data
+      pull_request = PullRequestExample.build('title' => pull_request_title)
+      job = JenkinsJobExample.build(job_attrs) if job_attrs
 
-        status_message = status_message_formatter.call(pull_request, job)
-        [example_name, status_message]
-      end
+      status_message = status_message_formatter.call(pull_request, job)
+      [example_name, status_message]
+    end
   end
+  # rubocop:enable Style/MethodLength
 end

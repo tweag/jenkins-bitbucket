@@ -1,8 +1,10 @@
+# rubocop:disable Style/ClassLength
 class PullRequestExample
+  # rubocop:disable Style/MethodLength
   def self.attributes(attrs)
     {
       'description' => 'This is my pull request',
-        'links' => {
+      'links' => {
         'decline' => {
           'href' => 'https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/211/decline'
         },
@@ -104,6 +106,7 @@ class PullRequestExample
       'id' => 211
     }.deep_merge(attrs)
   end
+  # rubocop:enable Style/MethodLength
 
   def self.build(attrs)
     BitbucketClient::PullRequest.new(attributes(attrs))

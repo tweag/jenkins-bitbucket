@@ -1,4 +1,5 @@
 class JenkinsJobExample
+  # rubocop:disable Style/MethodLength
   def self.attributes(attrs)
     {
       'name'  => 'test-job-for-webhooks-123',
@@ -18,6 +19,7 @@ class JenkinsJobExample
       }
     }.deep_merge(attrs)
   end
+  # rubocop:enable Style/MethodLength
 
   def self.build(attrs)
     JenkinsJob.new_from_jenkins(attributes(attrs))
