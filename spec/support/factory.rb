@@ -23,6 +23,10 @@ module Factory
       }
     }
   end
+
+  def build_job(attrs = {})
+    JenkinsJob.new_from_jenkins(job_params.merge(attrs))
+  end
 end
 
 RSpec.configure do |config|

@@ -7,7 +7,7 @@ describe BitbucketPullRequestStatusFormatter do
     subject { formatter.call(pull_request, job_status) }
 
     let(:job_status) do
-      JobStatus.new(
+      build_job(
         'name' => "my-job",
         'build' => {
           'status' => "the-status",
