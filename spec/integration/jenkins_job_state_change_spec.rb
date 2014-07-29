@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Jenkins job changes state', type: :request, vcr: true do
+describe 'Jenkins job changes state', vcr: true do
   let(:status) { "NEW-STATUS" }
   let(:phase)  { "STARTED" }
   let(:url)    { 'http://example.com/jenkins/jobs/42' }

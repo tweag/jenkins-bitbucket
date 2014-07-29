@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe JobStatus do
-  subject { JobStatus.new(params) }
+  subject { described_class.new(params) }
 
   let(:params) do
     {
@@ -33,12 +33,12 @@ describe JobStatus do
   its(:as_json)    { should eq params }
 
   context "when it has no status" do
-    subject { JobStatus.new("build" => {}) }
+    subject { described_class.new("build" => {}) }
     its(:status) { should be nil }
   end
 
   context "when it has no job number" do
-    subject { JobStatus.new("name" => 'the-name') }
+    subject { described_class.new("name" => 'the-name') }
     its(:job_number) { should be nil }
   end
 end
