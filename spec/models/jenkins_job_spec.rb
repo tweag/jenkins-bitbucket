@@ -29,7 +29,7 @@ describe JenkinsJob do
   its(:number)   { should eq 123 }
   its(:phase)    { should eq 'the-phase' }
   its(:status)   { should eq 'the-status' }
-  its(:url)      { should eq  'http://example.com/the-full-url' }
+  its(:url)      { should eq 'http://example.com/the-full-url' }
   its(:as_json)  { should eq params }
 
   context 'when it has no status' do

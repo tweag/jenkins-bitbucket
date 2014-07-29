@@ -13,10 +13,10 @@ class BitbucketClient
 
   def initialize
     @conn = Faraday.new(url: 'https://api.bitbucket.org') do |faraday|
-      faraday.request  :basic_auth, user, password
-      faraday.request  :json
+      faraday.request :basic_auth, user, password
+      faraday.request :json
       faraday.response :json
-      faraday.adapter  Faraday.default_adapter
+      faraday.adapter Faraday.default_adapter
     end
   end
 
