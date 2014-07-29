@@ -1,21 +1,21 @@
 require 'spec_helper'
 
 describe JenkinsJob do
-  describe ".save_job_status" do
-    let(:status) { build_job('name' => 'job-123') }
+  describe ".store" do
+    let(:job) { build_job('name' => 'job-123') }
 
     context "when a job with that number doesn't exist" do
       it "saves the job" do
-        described_class.save_job_status(status)
-        expect(described_class.get_job_status(123)).to eq status
+        described_class.store(job)
+        expect(described_class.fetch(123)).to eq job
       end
     end
 
     context "when a job with that number does exist" do
-      before { described_class.save_job_status(build_job('name' => 'XXX-123')) }
+      before { described_class.store(build_job('name' => 'XXX-123')) }
       it "upserts the job" do
-        described_class.save_job_status(status)
-        expect(described_class.get_job_status(123)).to eq status
+        described_class.store(job)
+        expect(described_class.fetch(123)).to eq job
       end
 
       it "doesn't create a new job" do
@@ -24,9 +24,9 @@ describe JenkinsJob do
     end
   end
 
-  describe ".get_job_status" do
+  describe ".fetch" do
     context "when a job with that number doesn't exist" do
-      subject { described_class.get_job_status(123) }
+      subject { described_class.fetch(123) }
       it { should be nil }
     end
   end

@@ -5,8 +5,8 @@ class JenkinsHandler
   end
 
   def call(params)
-    job_status = JenkinsJob.new_from_jenkins(params)
-    @jenkins.save_job_status job_status
-    @bitbucket.update_status job_status
+    job = JenkinsJob.new_from_jenkins(params)
+    @jenkins.store job
+    @bitbucket.update_status job
   end
 end

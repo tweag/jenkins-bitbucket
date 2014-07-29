@@ -5,28 +5,28 @@ class BitbucketPullRequestStatusFormatter
     self.root_url = root_url
   end
 
-  def call(pull_request, job_status)
+  def call(pull_request, job)
     [
-      *message(pull_request, job_status),
+      *message(pull_request, job),
       "",
       "Brought to you by [Jenkins-Bitbucket](#{root_url})"
     ].join("\n")
   end
 
-  def message(pull_request, job_status)
-    if job_status
-      job_status_message(pull_request, job_status)
+  def message(pull_request, job)
+    if job
+      job_status_message(pull_request, job)
     else
       no_job_status_message(pull_request)
     end
   end
 
-  def job_status_message(pull_request, job_status)
+  def job_status_message(pull_request, job)
     [
-      "# #{job_status.status || job_status.phase} on Jenkins",
+      "# #{job.status || job.phase} on Jenkins",
       refresh_link(pull_request),
       "",
-      "[#{job_status.job_name} on Jenkins](#{job_status.url})",
+      "[#{job.job_name} on Jenkins](#{job.url})",
     ]
   end
 

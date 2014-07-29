@@ -11,10 +11,10 @@ describe BitbucketPullRequestMessageAdjuster do
 
   describe "#call" do
     subject do
-      message_adjuster.call(pull_request, job_status)
+      message_adjuster.call(pull_request, job)
     end
 
-    let(:job_status) { build_job('name' => 'THE-JOB-NAME') }
+    let(:job) { build_job('name' => 'THE-JOB-NAME') }
 
     let(:pull_request) do
       double(title: "original title", description: original_description)
@@ -34,8 +34,8 @@ describe BitbucketPullRequestMessageAdjuster do
       its([:description]) { should eq "my pr\nxxx\nTHE-JOB-NAME" }
     end
 
-    context "when there is no job status" do
-      let(:job_status) {}
+    context "when there is no job" do
+      let(:job) {}
     end
   end
 end

@@ -14,16 +14,16 @@ class BitbucketPullRequestAdjuster
     self.message_adjuster = message_adjuster
   end
 
-  def update_status(job_status)
+  def update_status(job)
     client.prs
-      .select { |pr| self.class.match(Util.extract_id(pr.title), job_status.job_number) }
-      .each   { |pr| update_pr_with_job_status(pr, job_status) }
+      .select { |pr| self.class.match(Util.extract_id(pr.title), job.number) }
+      .each   { |pr| update_pr_with_job_status(pr, job) }
   end
 
   def update_status_from_pull_request(pr)
     job_number = Util.extract_id(pr.title)
-    job_status = jenkins_jobs.get_job_status(Integer(job_number)) if job_number
-    update_pr_with_job_status(pr, job_status)
+    job = jenkins_jobs.fetch(Integer(job_number)) if job_number
+    update_pr_with_job_status(pr, job)
   end
 
   def update_status_from_pull_request_id(id)
@@ -31,8 +31,8 @@ class BitbucketPullRequestAdjuster
   end
 
   private \
-  def update_pr_with_job_status(pr, job_status)
-    adjusted_pr = message_adjuster.call(pr, job_status)
+  def update_pr_with_job_status(pr, job)
+    adjusted_pr = message_adjuster.call(pr, job)
     client.update_pr pr.id, adjusted_pr.fetch(:title), adjusted_pr.fetch(:description)
   end
 

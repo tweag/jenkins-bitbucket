@@ -1,23 +1,23 @@
 require 'util'
 
 class JenkinsJob < ActiveRecord::Base
-  def self.save_job_status(job_status)
-    find_or_initialize_by(id: job_status.job_number)
-      .update_attributes(data: job_status.as_json)
+  def self.store(job)
+    find_or_initialize_by(id: job.number)
+      .update_attributes(data: job.as_json)
   end
 
-  def self.get_job_status(job_number)
+  def self.fetch(job_number)
     jenkins_job = find_by_id(job_number) or return
     new_from_jenkins(jenkins_job.data)
   end
 
   def self.new_from_jenkins(data)
     new(data: data).tap do |job|
-      job.id = job.job_number
+      job.id = job.number
     end
   end
 
-  def job_number
+  def number
     Util.extract_id(job_name)
   end
 

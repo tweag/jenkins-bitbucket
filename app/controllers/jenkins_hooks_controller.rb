@@ -10,4 +10,3 @@ class JenkinsHooksController < ApplicationController
     render text: "Point Jenkins to this URL"
   end
 end
-

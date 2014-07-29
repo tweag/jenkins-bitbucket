@@ -13,13 +13,13 @@ class BitbucketPullRequestMessageAdjuster
     self.formatter = formatter
   end
 
-  def call(pull_request, job_status)
+  def call(pull_request, job)
     {
       title: pull_request.title,
       description: [
         description_without_status(pull_request.description),
         separator,
-        formatter.call(pull_request, job_status)
+        formatter.call(pull_request, job)
       ].join("\n")
     }
   end

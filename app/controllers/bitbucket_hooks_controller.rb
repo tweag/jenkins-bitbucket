@@ -11,7 +11,7 @@ class BitbucketHooksController < ApplicationController
   end
 
   def refresh
-    bitbucket_hook_handler.refresh(params[:id])
+    bitbucket_hook_handler.refresh params[:id]
     render text: "Updated"
   end
 

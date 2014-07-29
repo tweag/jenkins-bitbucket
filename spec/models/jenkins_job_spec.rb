@@ -25,12 +25,12 @@ describe JenkinsJob do
     }
   end
 
-  its(:job_name)   { should eq "the-name-123" }
-  its(:job_number) { should eq 123 }
-  its(:phase)      { should eq "the-phase" }
-  its(:status)     { should eq "the-status" }
-  its(:url)        { should eq  "http://example.com/the-full-url"}
-  its(:as_json)    { should eq params }
+  its(:job_name) { should eq "the-name-123" }
+  its(:number)   { should eq 123 }
+  its(:phase)    { should eq "the-phase" }
+  its(:status)   { should eq "the-status" }
+  its(:url)      { should eq  "http://example.com/the-full-url"}
+  its(:as_json)  { should eq params }
 
   context "when it has no status" do
     subject { build_job("build" => {}) }
@@ -39,7 +39,7 @@ describe JenkinsJob do
 
   context "when it has no job number" do
     subject { build_job("name" => 'the-name') }
-    its(:job_number) { should be nil }
+    its(:number) { should be nil }
   end
 end
 

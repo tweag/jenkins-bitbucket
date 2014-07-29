@@ -26,7 +26,7 @@ describe JenkinsHandler, '.call' do
   let(:status) {}
 
   subject { JenkinsHandler.new(jenkins: jenkins, bitbucket: bitbucket) }
-  let(:jenkins)   { double save_job_status: nil }
+  let(:jenkins)   { double store: nil }
   let(:bitbucket) { double update_status: nil }
 
   before do
@@ -37,7 +37,7 @@ describe JenkinsHandler, '.call' do
     let(:phase) { "STARTED" }
 
     it 'upserts the job' do
-      expect(jenkins).to have_received(:save_job_status)
+      expect(jenkins).to have_received(:store)
     end
 
     it 'add the update_status on bitbuket' do
