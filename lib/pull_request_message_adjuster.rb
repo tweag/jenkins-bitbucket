@@ -1,4 +1,4 @@
-class BitbucketPullRequestMessageAdjuster
+class PullRequestMessageAdjuster
   DEFAULT_SEPARATOR = '* * * * * * * * * * * * * * *'
 
   attr_accessor :separator, :renderer

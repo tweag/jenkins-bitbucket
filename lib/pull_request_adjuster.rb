@@ -3,7 +3,7 @@ class PullRequestAdjuster
 
   def initialize(
     repo,
-    message_adjuster: BitbucketPullRequestMessageAdjuster.new,
+    message_adjuster: PullRequestMessageAdjuster.new,
     job_store:        JenkinsJob
   )
     self.repo             = repo
