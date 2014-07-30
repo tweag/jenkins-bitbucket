@@ -54,9 +54,12 @@ describe JenkinsJob do
 
       it { should be nil }
     end
+
     context 'when given nil' do
       subject { described_class[nil] }
-      before { described_class.store(JenkinsJobExample.build('name' => 'no-story-number')) }
+
+      before { described_class.store(job) }
+      let(:job) { JenkinsJobExample.build('name' => 'no-story-number') }
 
       it { should be nil }
     end

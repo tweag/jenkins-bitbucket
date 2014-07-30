@@ -6,9 +6,6 @@ class JobStatusInteractor
 
   def call(params)
     job = @jenkins.new_from_jenkins(params)
-
-    if @jenkins.store(job)
-      @bitbucket.update_status job
-    end
+    @bitbucket.update_status job if @jenkins.store(job)
   end
 end
