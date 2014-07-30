@@ -21,12 +21,13 @@ class BitbucketClient
   end
 
   def create_pull_request(title)
-    post(
+    pull_request_attrs = post(
       pull_requests_path,
       'source' => { 'branch' => { 'name' => 'my-branch' } },
       'title' => title,
       'description' => 'Test Pull Request'
     )
+    PullRequest.new(pull_request_attrs)
   end
 
   def update_pull_request(id, title, description)

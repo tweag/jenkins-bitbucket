@@ -7,28 +7,28 @@ module BitbucketHelpers
 
   def decline_all_pull_requests
     bitbucket.pull_requests.each do |pull_request|
-      bitbucket.decline_pull_request pull_request['id']
+      bitbucket.decline_pull_request pull_request.id
     end
   end
 
   def comments_for(pull_request)
-    bitbucket.comments(pull_request['id'])
+    bitbucket.comments(pull_request.id)
   end
 
   def all_comments_on_all_pull_requests
     bitbucket.pull_requests.map do |pull_request|
-      bitbucket.comments(pull_request['id'])
+      bitbucket.comments(pull_request.id)
     end.reduce(&:+)
   end
 
   def reload_pull_request(pull_request)
-    bitbucket.pull_request(pull_request['id'])
+    bitbucket.pull_request(pull_request.id)
   end
 
   def update_pull_request_description(pull_request, new_description)
     bitbucket.update_pull_request(
-      pull_request['id'],
-      pull_request['title'],
+      pull_request.id,
+      pull_request.title,
       new_description
     )
   end

@@ -18,7 +18,7 @@ describe 'Jenkins job changes state', vcr: true do
     before { decline_all_pull_requests }
     let!(:original_pull_request) { create_pull_request(pull_request_title) }
     let(:updated_description) do
-      reload_pull_request(original_pull_request)['description']
+      reload_pull_request(original_pull_request).description
     end
 
     context 'and there is no jenkins status in it' do

@@ -10,9 +10,9 @@ describe 'Bitbucket pull request is made', vcr: true do
   let(:pull_request)         { create_pull_request(title) }
   let(:title)                { "My Pull Request PR-#{story_number}" }
   let(:story_number)         { '123' }
-  let(:original_description) { pull_request['description'] }
+  let(:original_description) { pull_request.description }
   let(:updated_description) do
-    reload_pull_request(pull_request)['description']
+    reload_pull_request(pull_request).description
   end
 
   def associated_job_exists
@@ -49,17 +49,17 @@ describe 'Bitbucket pull request is made', vcr: true do
       pull_request_notification_of(pull_request)
 
       updated_pull_request = reload_pull_request(pull_request)
-      refresh_url = "/bitbucket/refresh/#{updated_pull_request['id']}"
-      expect(updated_pull_request['description']).to include refresh_url
+      refresh_url = "/bitbucket/refresh/#{updated_pull_request.id}"
+      expect(updated_pull_request.description).to include refresh_url
 
       new_description = 'Changed description'
       update_pull_request_description pull_request, new_description
 
       post refresh_url
       updated_pull_request = reload_pull_request(pull_request)
-      expect(updated_pull_request['description']).to include new_description
-      expect(updated_pull_request['description']).to include '* * *'
-      expect(updated_pull_request['description']).to include 'ABORTED'
+      expect(updated_pull_request.description).to include new_description
+      expect(updated_pull_request.description).to include '* * *'
+      expect(updated_pull_request.description).to include 'ABORTED'
     end
   end
 end
