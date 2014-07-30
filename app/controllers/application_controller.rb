@@ -6,8 +6,13 @@ class ApplicationController < ActionController::Base
   private
 
   memoize \
-  def jenkins_handler
+  def job_status_interactor
     JobStatusInteractor.new(bitbucket: bitbucket_pull_request_adjuster)
+  end
+
+  memoize \
+  def pull_request_interactor
+    PullRequestInteractor.new(bitbucket: bitbucket_pull_request_adjuster)
   end
 
   memoize \
@@ -28,11 +33,6 @@ class ApplicationController < ActionController::Base
   memoize \
   def status_message_formatter
     StatusMessageRenderer.new(self)
-  end
-
-  memoize \
-  def bitbucket_hook_handler
-    PullRequestInteractor.new(bitbucket: bitbucket_pull_request_adjuster)
   end
 
   memoize \

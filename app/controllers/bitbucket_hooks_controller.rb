@@ -2,7 +2,7 @@ class BitbucketHooksController < ApplicationController
   skip_before_action :verify_authenticity_token, only: :create
 
   def create
-    bitbucket_hook_handler.call params
+    pull_request_interactor.call params
     render text: 'Thanks'
   end
 
@@ -11,7 +11,7 @@ class BitbucketHooksController < ApplicationController
   end
 
   def refresh
-    bitbucket_hook_handler.refresh params[:id]
+    pull_request_interactor.refresh params[:id]
     render text: 'Updated'
   end
 
