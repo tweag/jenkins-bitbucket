@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
 
   memoize \
   def bitbucket_pull_request_adjuster
-    BitbucketPullRequestAdjuster.new(
+    PullRequestAdjuster.new(
       bitbucket_client,
       message_adjuster: message_adjuster
     )

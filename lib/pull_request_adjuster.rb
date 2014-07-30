@@ -1,4 +1,4 @@
-class BitbucketPullRequestAdjuster
+class PullRequestAdjuster
   attr_accessor :client, :message_adjuster, :jenkins_jobs
 
   def initialize(
