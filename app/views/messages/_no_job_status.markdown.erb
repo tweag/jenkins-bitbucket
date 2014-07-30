@@ -1,9 +1,11 @@
-# UNKNOWN on Jenkins
+<% if message[:pull_request].story_number -%>
+# No job on Jenkins
 
-I don't recall Jenkins ever telling me about a matching job.
+As far as I can tell, there isn't a job on Jenkins for story number <%= message[:pull_request].story_number %>.
 
-- Perhaps there isn't a job on Jenkins that has started running.
-- Perhaps the job doesn't have a number in its name.
-- Perhaps this pull request doesn't have a number in its title.
+To fix this, run a job on Jenkins that has "<%= message[:pull_request].story_number %>" in the name.
+<%- else -%>
+# No story number
 
-Once you fix the problem, you can <%= refresh_link(message[:pull_request]) -%>
+In order to connect this pull request to a job on Jenkins, please put the story number in the title. Once that's done, <%= refresh_link(message[:pull_request]) %>.
+<% end %>
