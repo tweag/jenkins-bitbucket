@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe JenkinsJob do
-  subject { JenkinsJob.new_from_jenkins(params) }
+  subject { described_class.new_from_jenkins(params) }
 
   let(:params) do
     {
@@ -33,9 +33,7 @@ describe JenkinsJob do
   its(:as_json)  { should eq params }
 
   context 'when it has no status' do
-    subject { described_class.new_from_jenkins(attrs_with_no_status) }
-
-    let(:attrs_with_no_status) do
+    let(:params) do
       JenkinsJobExample.attributes.tap do |attrs|
         attrs['build'].delete('status')
       end
