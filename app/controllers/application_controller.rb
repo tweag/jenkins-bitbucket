@@ -26,12 +26,12 @@ class ApplicationController < ActionController::Base
   memoize \
   def message_adjuster
     BitbucketPullRequestMessageAdjuster.new(
-      formatter: status_message_formatter
+      renderer: status_message_renderer
     )
   end
 
   memoize \
-  def status_message_formatter
+  def status_message_renderer
     StatusMessageRenderer.new(self)
   end
 

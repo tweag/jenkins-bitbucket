@@ -4,7 +4,7 @@ describe BitbucketPullRequestMessageAdjuster do
   let(:message_adjuster) do
     described_class.new(
       separator: 'xxx',
-      formatter: proc { |_pull_request, job| job.job_name }
+      renderer:  proc { |_pull_request, job| job.job_name }
     )
   end
 

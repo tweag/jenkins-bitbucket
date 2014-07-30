@@ -53,7 +53,7 @@ class TestsController < ApplicationController
       pull_request = PullRequestExample.build('title' => pull_request_title)
       job = JenkinsJobExample.build(job_attrs) if job_attrs
 
-      status_message = status_message_formatter.call(pull_request, job)
+      status_message = status_message_renderer.call(pull_request, job)
       [example_name, status_message]
     end
   end

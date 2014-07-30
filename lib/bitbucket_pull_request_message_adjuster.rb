@@ -1,11 +1,11 @@
 class BitbucketPullRequestMessageAdjuster
   DEFAULT_SEPARATOR = '* * * * * * * * * * * * * * *'
 
-  attr_accessor :separator, :formatter
+  attr_accessor :separator, :renderer
 
-  def initialize(separator: DEFAULT_SEPARATOR, formatter:)
+  def initialize(separator: DEFAULT_SEPARATOR, renderer:)
     self.separator = separator
-    self.formatter = formatter
+    self.renderer  = renderer
   end
 
   def call(pull_request, job)
@@ -14,7 +14,7 @@ class BitbucketPullRequestMessageAdjuster
       description: [
         description_without_status(pull_request.description),
         separator,
-        formatter.call(pull_request, job)
+        renderer.call(pull_request, job)
       ].join("\n")
     }
   end
