@@ -2,23 +2,26 @@ require 'spec_helper'
 
 describe JobStatusInteractor do
   describe '.call' do
-    subject { described_class.new(jenkins: jenkins, bitbucket: bitbucket) }
+    subject { described_class.new(jenkins: job_store, bitbucket: bitbucket) }
 
     let(:bitbucket) { double update_status: nil }
-    let(:params) { double }
-    let(:job) { double }
+    let(:params)    { double }
+    let(:job)       { double }
+    let(:job_store) { double }
 
     before do
-      allow(jenkins).to receive(:new_from_jenkins).with(params).and_return(job)
+      allow(job_store).to receive(:new_from_jenkins).with(params) { job }
+
+      allow(job_store).to receive(:store).with(job) { stored? }
 
       subject.call(params)
     end
 
     context 'the job store stores the job' do
-      let(:jenkins)   { double store: true }
+      let(:stored?) { true }
 
       it 'stores the job' do
-        expect(jenkins).to have_received(:store).with(job)
+        expect(job_store).to have_received(:store)
       end
 
       it 'updates the status message of the pull request' do
@@ -27,10 +30,10 @@ describe JobStatusInteractor do
     end
 
     context 'the job store does not store the job' do
-      let(:jenkins)   { double store: nil }
+      let(:stored?) { false }
 
       it 'attempts to store job' do
-        expect(jenkins).to have_received(:store).with(job)
+        expect(job_store).to have_received(:store)
       end
 
       it 'does not update the status message of the pull request' do
