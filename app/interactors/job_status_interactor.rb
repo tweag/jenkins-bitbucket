@@ -1,4 +1,4 @@
-class JenkinsHandler
+class JobStatusInteractor
   def initialize(jenkins: JenkinsJob, bitbucket:)
     @jenkins   = jenkins
     @bitbucket = bitbucket

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   memoize \
   def jenkins_handler
-    JenkinsHandler.new(bitbucket: bitbucket_pull_request_adjuster)
+    JobStatusInteractor.new(bitbucket: bitbucket_pull_request_adjuster)
   end
 
   memoize \
@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
 
   memoize \
   def bitbucket_hook_handler
-    BitbucketHookHandler.new(bitbucket: bitbucket_pull_request_adjuster)
+    PullRequestInteractor.new(bitbucket: bitbucket_pull_request_adjuster)
   end
 
   memoize \

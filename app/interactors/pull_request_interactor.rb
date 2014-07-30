@@ -1,4 +1,4 @@
-class BitbucketHookHandler
+class PullRequestInteractor
   def initialize(bitbucket:)
     @bitbucket = bitbucket
   end

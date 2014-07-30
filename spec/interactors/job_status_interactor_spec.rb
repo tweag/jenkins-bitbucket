@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe JenkinsHandler do
+describe JobStatusInteractor do
   describe '.call' do
     subject { described_class.new(jenkins: jenkins, bitbucket: bitbucket) }
 

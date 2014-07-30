@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe BitbucketHookHandler do
+describe PullRequestInteractor do
   describe '.call' do
     subject { described_class.new(bitbucket: bitbucket) }
 
