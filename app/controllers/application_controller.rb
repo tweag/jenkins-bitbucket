@@ -18,9 +18,14 @@ class ApplicationController < ActionController::Base
   def bitbucket_pull_request_adjuster
     BitbucketPullRequestAdjuster.new(
       bitbucket_client,
-      message_adjuster: BitbucketPullRequestMessageAdjuster.new(
-        formatter: status_message_formatter
-      )
+      message_adjuster: message_adjuster
+    )
+  end
+
+  memoize \
+  def message_adjuster
+    BitbucketPullRequestMessageAdjuster.new(
+      formatter: status_message_formatter
     )
   end
 
