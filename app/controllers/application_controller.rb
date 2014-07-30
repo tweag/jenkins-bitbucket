@@ -1,6 +1,7 @@
 require 'jenkins_handler'
 require 'bitbucket_hook_handler'
 require 'bitbucket_pull_request_adjuster'
+require 'message_formatter'
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
@@ -31,7 +32,7 @@ class ApplicationController < ActionController::Base
 
   memoize \
   def status_message_formatter
-    BitbucketPullRequestStatusFormatter.new(root_url: root_url)
+    MessageFormatter.new(self)
   end
 
   memoize \
