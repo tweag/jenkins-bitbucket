@@ -1,6 +1,6 @@
 class BitbucketClient
   # TODO: put this somewhere else
-  ATTRIBUTES = %i(user password repo)
+  ATTRIBUTES = %i(user password repo pull_request_builder)
   class << self
     attr_accessor(*ATTRIBUTES)
   end
@@ -27,7 +27,7 @@ class BitbucketClient
       'title' => title,
       'description' => 'Test Pull Request'
     )
-    PullRequest.new(pull_request_attrs)
+    build_pull_request(pull_request_attrs)
   end
 
   def update_pull_request(id, title, description)
@@ -36,12 +36,12 @@ class BitbucketClient
 
   def pull_requests
     get(pull_requests_path)['values'].map do |pull_request|
-      PullRequest.new(pull_request)
+      build_pull_request(pull_request)
     end
   end
 
   def pull_request(id)
-    PullRequest.new(get(pull_request_path(id)))
+    build_pull_request(get(pull_request_path(id)))
   end
 
   def decline_pull_request(id)
@@ -49,6 +49,10 @@ class BitbucketClient
   end
 
   private
+
+  def build_pull_request(*args)
+    (pull_request_builder || ->(x) { x }).call(*args)
+  end
 
   def post(url, body = nil)
     @conn.post do |req|
