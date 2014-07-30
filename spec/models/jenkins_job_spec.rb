@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe JenkinsJob do
-  subject { JenkinsJobExample.build(params) }
+  subject { JenkinsJob.new_from_jenkins(params) }
 
   let(:params) do
     {
