@@ -1,6 +1,3 @@
-require 'bitbucket_pull_request_message_adjuster'
-require 'util'
-
 class BitbucketPullRequestAdjuster
   attr_accessor :client, :message_adjuster, :jenkins_jobs
 

@@ -1,8 +1,3 @@
-require 'jenkins_handler'
-require 'bitbucket_hook_handler'
-require 'bitbucket_pull_request_adjuster'
-require 'message_formatter'
-
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 

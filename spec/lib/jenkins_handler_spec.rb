@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'jenkins_handler'
 
 describe JenkinsHandler do
   describe '.call' do

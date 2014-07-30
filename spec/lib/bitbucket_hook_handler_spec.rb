@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'bitbucket_hook_handler'
 
 describe BitbucketHookHandler do
   describe '.call' do

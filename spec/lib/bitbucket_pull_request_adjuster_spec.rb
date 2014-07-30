@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'bitbucket_pull_request_adjuster'
 
 describe BitbucketPullRequestAdjuster do
   describe '.match' do

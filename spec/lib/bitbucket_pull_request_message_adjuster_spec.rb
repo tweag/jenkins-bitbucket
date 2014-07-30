@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'bitbucket_pull_request_message_adjuster'
 
 describe BitbucketPullRequestMessageAdjuster do
   let(:message_adjuster) do

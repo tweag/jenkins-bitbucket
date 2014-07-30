@@ -1,5 +1,3 @@
-require 'util'
-
 class JenkinsJob < ActiveRecord::Base
   def self.store(job)
     find_or_initialize_by(id: job.number)

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'util'
 
 describe Util do
   describe '.extract_id' do
