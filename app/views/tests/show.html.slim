@@ -9,7 +9,7 @@ table
     tr
       td= pull_request.title
       td= pull_request.story_number
-      td= JenkinsJob.fetch(pull_request.story_number).try(:job_name)
+      td= JenkinsJob[pull_request.story_number].try(:job_name)
       td
         = form_tag "/bitbucket/refresh/#{pull_request.id}", method: :post do
           button Refresh

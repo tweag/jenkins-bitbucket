@@ -1,13 +1,13 @@
 class PullRequestAdjuster
-  attr_accessor :repo, :message_adjuster, :jenkins_jobs
+  attr_accessor :repo, :message_adjuster, :job_store
 
   def initialize(
     repo,
     message_adjuster: BitbucketPullRequestMessageAdjuster.new,
-    jenkins_jobs:     JenkinsJob
+    job_store:        JenkinsJob
   )
     self.repo             = repo
-    self.jenkins_jobs     = jenkins_jobs
+    self.job_store        = job_store
     self.message_adjuster = message_adjuster
   end
 
@@ -22,10 +22,7 @@ class PullRequestAdjuster
   end
 
   def update_status_from_pull_request(pull_request)
-    job = if pull_request.story_number
-            jenkins_jobs.fetch(pull_request.story_number)
-          end
-
+    job = job_store[pull_request.story_number]
     update_pull_request_with_job_status(pull_request, job)
   end
 

@@ -1,10 +1,11 @@
 class JenkinsJob < ActiveRecord::Base
   def self.store(job)
-    find_or_initialize_by(id: job.number)
-      .update_attributes(data: job.as_json)
+    job.number &&
+      find_or_initialize_by(id: job.number)
+        .update_attributes(data: job.as_json)
   end
 
-  def self.fetch(job_number)
+  def self.[](job_number)
     jenkins_job = find_by_id(job_number) || return
     new_from_jenkins(jenkins_job.data)
   end

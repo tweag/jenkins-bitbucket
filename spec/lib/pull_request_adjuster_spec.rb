@@ -4,13 +4,13 @@ describe PullRequestAdjuster do
   subject do
     described_class.new(client,
                         message_adjuster: message_adjuster,
-                        jenkins_jobs:     jenkins_jobs
+                        job_store:        job_store
                        )
   end
 
   let(:message_adjuster) { double }
   let(:pull_requests) {}
-  let(:jenkins_jobs) { double }
+  let(:job_store) { {} }
 
   let(:client) do
     double(pull_requests: pull_requests, update_pull_request: nil)
@@ -73,10 +73,7 @@ describe PullRequestAdjuster do
 
   describe '#update_status_from_pull_request' do
     let(:pull_request) { double(id: 42, story_number: 123) }
-
-    before do
-      allow(jenkins_jobs).to receive(:fetch).with(123) { job }
-    end
+    let(:job_store) { { 123 => job } }
 
     context 'when there is no matching job' do
       let(:job) {}
@@ -102,7 +99,7 @@ describe PullRequestAdjuster do
 
     context 'when the pull request has no story number' do
       let(:pull_request) { double(id: 42, story_number: nil) }
-      let(:job)   {}
+      let(:job) {}
 
       it 'updates the status of the pull request' do
         subject.update_status_from_pull_request pull_request
