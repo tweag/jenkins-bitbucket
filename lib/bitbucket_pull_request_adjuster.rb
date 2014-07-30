@@ -13,7 +13,7 @@ class BitbucketPullRequestAdjuster
 
   def update_status(job)
     pull_requests = client.pull_requests.select do |pull_request|
-      self.class.match(Util.extract_id(pull_request.title), job.number)
+      self.class.match(pull_request.story_number, job.number)
     end
 
     pull_requests.each do |pull_request|
@@ -22,7 +22,7 @@ class BitbucketPullRequestAdjuster
   end
 
   def update_status_from_pull_request(pull_request)
-    job_number = Util.extract_id(pull_request.title)
+    job_number = pull_request.story_number
     job = jenkins_jobs.fetch(Integer(job_number)) if job_number
     update_pull_request_with_job_status(pull_request, job)
   end

@@ -33,23 +33,23 @@ describe BitbucketPullRequestAdjuster do
   end
 
   describe '#update_status' do
-    let(:story_id) { '123' }
+    let(:story_id) { 123 }
     let(:job) { JenkinsJobExample.build('name' => "job-name-#{story_id}") }
 
     context 'when a pull request exists for the story' do
       let(:pull_request) do
         double(
-          id:          42,
-          title:       "pull request #{story_id}",
-          description: 'this is my pull request'
+          id:           42,
+          story_number: story_id,
+          description:  'this is my pull request'
         )
       end
 
       let(:pull_requests) do
         [
-          double(id: 1, title: 'pull request 012'),
+          double(id: 1, story_number: 911),
           pull_request,
-          double(id: 3, title: 'pull request 234')
+          double(id: 3, story_number: 666)
         ]
       end
 
@@ -64,8 +64,8 @@ describe BitbucketPullRequestAdjuster do
     context 'when a pull request does not exist for the story' do
       let(:pull_requests) do
         [
-          double(id: 1, title: 'pull request 012'),
-          double(id: 3, title: 'pull request 234')
+          double(id: 1, story_number: 12),
+          double(id: 3, story_number: 234)
         ]
       end
 
@@ -80,7 +80,7 @@ describe BitbucketPullRequestAdjuster do
   end
 
   describe '#update_status_from_pull_request' do
-    let(:pull_request) { double(id: 42, title: 'My Pull Request 123') }
+    let(:pull_request) { double(id: 42, story_number: 123) }
 
     before do
       allow(jenkins_jobs).to receive(:fetch).with(123) { job }
@@ -108,8 +108,8 @@ describe BitbucketPullRequestAdjuster do
       end
     end
 
-    context 'when there is no story number in the title' do
-      let(:pull_request) { double(id: 42, title: 'My Pull Request') }
+    context 'when the pull request has no story number' do
+      let(:pull_request) { double(id: 42, story_number: nil) }
       let(:job)   {}
 
       it 'updates the status of the pull request' do
