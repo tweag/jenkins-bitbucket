@@ -25,7 +25,7 @@ class TestsController < ApplicationController
             'status' => 'SUCCESS'
           } }
       ],
-      'Job passed, but SHAs don not match' => [
+      'Job passed, but SHAs do not match' => [
         'PR 123', { 'build' => {
           'phase' => 'FINALIZED',
           'status' => 'SUCCESS',
