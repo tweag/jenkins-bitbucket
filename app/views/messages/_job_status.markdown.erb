@@ -2,3 +2,11 @@
 <%= refresh_link(message[:pull_request]) %>
 
 [<%= message[:job].job_name %> on Jenkins](<%= message[:job].url %>)
+
+|
+---------------- | ----------------
+Pull Request SHA | <%= message[:pull_request].sha %>
+Jenkins Job  SHA | <%= message[:job].sha %>
+
+###
+###

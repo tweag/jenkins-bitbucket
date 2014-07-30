@@ -36,6 +36,10 @@ class JenkinsJob < ActiveRecord::Base
     build('phase')
   end
 
+  def sha
+    build('scm')['commit']
+  end
+
   def as_json(*args)
     data.as_json(*args)
   end
