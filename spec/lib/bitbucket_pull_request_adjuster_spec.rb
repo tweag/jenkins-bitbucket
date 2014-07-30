@@ -45,6 +45,7 @@ describe BitbucketPullRequestAdjuster do
           description: 'this is my pull request'
         )
       end
+
       let(:pull_requests) do
         [
           double(id: 1, title: 'pull request 012'),
@@ -68,7 +69,9 @@ describe BitbucketPullRequestAdjuster do
           double(id: 3, title: 'pull request 234')
         ]
       end
+
       let(:pull_request) {}
+
       it 'does not update any pull request' do
         subject.update_status job
 

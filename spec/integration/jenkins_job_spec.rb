@@ -12,7 +12,10 @@ describe JenkinsJob do
     end
 
     context 'when a job with that number does exist' do
-      before { described_class.store(JenkinsJobExample.build('name' => 'XXX-123')) }
+      before do
+        described_class.store(JenkinsJobExample.build('name' => 'XXX-123'))
+      end
+
       it 'upserts the job' do
         described_class.store(job)
         expect(described_class.fetch(123)).to eq job
@@ -27,6 +30,7 @@ describe JenkinsJob do
   describe '.fetch' do
     context "when a job with that number doesn't exist" do
       subject { described_class.fetch(123) }
+
       it { should be nil }
     end
   end

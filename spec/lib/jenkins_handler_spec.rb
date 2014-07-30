@@ -3,6 +3,8 @@ require 'jenkins_handler'
 
 describe JenkinsHandler do
   describe '.call' do
+    subject { described_class.new(jenkins: jenkins, bitbucket: bitbucket) }
+
     let(:params) do
       {
         'name'  => 'test-job-for-webhooks',
@@ -24,9 +26,9 @@ describe JenkinsHandler do
         }
       }
     end
+
     let(:status) {}
 
-    subject { described_class.new(jenkins: jenkins, bitbucket: bitbucket) }
     let(:jenkins)   { double store: nil }
     let(:bitbucket) { double update_status: nil }
 

@@ -34,6 +34,7 @@ describe JenkinsJob do
 
   context 'when it has no status' do
     subject { described_class.new_from_jenkins(attrs_with_no_status) }
+
     let(:attrs_with_no_status) do
       JenkinsJobExample.attributes.tap do |attrs|
         attrs['build'].delete('status')
@@ -45,6 +46,7 @@ describe JenkinsJob do
 
   context 'when it has no job number' do
     subject { JenkinsJobExample.build('name' => 'the-name') }
+
     its(:number) { should be nil }
   end
 end

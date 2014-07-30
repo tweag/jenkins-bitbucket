@@ -5,6 +5,7 @@ describe 'Jenkins job changes state', vcr: true do
 
   context 'and there is no pull request' do
     let(:job_name) { 'job-name-for-non-existant-pull-request' }
+
     it 'does nothing' do
       job_changes_state
     end
@@ -31,6 +32,7 @@ describe 'Jenkins job changes state', vcr: true do
 
     context 'and there is a jenkins status in it' do
       before { job_changes_state 'FAILURE' }
+
       it 'updates the pull request with the status' do
         job_changes_state status: 'SUCCESS'
 
@@ -42,7 +44,7 @@ describe 'Jenkins job changes state', vcr: true do
     end
   end
 
-  def job_changes_state(status = "SUCCESS")
+  def job_changes_state(status = 'SUCCESS')
     post '/hooks/jenkins', JenkinsJobExample.attributes(
       'name' => job_name,
       'build' => {

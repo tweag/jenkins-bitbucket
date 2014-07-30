@@ -3,12 +3,10 @@ require 'bitbucket_hook_handler'
 
 describe BitbucketHookHandler do
   describe '.call' do
-    let(:params) do
-      { action => { 'id' => 42 } }
-    end
-
     subject { described_class.new(bitbucket: bitbucket) }
+
     let(:bitbucket) { double }
+    let(:params)    { { action => { 'id' => 42 } } }
 
     describe 'a pull request created' do
       let(:action) { 'pullrequest_created' }

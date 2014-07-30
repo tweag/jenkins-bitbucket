@@ -10,9 +10,7 @@ describe BitbucketPullRequestMessageAdjuster do
   end
 
   describe '#call' do
-    subject do
-      message_adjuster.call(pull_request, job)
-    end
+    subject { message_adjuster.call(pull_request, job) }
 
     let(:job) { JenkinsJobExample.build('name' => 'THE-JOB-NAME') }
 
@@ -32,10 +30,6 @@ describe BitbucketPullRequestMessageAdjuster do
 
       its([:title])       { should eq 'original title' }
       its([:description]) { should eq "my pull request\nxxx\nTHE-JOB-NAME" }
-    end
-
-    context 'when there is no job' do
-      let(:job) {}
     end
   end
 end
