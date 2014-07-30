@@ -83,10 +83,4 @@ class BitbucketClient
   def path(*parts)
     parts.join('/')
   end
-
-  class PullRequest < Hashie::Mash
-    def story_number
-      Util.extract_id(title)
-    end
-  end
 end

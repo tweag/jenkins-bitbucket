@@ -5,7 +5,7 @@ class PullRequestInteractor
 
   def call(params)
     pull_request_params = params['pullrequest_created'] || return
-    pull_request = BitbucketClient::PullRequest.new(pull_request_params)
+    pull_request = PullRequest.new(pull_request_params)
     @bitbucket.update_status_from_pull_request pull_request
   end
 

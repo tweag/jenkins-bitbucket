@@ -109,6 +109,6 @@ class PullRequestExample
   # rubocop:enable Style/MethodLength
 
   def self.build(attrs)
-    BitbucketClient::PullRequest.new(attributes(attrs))
+    PullRequest.new(attributes(attrs))
   end
 end

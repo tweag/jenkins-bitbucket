@@ -17,7 +17,7 @@ describe PullRequestInteractor do
       it 'add the status to the pull request' do
         subject.call(params)
         expect(bitbucket).to have_received(:update_status_from_pull_request)
-          .with(BitbucketClient::PullRequest.new('id' => 42))
+          .with(PullRequest.new('id' => 42))
       end
     end
 
