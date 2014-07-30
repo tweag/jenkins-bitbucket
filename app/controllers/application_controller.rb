@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
 
   memoize \
   def status_message_formatter
-    MessageFormatter.new(self)
+    StatusMessageRenderer.new(self)
   end
 
   memoize \
