@@ -18,11 +18,11 @@ describe JenkinsHandler do
     end
 
     describe 'a job started' do
-      it 'upserts the job' do
+      it 'stores the job' do
         expect(jenkins).to have_received(:store).with(job)
       end
 
-      it 'add the update_status on bitbuket' do
+      it 'updates the status message bitbuket' do
         expect(bitbucket).to have_received(:update_status).with(job)
       end
     end
