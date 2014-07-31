@@ -11,6 +11,8 @@ class BitbucketClient
     end
   end
 
+  MAX_PULL_REQUEST_PAGE_LENGTH = 50
+
   def initialize
     @conn = Faraday.new(url: 'https://api.bitbucket.org') do |faraday|
       faraday.request :basic_auth, user, password
@@ -35,7 +37,8 @@ class BitbucketClient
   end
 
   def pull_requests
-    get(pull_requests_path)['values'].map do |pull_request|
+    data = get(pull_requests_path("?pagelen=#{MAX_PULL_REQUEST_PAGE_LENGTH}"))
+    data['values'].map do |pull_request|
       build_pull_request(pull_request)
     end
   end
@@ -72,8 +75,8 @@ class BitbucketClient
     @conn.get(str).body
   end
 
-  def pull_requests_path
-    "/2.0/repositories/#{repo}/pullrequests"
+  def pull_requests_path(query = '')
+    "/2.0/repositories/#{repo}/pullrequests#{query}"
   end
 
   def pull_request_path(id)

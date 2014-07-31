@@ -27,7 +27,7 @@ describe 'Bitbucket pull request is made', vcr: true do
       pull_request_notification_of(pull_request)
       expect(updated_description).to include original_description
       expect(updated_description).to include '* * *'
-      expect(updated_description).to include 'UNKNOWN'
+      expect(updated_description).to include 'No job'
     end
   end
 
