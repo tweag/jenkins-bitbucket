@@ -17,6 +17,6 @@ I'm pretty sure it's something like:
     rake db:setup
     rails server
 
-In development, the configured to run against [this repository on Bitbucket](https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-requests).
+In development, the app is configured by default to run against [this repository on Bitbucket](https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-requests).
 
 If you need to test out the webhooks, a useful technique is to run the app on your local machine and use the [proxylocal gem](http://proxylocal.com/) to let Jenkins and Bitbucket talk to your local machine.
