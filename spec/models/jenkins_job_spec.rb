@@ -25,13 +25,13 @@ describe JenkinsJob do
     }
   end
 
-  its(:job_name) { should eq 'the-name-123' }
-  its(:number)   { should eq 123 }
-  its(:phase)    { should eq 'the-phase' }
-  its(:status)   { should eq 'the-status' }
-  its(:url)      { should eq 'http://example.com/the-full-url' }
-  its(:as_json)  { should eq params }
-  its(:sha)      { should eq '9a6e22c90bb0c90781dcf6f4ff94b52f97d80883' }
+  its(:job_name)     { should eq 'the-name-123' }
+  its(:story_number) { should eq 123 }
+  its(:phase)        { should eq 'the-phase' }
+  its(:status)       { should eq 'the-status' }
+  its(:url)          { should eq 'http://example.com/the-full-url' }
+  its(:as_json)      { should eq params }
+  its(:sha)          { should eq '9a6e22c90bb0c90781dcf6f4ff94b52f97d80883' }
 
   context 'when it has no status' do
     let(:params) do
@@ -43,9 +43,9 @@ describe JenkinsJob do
     its(:status) { should be nil }
   end
 
-  context 'when it has no job number' do
+  context 'when it has no story number' do
     subject { JenkinsJobExample.build('name' => 'the-name') }
 
-    its(:number) { should be nil }
+    its(:story_number) { should be nil }
   end
 end

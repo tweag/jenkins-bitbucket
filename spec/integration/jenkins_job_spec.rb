@@ -4,7 +4,7 @@ describe JenkinsJob do
   describe '.store' do
     let(:job) { JenkinsJobExample.build('name' => 'job-123') }
 
-    context "when a job with that number doesn't exist" do
+    context "when a job with that story number doesn't exist" do
       it 'saves the job' do
         described_class.store(job)
         expect(described_class[123]).to eq job
@@ -15,7 +15,7 @@ describe JenkinsJob do
       end
     end
 
-    context 'when a job with that number does exist' do
+    context 'when a job with that story number does exist' do
       before do
         described_class.store(JenkinsJobExample.build('name' => 'XXX-123'))
       end
@@ -34,8 +34,8 @@ describe JenkinsJob do
       end
     end
 
-    context 'when the job does not have a number' do
-      let(:job) { JenkinsJobExample.build('name' => 'job-no-number') }
+    context 'when the job does not have a story number' do
+      let(:job) { JenkinsJobExample.build('name' => 'job-no-story-number') }
 
       it 'does nothing' do
         described_class.store(job)
@@ -49,7 +49,7 @@ describe JenkinsJob do
   end
 
   describe '.[]' do
-    context "when a job with that number doesn't exist" do
+    context "when a job with that story number doesn't exist" do
       subject { described_class[123] }
 
       it { should be nil }
