@@ -17,10 +17,10 @@ class JenkinsJob < ActiveRecord::Base
   end
 
   def story_number
-    Util.extract_id(job_name)
+    Util.extract_id(name)
   end
 
-  def job_name
+  def name
     data.fetch('name')
   end
 

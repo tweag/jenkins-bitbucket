@@ -12,7 +12,7 @@ describe 'Jenkins job changes state', vcr: true do
   end
 
   context 'and there is a pull request' do
-    let(:job_name) { 'job-4958' }
+    let(:job_name)           { 'job-4958' }
     let(:pull_request_title) { 'pull request 4958' }
 
     before { decline_all_pull_requests }

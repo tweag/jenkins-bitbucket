@@ -4,7 +4,7 @@ describe PullRequestMessageAdjuster do
   let(:message_adjuster) do
     described_class.new(
       separator: 'xxx',
-      renderer:  proc { |_pull_request, job| job.job_name }
+      renderer:  proc { |_pull_request, job| job.name }
     )
   end
 

@@ -25,7 +25,7 @@ describe JenkinsJob do
     }
   end
 
-  its(:job_name)     { should eq 'the-name-123' }
+  its(:name)         { should eq 'the-name-123' }
   its(:story_number) { should eq 123 }
   its(:phase)        { should eq 'the-phase' }
   its(:status)       { should eq 'the-status' }
