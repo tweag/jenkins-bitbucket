@@ -1,6 +1,7 @@
 # rubocop:disable Style/ClassLength
 class PullRequestExample
   # rubocop:disable Style/MethodLength
+  # rubocop:disable Style/LineLength
   def self.attributes(attrs = {})
     {
       'description' => 'This is my pull request',
@@ -69,6 +70,7 @@ class PullRequestExample
     }.deep_merge(attrs)
   end
   # rubocop:enable Style/MethodLength
+  # rubocop:enable Style/LineLength
 
   def self.build(attrs)
     PullRequest.new(attributes(attrs))
