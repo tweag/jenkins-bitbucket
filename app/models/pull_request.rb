@@ -8,6 +8,6 @@ class PullRequest < Hashie::Mash
   end
 
   def url
-    links.self.href
+    links.html.href
   end
 end

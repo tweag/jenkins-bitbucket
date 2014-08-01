@@ -6,7 +6,7 @@ describe PullRequest, type: :model do
   let(:attrs) do
     {
       'source' => { 'commit' => { 'hash' => 'ccccccc' } },
-      'links' => { 'self' => { 'href' => 'http://pullrequest.com' } }
+      'links' => { 'html' => { 'href' => 'http://pullrequest.com' } }
     }
   end
 
