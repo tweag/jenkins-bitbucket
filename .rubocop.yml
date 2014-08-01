@@ -10,6 +10,7 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - 'bin/**/*'
+    - 'vendor/**/*'
 
 Documentation:
   Enabled: false
