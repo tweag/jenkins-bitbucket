@@ -5,11 +5,11 @@ table
       th Pull Request
       th Story Number
       th Job Status
-  - @pull_requests.each do |pull_request|
+  - @pull_requests.each do |pull_request, job|
     tr
       td= pull_request.title
       td= pull_request.story_number
-      td= JenkinsJob[pull_request.story_number].try(:name)
+      td= job.try(:name)
       td
         = form_tag "/bitbucket/refresh/#{pull_request.id}", method: :post do
           button Refresh

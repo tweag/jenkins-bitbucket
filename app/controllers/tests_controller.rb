@@ -1,6 +1,8 @@
 class TestsController < ApplicationController
   def show
-    @pull_requests = bitbucket_client.pull_requests
+    @pull_requests = bitbucket_client.pull_requests.map do |pull_request|
+      [pull_request, JenkinsJob[pull_request.story_number]]
+    end
   end
 
   # rubocop:disable Style/MethodLength
