@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe JenkinsJob do
+describe JenkinsJob, type: :model do
   subject { described_class.new_from_jenkins(params) }
 
   let(:params) do
@@ -25,13 +25,40 @@ describe JenkinsJob do
     }
   end
 
-  its(:name)         { should eq 'the-name-123' }
-  its(:story_number) { should eq 123 }
-  its(:phase)        { should eq 'the-phase' }
-  its(:status)       { should eq 'the-status' }
-  its(:url)          { should eq 'http://example.com/the-full-url' }
-  its(:as_json)      { should eq params }
-  its(:sha)          { should eq '9a6e22c90bb0c90781dcf6f4ff94b52f97d80883' }
+  describe '#name' do
+    subject { super().name }
+    it { is_expected.to eq 'the-name-123' }
+  end
+
+  describe '#story_number' do
+    subject { super().story_number }
+    it { is_expected.to eq 123 }
+  end
+
+  describe '#phase' do
+    subject { super().phase }
+    it { is_expected.to eq 'the-phase' }
+  end
+
+  describe '#status' do
+    subject { super().status }
+    it { is_expected.to eq 'the-status' }
+  end
+
+  describe '#url' do
+    subject { super().url }
+    it { is_expected.to eq 'http://example.com/the-full-url' }
+  end
+
+  describe '#as_json' do
+    subject { super().as_json }
+    it { is_expected.to eq params }
+  end
+
+  describe '#sha' do
+    subject { super().sha }
+    it { is_expected.to eq '9a6e22c90bb0c90781dcf6f4ff94b52f97d80883' }
+  end
 
   context 'when it has no status' do
     let(:params) do
@@ -40,12 +67,18 @@ describe JenkinsJob do
       end
     end
 
-    its(:status) { should be nil }
+    describe '#status' do
+      subject { super().status }
+      it { is_expected.to be nil }
+    end
   end
 
   context 'when it has no story number' do
     subject { JenkinsJobExample.build('name' => 'the-name') }
 
-    its(:story_number) { should be nil }
+    describe '#story_number' do
+      subject { super().story_number }
+      it { is_expected.to be nil }
+    end
   end
 end

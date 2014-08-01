@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe JenkinsJob do
+describe JenkinsJob, type: :request do
   describe '.store' do
     let(:job) { JenkinsJobExample.build('name' => 'job-123') }
 
@@ -43,7 +43,7 @@ describe JenkinsJob do
       end
 
       it 'returns false' do
-        expect(described_class.store(job)).to be_false
+        expect(described_class.store(job)).to be_falsey
       end
     end
   end
@@ -52,7 +52,7 @@ describe JenkinsJob do
     context "when a job with that story number doesn't exist" do
       subject { described_class[123] }
 
-      it { should be nil }
+      it { is_expected.to be nil }
     end
 
     context 'when given nil' do
@@ -61,7 +61,7 @@ describe JenkinsJob do
       before { described_class.store(job) }
       let(:job) { JenkinsJobExample.build('name' => 'no-story-number') }
 
-      it { should be nil }
+      it { is_expected.to be nil }
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe PullRequest do
+describe PullRequest, type: :model do
   subject { described_class.new(PullRequestExample.attributes(attrs)) }
 
   let(:attrs) do
@@ -9,5 +9,8 @@ describe PullRequest do
     }
   end
 
-  its(:sha) { should eq 'ccccccc' }
+  describe '#sha' do
+    subject { super().sha }
+    it { is_expected.to eq 'ccccccc' }
+  end
 end

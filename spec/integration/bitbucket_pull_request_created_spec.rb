@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Bitbucket pull request is made', vcr: true do
+describe 'Bitbucket pull request is made', type: :request, vcr: true do
   before { decline_all_pull_requests }
 
   def pull_request_notification_of(pull_request)
