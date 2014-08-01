@@ -15,7 +15,11 @@ gem 'hashie'
 gem 'slim-rails'
 gem 'memoist'
 gem 'puma'
-gem 'rack-timeout', group: :production
+
+group :production do
+  gem 'rack-timeout'
+  gem 'rails_12factor'
+end
 
 group :development, :test do
   gem 'spring'
