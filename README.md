@@ -1,5 +1,7 @@
 # Jenkins-Bitbucket
 
+[![Code Climate](https://codeclimate.com/github/promptworks/jenkins-bitbucket/badges/gpa.svg)](https://codeclimate.com/github/promptworks/jenkins-bitbucket)
+
 Keeps Bitbucket pull requests up-to-date with the related job status from Jenkins.
 
 ## How it works
