@@ -10,7 +10,4 @@ table
       td= link_to pull_request.title, pull_request.url
       td= pull_request.story_number
       td= link_to job.name, job.url if job
-      td
-        = form_tag "/bitbucket/refresh/#{pull_request.id}", method: :post do
-          button Refresh
-
+      td= button_to "Refresh", "/bitbucket/refresh/#{pull_request.id}", method: :post
