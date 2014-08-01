@@ -6,4 +6,8 @@ class PullRequest < Hashie::Mash
   def sha
     source.commit['hash']
   end
+
+  def url
+    links.self.href
+  end
 end

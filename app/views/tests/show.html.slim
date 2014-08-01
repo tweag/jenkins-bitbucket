@@ -7,7 +7,7 @@ table
       th Job Status
   - @pull_requests.each do |pull_request, job|
     tr
-      td= pull_request.title
+      td= link_to pull_request.title, pull_request.url
       td= pull_request.story_number
       td= job.try(:name)
       td
