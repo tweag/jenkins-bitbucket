@@ -7,7 +7,7 @@ describe JenkinsJob, type: :request do
     context "when a job with that story number doesn't exist" do
       it 'saves the job' do
         described_class.store(job)
-        expect(described_class[123]).to eq job
+        expect(described_class[123].story_number).to eq 123
       end
 
       it 'returns true' do
@@ -22,7 +22,7 @@ describe JenkinsJob, type: :request do
 
       it 'upserts the job' do
         described_class.store(job)
-        expect(described_class[123]).to eq job
+        expect(described_class[123].story_number).to eq 123
       end
 
       it "doesn't create a new job" do
