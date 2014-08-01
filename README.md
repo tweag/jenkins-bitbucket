@@ -2,6 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/promptworks/jenkins-bitbucket/badges/gpa.svg)](https://codeclimate.com/github/promptworks/jenkins-bitbucket)
 [![Build Status](https://travis-ci.org/promptworks/jenkins-bitbucket.svg?branch=master)](https://travis-ci.org/promptworks/jenkins-bitbucket)
+[![Dependency Status](https://gemnasium.com/promptworks/jenkins-bitbucket.svg)](https://gemnasium.com/promptworks/jenkins-bitbucket)
 
 Keeps Bitbucket pull requests up-to-date with the related job status from Jenkins.
 
