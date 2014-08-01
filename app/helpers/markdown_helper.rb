@@ -4,6 +4,6 @@ module MarkdownHelper
   end
 
   def md_image(*args)
-    "!" + md_link_to(*args)
+    '!' + md_link_to(*args)
   end
 end
