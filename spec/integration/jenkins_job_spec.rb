@@ -26,6 +26,7 @@ describe JenkinsJob, type: :request do
       end
 
       it "doesn't create a new job" do
+        described_class.store(job)
         expect(described_class.count).to eq 1
       end
 
