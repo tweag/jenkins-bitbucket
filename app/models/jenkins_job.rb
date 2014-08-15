@@ -21,7 +21,7 @@ class JenkinsJob < ActiveRecord::Base
   end
 
   def identifier
-    Util.extract_id(name)
+    build('scm').fetch('branch').sub(/^origin\//, '')
   end
 
   def name

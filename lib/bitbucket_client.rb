@@ -22,11 +22,11 @@ class BitbucketClient
     end
   end
 
-  def create_pull_request(title)
+  def reset_pull_request
     pull_request_attrs = post(
       pull_requests_path,
-      'source' => { 'branch' => { 'name' => 'my-branch' } },
-      'title' => title,
+      'source'      => { 'branch' => { 'name' => 'my-branch' } },
+      'title'       => 'Example pull request',
       'description' => 'Test Pull Request'
     )
     build_pull_request(pull_request_attrs)

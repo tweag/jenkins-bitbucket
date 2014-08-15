@@ -17,7 +17,7 @@ describe JenkinsJob, type: :model do
         'scm'      =>
         {
           'url'    => 'git@bitbucket.org:mountdiablo/ce_bacchus.git',
-          'branch' => 'origin/master',
+          'branch' => 'origin/my-branch/STORY-123',
           'commit' => '9a6e22c90bb0c90781dcf6f4ff94b52f97d80883'
         },
         'artifacts'  => {}
@@ -32,7 +32,7 @@ describe JenkinsJob, type: :model do
 
   describe '#identifier' do
     subject { super().identifier }
-    it { is_expected.to eq 123 }
+    it { is_expected.to eq 'my-branch/STORY-123' }
   end
 
   describe '#phase' do
@@ -69,15 +69,6 @@ describe JenkinsJob, type: :model do
 
     describe '#status' do
       subject { super().status }
-      it { is_expected.to be nil }
-    end
-  end
-
-  context 'when it has no story number' do
-    subject { JenkinsJobExample.build('name' => 'the-name') }
-
-    describe '#identifier' do
-      subject { super().identifier }
       it { is_expected.to be nil }
     end
   end

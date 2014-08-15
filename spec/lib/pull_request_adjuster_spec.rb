@@ -25,14 +25,18 @@ describe PullRequestAdjuster do
   end
 
   describe '#update_status' do
-    let(:story_id) { 123 }
-    let(:job) { JenkinsJobExample.build('name' => "job-name-#{story_id}") }
+    let(:identifier) { 'my-branch' }
+    let(:job) do
+      JenkinsJobExample.build(
+        'build' => { 'scm' => { 'branch' => "origin/#{identifier}" } }
+      )
+    end
 
     context 'when a pull request exists for the story' do
       let(:pull_request) do
         double(
           id:          42,
-          identifier:  story_id,
+          identifier:  identifier,
           description: 'this is my pull request'
         )
       end
@@ -72,8 +76,8 @@ describe PullRequestAdjuster do
   end
 
   describe '#update_status_from_pull_request' do
-    let(:pull_request) { double(id: 42, identifier: 123) }
-    let(:job_store) { { 123 => job } }
+    let(:pull_request) { double(id: 42, identifier: 'my-branch') }
+    let(:job_store) { { 'my-branch' => job } }
 
     context 'when there is no matching job' do
       let(:job) {}

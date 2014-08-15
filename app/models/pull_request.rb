@@ -1,6 +1,6 @@
 class PullRequest < Hashie::Mash
   def identifier
-    Util.extract_id(title)
+    source.branch.name
   end
 
   def sha

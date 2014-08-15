@@ -5,9 +5,17 @@ describe PullRequest, type: :model do
 
   let(:attrs) do
     {
-      'source' => { 'commit' => { 'hash' => 'ccccccc' } },
+      'source' => {
+        'commit' => { 'hash' => 'ccccccc' },
+        'branch' => { 'name' => 'my-branch/STORY-123' }
+      },
       'links' => { 'html' => { 'href' => 'http://pullrequest.com' } }
     }
+  end
+
+  describe '#identifier' do
+    subject { super().identifier }
+    it { is_expected.to eq 'my-branch/STORY-123' }
   end
 
   describe '#sha' do
