@@ -1,9 +1,7 @@
 <%=
   if message[:job]
     render 'messages/job_status.markdown', message: message
-  elsif message[:pull_request].identifier
-    render 'messages/no_job.markdown', message: message
   else
-    render 'messages/no_story_number.markdown', message: message
+    render 'messages/no_job.markdown', message: message
   end
 -%>

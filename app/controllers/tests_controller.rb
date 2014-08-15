@@ -8,9 +8,6 @@ class TestsController < ApplicationController
   # rubocop:disable Style/MethodLength
   def messages
     job_and_pull_request_data = {
-      'No story number in pull request' => [
-        'My pull request', nil
-      ],
       'No job' => [
         'PR 123', nil
       ],
