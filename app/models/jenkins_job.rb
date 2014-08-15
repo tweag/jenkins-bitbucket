@@ -1,26 +1,26 @@
 class JenkinsJob < ActiveRecord::Base
   def self.store(job)
-    job.story_number &&
-      find_or_initialize_by(story_number: job.story_number.to_s)
+    job.identifier &&
+      find_or_initialize_by(story_number: job.identifier.to_s)
         .update_attributes(data: job.as_json)
   end
 
-  def self.[](story_number)
-    jenkins_job = find_by_story_number(story_number.to_s) || return
+  def self.[](identifier)
+    jenkins_job = find_by_story_number(identifier.to_s) || return
     new_from_jenkins(jenkins_job.data)
   end
 
   def self.new_from_jenkins(data)
     new(data: data).tap do |job|
-      job.story_number = job.story_number
+      job.story_number = job.identifier
     end
   end
 
   def ==(other)
-    story_number == other.story_number
+    identifier == other.identifier
   end
 
-  def story_number
+  def identifier
     Util.extract_id(name)
   end
 

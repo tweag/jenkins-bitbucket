@@ -31,17 +31,17 @@ describe PullRequestAdjuster do
     context 'when a pull request exists for the story' do
       let(:pull_request) do
         double(
-          id:           42,
-          story_number: story_id,
-          description:  'this is my pull request'
+          id:          42,
+          identifier:  story_id,
+          description: 'this is my pull request'
         )
       end
 
       let(:pull_requests) do
         [
-          double(id: 1, story_number: 911),
+          double(id: 1, identifier: 911),
           pull_request,
-          double(id: 3, story_number: 666)
+          double(id: 3, identifier: 666)
         ]
       end
 
@@ -56,8 +56,8 @@ describe PullRequestAdjuster do
     context 'when a pull request does not exist for the story' do
       let(:pull_requests) do
         [
-          double(id: 1, story_number: 12),
-          double(id: 3, story_number: 234)
+          double(id: 1, identifier: 12),
+          double(id: 3, identifier: 234)
         ]
       end
 
@@ -72,7 +72,7 @@ describe PullRequestAdjuster do
   end
 
   describe '#update_status_from_pull_request' do
-    let(:pull_request) { double(id: 42, story_number: 123) }
+    let(:pull_request) { double(id: 42, identifier: 123) }
     let(:job_store) { { 123 => job } }
 
     context 'when there is no matching job' do
@@ -98,7 +98,7 @@ describe PullRequestAdjuster do
     end
 
     context 'when the pull request has no story number' do
-      let(:pull_request) { double(id: 42, story_number: nil) }
+      let(:pull_request) { double(id: 42, identifier: nil) }
       let(:job) {}
 
       it 'updates the status of the pull request' do

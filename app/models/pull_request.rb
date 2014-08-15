@@ -1,5 +1,5 @@
 class PullRequest < Hashie::Mash
-  def story_number
+  def identifier
     Util.extract_id(title)
   end
 

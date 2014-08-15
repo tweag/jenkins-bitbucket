@@ -8,8 +8,8 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
   end
 
   let(:pull_request)         { create_pull_request(title) }
-  let(:title)                { "My Pull Request PR-#{story_number}" }
-  let(:story_number)         { '123' }
+  let(:title)                { "My Pull Request PR-#{identifier}" }
+  let(:identifier)           { '123' }
   let(:original_description) { pull_request.description }
   let(:updated_description) do
     reload_pull_request(pull_request).description
@@ -17,7 +17,7 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
 
   def associated_job_exists
     post '/hooks/jenkins', JenkinsJobExample.attributes(
-      'name' => "job-#{story_number}",
+      'name' => "job-#{identifier}",
       'build' => { 'status' => 'ABORTED' }
     )
   end

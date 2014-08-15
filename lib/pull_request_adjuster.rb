@@ -13,7 +13,7 @@ class PullRequestAdjuster
 
   def update_status(job)
     pull_requests = repo.pull_requests.select do |pull_request|
-      self.class.match(pull_request.story_number, job.story_number)
+      self.class.match(pull_request.identifier, job.identifier)
     end
 
     pull_requests.each do |pull_request|
@@ -22,7 +22,7 @@ class PullRequestAdjuster
   end
 
   def update_status_from_pull_request(pull_request)
-    job = job_store[pull_request.story_number]
+    job = job_store[pull_request.identifier]
     update_pull_request_with_job_status(pull_request, job)
   end
 
@@ -39,7 +39,7 @@ class PullRequestAdjuster
   end
   private :update_pull_request_with_job_status
 
-  def self.match(pull_request_title, story_number)
-    pull_request_title && pull_request_title == story_number
+  def self.match(pull_request_title, identifier)
+    pull_request_title && pull_request_title == identifier
   end
 end

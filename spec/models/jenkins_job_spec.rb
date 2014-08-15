@@ -30,8 +30,8 @@ describe JenkinsJob, type: :model do
     it { is_expected.to eq 'the-name-123' }
   end
 
-  describe '#story_number' do
-    subject { super().story_number }
+  describe '#identifier' do
+    subject { super().identifier }
     it { is_expected.to eq 123 }
   end
 
@@ -76,8 +76,8 @@ describe JenkinsJob, type: :model do
   context 'when it has no story number' do
     subject { JenkinsJobExample.build('name' => 'the-name') }
 
-    describe '#story_number' do
-      subject { super().story_number }
+    describe '#identifier' do
+      subject { super().identifier }
       it { is_expected.to be nil }
     end
   end
