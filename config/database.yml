@@ -16,3 +16,7 @@ test:
   pool: 5
   timeout: 5000
   password:
+
+# only here to allow asset precompilation
+production:
+  adapter: postgresql
