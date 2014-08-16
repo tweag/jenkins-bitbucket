@@ -12,7 +12,7 @@ class BitbucketHooksController < ApplicationController
 
   def refresh
     pull_request_interactor.refresh params[:id]
-    render text: 'Updated'
+    redirect_to(params[:back_to] || :back)
   end
 
   def refresh_button

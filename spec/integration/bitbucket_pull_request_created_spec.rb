@@ -55,7 +55,9 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
       new_description = 'Changed description'
       update_pull_request_description pull_request, new_description
 
-      post refresh_url
+      post refresh_url, back_to: 'http://example.com'
+      expect(response).to redirect_to 'http://example.com'
+
       updated_pull_request = reload_pull_request(pull_request)
       expect(updated_pull_request.description).to include new_description
       expect(updated_pull_request.description).to include '* * *'

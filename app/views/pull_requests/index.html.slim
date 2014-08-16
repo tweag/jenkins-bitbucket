@@ -6,9 +6,10 @@ table.table.table-striped.table-hover
       th Branch
       th Job Status
       th
+      th
   - @pull_requests.each do |pull_request, job|
     tr
       td= link_to pull_request.title, pull_request.url
       td= pull_request.identifier
       td= link_to job.name, job.url if job
-      td= button_to "Refresh", bitbucket_refresh_path(pull_request.id), method: :post, class: 'btn btn-default btn-sm'
+      td= link_to "Refresh", bitbucket_refresh_path(pull_request.id), class: 'btn btn-default btn-sm'

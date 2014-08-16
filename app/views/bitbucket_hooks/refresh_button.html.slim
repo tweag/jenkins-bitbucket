@@ -1,2 +1,6 @@
-= form_tag nil, method: :post do
-  button Refresh
+| Refreshing...
+
+= form_tag nil, method: :post
+  input type='hidden' name='back_to' value=request.referer
+javascript:
+  document.forms[0].submit()
