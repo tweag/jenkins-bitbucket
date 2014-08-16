@@ -1,13 +1,14 @@
 h2 Pull Requests I can see:
-table
+table.table.table-striped.table-hover
   thead
     tr
       th Pull Request
-      th Story Number
+      th Branch
       th Job Status
+      th
   - @pull_requests.each do |pull_request, job|
     tr
       td= link_to pull_request.title, pull_request.url
       td= pull_request.identifier
       td= link_to job.name, job.url if job
-      td= button_to "Refresh", "/bitbucket/refresh/#{pull_request.id}", method: :post
+      td= button_to "Refresh", "/bitbucket/refresh/#{pull_request.id}", method: :post, class: 'btn btn-default btn-sm'

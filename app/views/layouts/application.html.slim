@@ -6,27 +6,33 @@ html
     -# javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    h1= ENV.fetch('PROJECT_NAME')
-    table
-      tr
-        th Jenkins Hook URL:
-        td: code: a href=jenkins_hook_url = jenkins_hook_url
-      tr
-        th Bitbucket Hook URL:
-        td: code: a href=bitbucket_hook_url = bitbucket_hook_url
-      tr
-        th Test Bitbucket configuration:
-        td: a href=test_url Run test
-      tr
-        th Bitbucket Repo:
-        td: code: a href=repo_url = repo_url
-      tr
-        th Bitbucket Repo Issues:
-        td: code: a href=repo_url = repo_url('/issues')
-      tr
-        th Bitbucket User:
-        td: code: a href=user_url = user_url
-      tr
-        th Message formats
-        td= link_to "Test", test_messages_path
-    = yield
+    .navbar.navbar-inverse
+      .container
+        .navbar-brand
+          = link_to ENV.fetch('PROJECT_NAME'), root_url
+
+    .container
+      table.table
+        tr
+          th Jenkins Hook URL:
+          td: code: a href=jenkins_hook_url = jenkins_hook_url
+        tr
+          th Bitbucket Hook URL:
+          td: code: a href=bitbucket_hook_url = bitbucket_hook_url
+        tr
+          th Test Bitbucket configuration:
+          td: a href=test_url Run test
+        tr
+          th Bitbucket Repo:
+          td: code: a href=repo_url = repo_url
+        tr
+          th Bitbucket Repo Issues:
+          td: code: a href=repo_url = repo_url('/issues')
+        tr
+          th Bitbucket User:
+          td: code: a href=user_url = user_url
+        tr
+          th Message formats
+          td= link_to "Test", test_messages_path
+
+      = yield
