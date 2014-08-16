@@ -15,6 +15,11 @@ class BitbucketHooksController < ApplicationController
     redirect_to(params[:back_to] || :back)
   end
 
+  def refresh_all
+    pull_request_interactor.refresh_all
+    redirect_to :back
+  end
+
   def refresh_button
     render layout: false
   end

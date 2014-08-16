@@ -12,4 +12,8 @@ class PullRequestInteractor
   def refresh(id)
     @bitbucket.update_status_from_pull_request_id id
   end
+
+  def refresh_all
+    @bitbucket.update_statuses_for_all_pull_requests
+  end
 end

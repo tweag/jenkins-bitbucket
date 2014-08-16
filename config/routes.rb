@@ -8,8 +8,12 @@ Rails.application.routes.draw do
   end
 
   scope :bitbucket do
-    post '/refresh/:id', to: 'bitbucket_hooks#refresh', as: :bitbucket_refresh
-    get  '/refresh/:id', to: 'bitbucket_hooks#refresh_button'
+    scope :refresh do
+      post '/:id', to: 'bitbucket_hooks#refresh', as: :bitbucket_refresh
+      get  '/:id', to: 'bitbucket_hooks#refresh_button'
+
+      post '/', to: 'bitbucket_hooks#refresh_all', as: :bitbucket_refresh_all
+    end
   end
 
   resources :message_examples, only: :index

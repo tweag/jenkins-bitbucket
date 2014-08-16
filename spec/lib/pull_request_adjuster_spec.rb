@@ -103,4 +103,5 @@ describe PullRequestAdjuster do
   end
 
   describe '#update_status_from_pull_request_id'
+  describe '#update_statuses_for_all_pull_requests'
 end

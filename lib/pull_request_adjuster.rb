@@ -30,6 +30,12 @@ class PullRequestAdjuster
     update_status_from_pull_request repo.pull_request(id)
   end
 
+  def update_statuses_for_all_pull_requests
+    repo.pull_requests.each do |pull_request|
+      update_status_from_pull_request pull_request
+    end
+  end
+
   def update_pull_request_with_job_status(pull_request, job)
     adjusted_pull_request = message_adjuster.call(pull_request, job)
     repo.update_pull_request \

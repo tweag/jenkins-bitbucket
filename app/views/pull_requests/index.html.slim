@@ -13,3 +13,5 @@ table.table.table-striped.table-hover
       td= pull_request.identifier
       td= link_to job.name, job.url if job
       td= link_to "Refresh", bitbucket_refresh_path(pull_request.id), class: 'btn btn-default btn-sm'
+
+= button_to "Refresh all", bitbucket_refresh_all_path, class: 'btn btn-default'
