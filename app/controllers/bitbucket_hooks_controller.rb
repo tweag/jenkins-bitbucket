@@ -12,11 +12,15 @@ class BitbucketHooksController < ApplicationController
 
   def refresh
     pull_request_interactor.refresh params[:id]
+
+    flash['success'] = 'Refreshed pull request'
     redirect_to(params[:back_to] || :back)
   end
 
   def refresh_all
     pull_request_interactor.refresh_all
+
+    flash['success'] = 'Refreshed all pull requests'
     redirect_to :back
   end
 

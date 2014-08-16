@@ -15,4 +15,5 @@ html
           li= link_to 'Message Examples', message_examples_path
 
     .container
+      = render 'shared/flash', flash: flash
       = yield
