@@ -1,10 +1,4 @@
 class TestsController < ApplicationController
-  def show
-    @pull_requests = bitbucket_client.pull_requests.map do |pull_request|
-      [pull_request, JenkinsJob[pull_request.identifier]]
-    end
-  end
-
   # rubocop:disable Style/MethodLength
   def messages
     pull_request_title = "My PR #{STORY_NUMBER_EXAMPLE}"

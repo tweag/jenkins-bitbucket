@@ -11,7 +11,7 @@ html
         .navbar-header: .navbar-brand
           = link_to ENV.fetch('PROJECT_NAME'), root_url
         .collapse.navbar-collapse: ul.nav.navbar-nav
-          li= link_to 'Pull Requests', test_url
+          li= link_to 'Pull Requests', pull_requests_path
           li= link_to 'Message Formats', test_messages_path
 
     .container

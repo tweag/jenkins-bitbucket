@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   resource :test, only: :show
 
+  resources :pull_requests, only: :index
+
   get '/test/messages', to: 'tests#messages', as: 'test_messages'
 
   root to: 'home#index'
