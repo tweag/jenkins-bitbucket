@@ -6,7 +6,6 @@ table.table.table-striped.table-hover
       th Branch
       th Job Status
       th
-      th
   - @pull_requests.each do |pull_request, job|
     tr
       td= link_to pull_request.title, pull_request.url
