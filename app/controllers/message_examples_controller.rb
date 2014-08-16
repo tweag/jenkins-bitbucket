@@ -1,6 +1,6 @@
-class TestsController < ApplicationController
+class MessageExamplesController < ApplicationController
   # rubocop:disable Style/MethodLength
-  def messages
+  def index
     pull_request_title = "My PR #{STORY_NUMBER_EXAMPLE}"
 
     job_and_pull_request_data = {

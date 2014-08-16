@@ -8,11 +8,8 @@ Rails.application.routes.draw do
   post '/bitbucket/refresh/:id', to: 'bitbucket_hooks#refresh'
   get  '/bitbucket/refresh/:id', to: 'bitbucket_hooks#refresh_button'
 
-  resource :test, only: :show
-
-  resources :pull_requests, only: :index
-
-  get '/test/messages', to: 'tests#messages', as: 'test_messages'
+  resources :message_examples, only: :index
+  resources :pull_requests,    only: :index
 
   root to: 'home#index'
 end
