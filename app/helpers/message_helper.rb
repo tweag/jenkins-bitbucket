@@ -24,10 +24,11 @@ module MessageHelper
     return unless message[:job] && message[:pull_request]
 
     if message[:job].sha == message[:pull_request].sha
-      checkmark_good('SHAs match')
+      checkmark_good('PR and Jenkins job SHAs are up to date with each other')
     else
-      checkmark_bad('Pull request and job SHAs do not match. '\
-        'One of them is out of date')
+      checkmark_bad('PR and Jenkins job SHAs do not match. '\
+                    'One of them is out of date. '\
+                    'Either update this PR or rerun the Jenkins job.')
     end
   end
 
