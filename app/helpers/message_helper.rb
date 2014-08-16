@@ -44,14 +44,10 @@ module MessageHelper
   end
 
   def checkmark_good(string)
-    checkmark(':thumbsup: ') + string
+    ':thumbsup: ' + string
   end
 
   def checkmark_bad(string)
-    checkmark(':x: ') + string
-  end
-
-  def checkmark(string)
-    '* ' + string
+    ':x: ' + string
   end
 end
