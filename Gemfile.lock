@@ -53,7 +53,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    memoist (0.9.3)
+    memoist (0.10.0)
     method_source (0.8.2)
     mime-types (1.25.1)
     minitest (5.4.0)
@@ -101,12 +101,12 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.0.0)
     rake (10.3.2)
-    rspec-core (3.0.3)
+    rspec-core (3.0.4)
       rspec-support (~> 3.0.0)
-    rspec-expectations (3.0.3)
+    rspec-expectations (3.0.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.0.0)
-    rspec-mocks (3.0.3)
+    rspec-mocks (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-rails (3.0.2)
       actionpack (>= 3.0)
@@ -116,7 +116,7 @@ GEM
       rspec-expectations (~> 3.0.0)
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
-    rspec-support (3.0.3)
+    rspec-support (3.0.4)
     rubocop (0.24.1)
       json (>= 1.7.7, < 2)
       parser (>= 2.2.0.pre.3, < 3.0)
@@ -153,7 +153,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (1.2.1)
+    tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
       execjs (>= 0.3.0)
@@ -172,6 +172,7 @@ DEPENDENCIES
   faraday_middleware
   hashie
   memoist
+  parser (= 2.2.0.pre.3)
   pg
   pry-nav
   pry-rails

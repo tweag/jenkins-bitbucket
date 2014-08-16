@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'dotenv-rails'
   gem 'rubocop'
+  gem 'parser', '2.2.0.pre.3'
   gem 'rubocop-rspec'
 end
 
