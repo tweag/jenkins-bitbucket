@@ -40,7 +40,7 @@ describe 'Jenkins job changes state', type: :request, vcr: true do
   end
 
   def job_changes_state(status = 'SUCCESS')
-    post '/hooks/jenkins', JenkinsJobExample.attributes(
+    post jenkins_hook_path, JenkinsJobExample.attributes(
       'build' => {
         'status'   => status,
         'full_url' => url,

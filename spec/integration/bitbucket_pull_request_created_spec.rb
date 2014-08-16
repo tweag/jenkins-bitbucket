@@ -4,7 +4,7 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
   before { decline_all_pull_requests }
 
   def pull_request_notification_of(pull_request)
-    post '/hooks/bitbucket', pullrequest_created: pull_request
+    post bitbucket_hook_path, pullrequest_created: pull_request
   end
 
   let(:pull_request)         { reset_pull_request }
@@ -14,7 +14,7 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
   end
 
   def associated_job_exists
-    post '/hooks/jenkins', JenkinsJobExample.attributes(
+    post jenkins_hook_path, JenkinsJobExample.attributes(
       'build' => {
         'status' => 'ABORTED',
         'scm' => { 'branch' => 'origin/my-branch' }
