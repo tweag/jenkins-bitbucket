@@ -57,7 +57,7 @@ describe JenkinsJob, type: :model do
 
   describe '#sha' do
     subject { super().sha }
-    it { is_expected.to eq '9a6e22c90bb0c90781dcf6f4ff94b52f97d80883' }
+    it { is_expected.to eq '9a6e22c' }
   end
 
   context 'when it has no status' do

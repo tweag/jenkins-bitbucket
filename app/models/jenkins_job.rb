@@ -41,7 +41,7 @@ class JenkinsJob < ActiveRecord::Base
   end
 
   def sha
-    build('scm')['commit']
+    Util.normalize_sha(build('scm')['commit'])
   end
 
   def as_json(*args)

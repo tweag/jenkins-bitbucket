@@ -4,7 +4,7 @@ class PullRequest < Hashie::Mash
   end
 
   def sha
-    source.commit['hash']
+    Util.normalize_sha(source.commit['hash'])
   end
 
   def url

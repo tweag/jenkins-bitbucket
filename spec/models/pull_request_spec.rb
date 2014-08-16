@@ -6,7 +6,7 @@ describe PullRequest, type: :model do
   let(:attrs) do
     {
       'source' => {
-        'commit' => { 'hash' => 'ccccccc' },
+        'commit' => { 'hash' => 'abcdefghijkl' },
         'branch' => { 'name' => 'my-branch/STORY-123' }
       },
       'links' => { 'html' => { 'href' => 'http://pullrequest.com' } }
@@ -20,7 +20,7 @@ describe PullRequest, type: :model do
 
   describe '#sha' do
     subject { super().sha }
-    it { is_expected.to eq 'ccccccc' }
+    it { is_expected.to eq 'abcdefg' }
   end
 
   describe '#url' do
