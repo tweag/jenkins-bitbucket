@@ -46,10 +46,10 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
     before { associated_job_exists }
 
     it 'can be updated by clicking a link in the pull request' do
-      pull_request_notification_of(pull_request)
+      pull_request_notification_of pull_request
 
       updated_pull_request = reload_pull_request(pull_request)
-      refresh_url = "/bitbucket/refresh/#{updated_pull_request.id}"
+      refresh_url = bitbucket_refresh_path(updated_pull_request.id)
       expect(updated_pull_request.description).to include refresh_url
 
       new_description = 'Changed description'
