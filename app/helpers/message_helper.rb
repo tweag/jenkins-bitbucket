@@ -1,7 +1,7 @@
 module MessageHelper
   def refresh_link(pull_request)
     md_link_to 'refresh this message',
-      bitbucket_refresh_url(pull_request.id, back_to: pull_request.url)
+               bitbucket_refresh_url(pull_request.id, back_to: pull_request.url)
   end
 
   def status(job)
