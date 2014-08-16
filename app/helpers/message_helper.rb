@@ -19,4 +19,27 @@ module MessageHelper
 
     md_image(status_name, image_url(image))
   end
+
+  def checkmark_for_shas(message)
+    return unless message[:job] && message[:pull_request]
+
+    if message[:job].sha == message[:pull_request].sha
+      checkmark_good('SHAs match')
+    else
+      checkmark_bad('Pull request and job SHAs do not match. '\
+        'One of them is out of date')
+    end
+  end
+
+  def checkmark_good(string)
+    checkmark(':thumbsup: ') + string
+  end
+
+  def checkmark_bad(string)
+    checkmark(':x: ') + string
+  end
+
+  def checkmark(string)
+    '* ' + string
+  end
 end

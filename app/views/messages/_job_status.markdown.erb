@@ -2,10 +2,7 @@
 
 [<%= message[:job].name %> on Jenkins](<%= message[:job].url %>)
 
-|
----------------- | ----------------
-Pull Request SHA | <%= message[:pull_request].sha %>
-Jenkins Job  SHA | <%= message[:job].sha %>
+<%= render 'messages/checklist.markdown', message: message -%>
 
 ###
 ###
