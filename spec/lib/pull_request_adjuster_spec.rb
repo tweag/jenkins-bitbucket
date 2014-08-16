@@ -32,7 +32,7 @@ describe PullRequestAdjuster do
       )
     end
 
-    context 'when a pull request exists for the story' do
+    context 'when a pull request exists for the branch' do
       let(:pull_request) do
         double(
           id:          42,
@@ -57,7 +57,7 @@ describe PullRequestAdjuster do
       end
     end
 
-    context 'when a pull request does not exist for the story' do
+    context 'when a pull request does not exist for the branch' do
       let(:pull_requests) do
         [
           double(id: 1, identifier: 12),
@@ -92,18 +92,6 @@ describe PullRequestAdjuster do
 
     context 'when there is a matching job' do
       let(:job) { double }
-
-      it 'updates the status of the pull request' do
-        subject.update_status_from_pull_request pull_request
-
-        expect(client).to have_received(:update_pull_request)
-          .with(42, 'adjusted title', 'adjusted description')
-      end
-    end
-
-    context 'when the pull request has no story number' do
-      let(:pull_request) { double(id: 42, identifier: nil) }
-      let(:job) {}
 
       it 'updates the status of the pull request' do
         subject.update_status_from_pull_request pull_request
