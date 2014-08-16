@@ -24,10 +24,12 @@ module MessageHelper
     # rubocop:disable Style/CaseEquality
     # It can be a proc, regexp, or otherwise
     if STORY_NUMBER_CHECKER === pull_request.title
-      checkmark_good('Pull request title contains story number')
+      checkmark_good(t('messages.pull_request_story_number.good'))
     else
-      checkmark_bad('Pull request title does not contain story number '\
-                    "(i.e. it does not match `#{STORY_NUMBER_CHECKER}`)")
+      checkmark_bad(
+        t('messages.pull_request_story_number.bad',
+          example: STORY_NUMBER_CHECKER)
+      )
     end
   end
 
@@ -35,11 +37,9 @@ module MessageHelper
     return unless message[:job] && message[:pull_request]
 
     if message[:job].sha == message[:pull_request].sha
-      checkmark_good('PR and Jenkins job SHAs are up to date with each other')
+      checkmark_good(t('messages.shas_match.good'))
     else
-      checkmark_bad('PR and Jenkins job SHAs do not match. '\
-                    'One of them is out of date. '\
-                    'Either update this PR or rerun the Jenkins job.')
+      checkmark_bad(t('messages.shas_match.bad'))
     end
   end
 
