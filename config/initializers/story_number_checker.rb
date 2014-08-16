@@ -1,0 +1,1 @@
+STORY_NUMBER_CHECKER = Regexp.new(ENV.fetch('STORY_NUMBER_REGEXP', '\d+'))

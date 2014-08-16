@@ -45,6 +45,9 @@ class TestsController < ApplicationController
             'status' => 'FAILURE',
             'scm' => { 'commit' => 'differentsha' }
           } }
+      ],
+      'No story number in title' => [
+        'PR no story number', {}
       ]
     }
     @messages = job_and_pull_request_data.map do |example_name, data|

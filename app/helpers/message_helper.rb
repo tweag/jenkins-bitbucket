@@ -20,6 +20,17 @@ module MessageHelper
     md_image(status_name, image_url(image))
   end
 
+  def checkmark_for_story_number(pull_request)
+    # rubocop:disable Style/CaseEquality
+    # It can be a proc, regexp, or otherwise
+    if STORY_NUMBER_CHECKER === pull_request.title
+      checkmark_good('Pull request title contains story number')
+    else
+      checkmark_bad('Pull request title does not contain story number '\
+                    "(i.e. it does not match `#{STORY_NUMBER_CHECKER}`)")
+    end
+  end
+
   def checkmark_for_shas(message)
     return unless message[:job] && message[:pull_request]
 
