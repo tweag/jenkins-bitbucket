@@ -6,33 +6,13 @@ html
     -# javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    .navbar.navbar-inverse
+    .navbar.navbar-default.navbar-inverse
       .container
-        .navbar-brand
+        .navbar-header: .navbar-brand
           = link_to ENV.fetch('PROJECT_NAME'), root_url
+        .collapse.navbar-collapse: ul.nav.navbar-nav
+          li= link_to 'Pull Requests', test_url
+          li= link_to 'Message Formats', test_messages_path
 
     .container
-      table.table
-        tr
-          th Jenkins Hook URL:
-          td: code: a href=jenkins_hook_url = jenkins_hook_url
-        tr
-          th Bitbucket Hook URL:
-          td: code: a href=bitbucket_hook_url = bitbucket_hook_url
-        tr
-          th Test Bitbucket configuration:
-          td: a href=test_url Run test
-        tr
-          th Bitbucket Repo:
-          td: code: a href=repo_url = repo_url
-        tr
-          th Bitbucket Repo Issues:
-          td: code: a href=repo_url = repo_url('/issues')
-        tr
-          th Bitbucket User:
-          td: code: a href=user_url = user_url
-        tr
-          th Message formats
-          td= link_to "Test", test_messages_path
-
       = yield
