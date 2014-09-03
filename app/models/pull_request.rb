@@ -1,6 +1,10 @@
 class PullRequest < Hashie::Mash
+  def branch
+    source['branch'].name
+  end
+
   def identifier
-    source.branch.name
+    JobToPullRequestMatcher.normalize_identifier(branch)
   end
 
   def sha

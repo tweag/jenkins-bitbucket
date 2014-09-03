@@ -30,8 +30,8 @@ describe JenkinsJob, type: :model do
     it { is_expected.to eq 'the-name-123' }
   end
 
-  describe '#identifier' do
-    subject { super().identifier }
+  describe '#branch' do
+    subject { super().branch }
     it { is_expected.to eq 'my-branch/STORY-123' }
   end
 
@@ -58,6 +58,24 @@ describe JenkinsJob, type: :model do
   describe '#sha' do
     subject { super().sha }
     it { is_expected.to eq '9a6e22c' }
+  end
+
+  describe '#identifier' do
+    subject { super().identifier }
+
+    context 'when it has a branch' do
+      it { is_expected.to eq 'mybranchSTORY123' }
+    end
+
+    context 'when it has no branch' do
+      before do
+        params['build']['scm'].delete('branch')
+      end
+
+      it 'use the job name' do
+        is_expected.to eq 'thename123'
+      end
+    end
   end
 
   context 'when it has no status' do

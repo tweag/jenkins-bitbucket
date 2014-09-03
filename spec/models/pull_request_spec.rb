@@ -13,9 +13,14 @@ describe PullRequest, type: :model do
     }
   end
 
+  describe '#branch' do
+    subject { super().branch }
+    it { is_expected.to eq 'my-branch/STORY-123' }
+  end
+
   describe '#identifier' do
     subject { super().identifier }
-    it { is_expected.to eq 'my-branch/STORY-123' }
+    it { is_expected.to eq 'mybranchSTORY123' }
   end
 
   describe '#sha' do

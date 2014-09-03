@@ -9,8 +9,8 @@ describe PullRequestAdjuster do
   end
 
   let(:message_adjuster) { double }
-  let(:pull_requests) {}
-  let(:job_store) { {} }
+  let(:pull_requests)    {}
+  let(:job_store)        { {} }
 
   let(:client) do
     double(pull_requests: pull_requests, update_pull_request: nil)
@@ -25,10 +25,9 @@ describe PullRequestAdjuster do
   end
 
   describe '#update_status' do
-    let(:identifier) { 'my-branch' }
     let(:job) do
       JenkinsJobExample.build(
-        'build' => { 'scm' => { 'branch' => "origin/#{identifier}" } }
+        'build' => { 'scm' => { 'branch' => 'origin/my-branch' } }
       )
     end
 
@@ -36,7 +35,7 @@ describe PullRequestAdjuster do
       let(:pull_request) do
         double(
           id:          42,
-          identifier:  identifier,
+          identifier:  'mybranch',
           description: 'this is my pull request'
         )
       end

@@ -11,7 +11,7 @@ describe JenkinsJob, type: :request do
     context "when a job with that identifier doesn't exist" do
       it 'saves the job' do
         described_class.store(job)
-        expect(described_class['my-branch'].identifier).to eq 'my-branch'
+        expect(described_class['my-branch'].identifier).to eq 'mybranch'
       end
 
       it 'returns true' do
@@ -30,7 +30,7 @@ describe JenkinsJob, type: :request do
 
       it 'upserts the job' do
         described_class.store(job)
-        expect(described_class['my-branch'].identifier).to eq 'my-branch'
+        expect(described_class['my-branch'].identifier).to eq 'mybranch'
       end
 
       it "doesn't create a new job" do

@@ -6,8 +6,9 @@ class JenkinsJob < ActiveRecord::Base
   end
 
   def self.[](identifier)
-    jenkins_job = find_by_identifier(identifier.to_s) || return
-    new_from_jenkins(jenkins_job.data)
+    normal_identifier = JobToPullRequestMatcher.normalize_identifier(identifier)
+    jenkins_job = find_by_identifier(normal_identifier)
+    jenkins_job && new_from_jenkins(jenkins_job.data)
   end
 
   def self.new_from_jenkins(data)
@@ -21,7 +22,12 @@ class JenkinsJob < ActiveRecord::Base
   end
 
   def identifier
-    build('scm').fetch('branch').sub(/^origin\//, '')
+    JobToPullRequestMatcher.normalize_identifier(branch || name)
+  end
+
+  def branch
+    full_branch_name = build('scm')['branch']
+    full_branch_name.sub(/^origin\//, '') if full_branch_name
   end
 
   def name
