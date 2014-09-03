@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :message_examples, only: :index
   resources :pull_requests,    only: :index
+  resources :jenkins_jobs,     only: :index
 
   root to: 'home#index'
 end

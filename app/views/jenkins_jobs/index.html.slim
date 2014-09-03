@@ -1,0 +1,35 @@
+h2 Jenkins Jobs
+p These are all jobs that I have been notified about. I am notified from Jenkins when it runs a job.
+
+table.table
+  - @jenins_jobs.each do |jenkins_job|
+    tr
+      td
+        dl
+          dt Branch
+          dd= jenkins_job.identifier
+
+          dt First seen
+          dd= jenkins_job.created_at
+          dd= ago(jenkins_job.created_at)
+
+          dt Last seen
+          dd= jenkins_job.updated_at
+          dd= ago(jenkins_job.updated_at)
+
+          dt Job Name
+          dd= jenkins_job.name
+
+          dt URL
+          dd= jenkins_job.url
+
+          dt Status
+          dd= jenkins_job.status
+
+          dt Phase
+          dd= jenkins_job.phase
+
+          dt SHA
+          dd= jenkins_job.sha
+
+      td: pre: code= jenkins_job.data.to_yaml
