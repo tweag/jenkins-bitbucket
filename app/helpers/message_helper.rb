@@ -11,9 +11,9 @@ module MessageHelper
   def status_image(job)
     status_name = status(job)
     image = case status_name
-            when 'SUCCESS'             then 'success.png'
-            when 'FAILURE', 'UNSTABLE' then 'failure.png'
-            when 'STARTED'             then 'working.png'
+            when 'SUCCESS'                        then 'success.png'
+            when 'FAILURE', 'UNSTABLE', 'ABORTED' then 'failure.png'
+            when 'STARTED'                        then 'working.png'
             else ''
             end
 
