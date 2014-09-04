@@ -25,57 +25,18 @@ describe JenkinsJob, type: :model do
     }
   end
 
-  describe '#name' do
-    subject { super().name }
-    it { is_expected.to eq 'the-name-123' }
-  end
+  its(:name)       { is_expected.to eq 'the-name-123' }
+  its(:branch)     { is_expected.to eq 'my-branch/STORY-123' }
+  its(:phase)      { is_expected.to eq 'the-phase' }
+  its(:status)     { is_expected.to eq 'the-status' }
+  its(:url)        { is_expected.to eq 'http://example.com/the-full-url' }
+  its(:as_json)    { is_expected.to eq params }
+  its(:sha)        { is_expected.to eq '9a6e22c' }
+  its(:identifier) { is_expected.to eq 'mybranchSTORY123' }
 
-  describe '#branch' do
-    subject { super().branch }
-    it { is_expected.to eq 'my-branch/STORY-123' }
-  end
-
-  describe '#phase' do
-    subject { super().phase }
-    it { is_expected.to eq 'the-phase' }
-  end
-
-  describe '#status' do
-    subject { super().status }
-    it { is_expected.to eq 'the-status' }
-  end
-
-  describe '#url' do
-    subject { super().url }
-    it { is_expected.to eq 'http://example.com/the-full-url' }
-  end
-
-  describe '#as_json' do
-    subject { super().as_json }
-    it { is_expected.to eq params }
-  end
-
-  describe '#sha' do
-    subject { super().sha }
-    it { is_expected.to eq '9a6e22c' }
-  end
-
-  describe '#identifier' do
-    subject { super().identifier }
-
-    context 'when it has a branch' do
-      it { is_expected.to eq 'mybranchSTORY123' }
-    end
-
-    context 'when it has no branch' do
-      before do
-        params['build']['scm'].delete('branch')
-      end
-
-      it 'use the job name' do
-        is_expected.to eq 'thename123'
-      end
-    end
+  context 'when it has no branch' do
+    before { params['build']['scm'].delete('branch') }
+    its(:identifier) { is_expected.to eq 'thename123' }
   end
 
   context 'when it has no status' do
@@ -85,9 +46,6 @@ describe JenkinsJob, type: :model do
       end
     end
 
-    describe '#status' do
-      subject { super().status }
-      it { is_expected.to be nil }
-    end
+    its(:status) { is_expected.to be nil }
   end
 end

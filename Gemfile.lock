@@ -108,6 +108,9 @@ GEM
     rspec-expectations (3.0.4)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.0.0)
+    rspec-its (1.0.1)
+      rspec-core (>= 2.99.0.beta1)
+      rspec-expectations (>= 2.99.0.beta1)
     rspec-mocks (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-rails (3.0.2)
@@ -188,6 +191,7 @@ DEPENDENCIES
   rack-timeout
   rails (= 4.1.4)
   rails_12factor
+  rspec-its
   rspec-rails
   rubocop
   rubocop-rspec

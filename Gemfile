@@ -28,6 +28,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-nav'
   gem 'rspec-rails'
+  gem 'rspec-its'
   gem 'dotenv-rails'
   gem 'rubocop'
   gem 'rubocop-rspec'

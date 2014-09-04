@@ -20,28 +20,20 @@ describe PullRequestMessageAdjuster do
     context 'when a status is not already in the message' do
       let(:original_description) { 'my pull request' }
 
-      describe '[:title]' do
-        subject { super()[:title] }
-        it { is_expected.to eq 'original title' }
-      end
+      its([:title]) { is_expected.to eq 'original title' }
 
-      describe '[:description]' do
-        subject { super()[:description] }
-        it { is_expected.to eq "my pull request\nxxx\nTHE-JOB-NAME" }
+      its([:description]) do
+        is_expected.to eq "my pull request\nxxx\nTHE-JOB-NAME"
       end
     end
 
     context 'when a status is already in the message' do
       let(:original_description) { "my pull request\nxxx\nOLD STATUS" }
 
-      describe '[:title]' do
-        subject { super()[:title] }
-        it { is_expected.to eq 'original title' }
-      end
+      its([:title]) { is_expected.to eq 'original title' }
 
-      describe '[:description]' do
-        subject { super()[:description] }
-        it { is_expected.to eq "my pull request\nxxx\nTHE-JOB-NAME" }
+      its([:description]) do
+        is_expected.to eq "my pull request\nxxx\nTHE-JOB-NAME"
       end
     end
   end

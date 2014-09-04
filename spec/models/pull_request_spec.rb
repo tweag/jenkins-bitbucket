@@ -13,23 +13,8 @@ describe PullRequest, type: :model do
     }
   end
 
-  describe '#branch' do
-    subject { super().branch }
-    it { is_expected.to eq 'my-branch/STORY-123' }
-  end
-
-  describe '#identifier' do
-    subject { super().identifier }
-    it { is_expected.to eq 'mybranchSTORY123' }
-  end
-
-  describe '#sha' do
-    subject { super().sha }
-    it { is_expected.to eq 'abcdefg' }
-  end
-
-  describe '#url' do
-    subject { super().url }
-    it { is_expected.to eq 'http://pullrequest.com' }
-  end
+  its(:branch)     { is_expected.to eq 'my-branch/STORY-123' }
+  its(:identifier) { is_expected.to eq 'mybranchSTORY123' }
+  its(:sha)        { is_expected.to eq 'abcdefg' }
+  its(:url)        { is_expected.to eq 'http://pullrequest.com' }
 end
