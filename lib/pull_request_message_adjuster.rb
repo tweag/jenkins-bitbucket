@@ -20,7 +20,7 @@ class PullRequestMessageAdjuster
   end
 
   def description_without_status(description)
-    index = description.index(separator.reverse)
+    index = description.index(separator)
     if index
       description[0, index].strip
     else
