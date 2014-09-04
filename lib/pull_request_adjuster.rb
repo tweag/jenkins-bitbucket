@@ -7,8 +7,8 @@ class PullRequestAdjuster
     job_store:        JenkinsJob
   )
     self.repo             = repo
-    self.job_store        = job_store
     self.message_adjuster = message_adjuster
+    self.job_store        = job_store
   end
 
   def update_status(job)
