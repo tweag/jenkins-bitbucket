@@ -12,8 +12,8 @@ html
           = link_to ENV.fetch('PROJECT_NAME'), root_path
         .collapse.navbar-collapse: ul.nav.navbar-nav
           li= link_to 'Pull Requests', pull_requests_path
-          li= link_to 'Message Examples', message_examples_path
           li= link_to 'Jenkins Jobs', jenkins_jobs_path
+          li= link_to 'Message Examples', message_examples_path
 
     .container
       = render 'shared/flash', flash: flash
