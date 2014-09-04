@@ -9,7 +9,7 @@ table.table.table-striped.table-hover
   - @pull_requests.each do |pull_request, job|
     tr
       td= link_to pull_request.title, pull_request.url
-      td= pull_request.identifier
+      td= pull_request.branch
       td= link_to job.name, job.url if job
       td= link_to "Refresh", bitbucket_refresh_path(pull_request.id), class: 'btn btn-default btn-sm'
 
