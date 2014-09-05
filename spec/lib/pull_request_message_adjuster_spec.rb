@@ -9,7 +9,7 @@ describe PullRequestMessageAdjuster do
   end
 
   describe '#call' do
-    subject { message_adjuster.call(pull_request, job) }
+    subject { message_adjuster.call(StatusMessage.new(pull_request, job)) }
 
     let(:job) { JenkinsJobExample.build('name' => 'THE-JOB-NAME') }
 

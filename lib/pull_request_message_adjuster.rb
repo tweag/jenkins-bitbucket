@@ -8,13 +8,13 @@ class PullRequestMessageAdjuster
     self.renderer  = renderer
   end
 
-  def call(pull_request, job)
+  def call(status_message)
     {
-      title:       pull_request.title,
+      title:       status_message.pull_request.title,
       description: [
-        description_without_status(pull_request.description),
+        description_without_status(status_message.pull_request.description),
         separator,
-        renderer.call(pull_request, job)
+        renderer.call(status_message.pull_request, status_message.job)
       ].join("\n")
     }
   end
