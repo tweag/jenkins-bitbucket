@@ -1,54 +1,71 @@
 class MessageExamplesController < ApplicationController
   # rubocop:disable Style/MethodLength
   def index
-    pull_request_title = "My PR #{STORY_NUMBER_EXAMPLE}"
-
     job_and_pull_request_data = {
       'No job' => [
-        'PR 123', nil
+        { 'title' => 'PR 123' },
+        nil
       ],
       'Job running' => [
-        'PR 123', {
+        { 'title' => 'PR 123' },
+        {
           'build' => {
             'phase' => 'STARTED', 'status' => nil
-          } }
+          }
+        }
       ],
       'Job passed' => [
-        'PR 123', {
+        {
+          'title' => 'PR 123',
+          'source' => {
+            'branch' => { 'name' => "story/#{STORY_NUMBER_EXAMPLE}" }
+          }
+        },
+        {
           'build' => {
             'phase' => 'FINALIZED',
             'status' => 'SUCCESS'
-          } }
+          }
+        }
       ],
       'Job passed, but SHAs do not match' => [
-        'PR 123', { 'build' => {
-          'phase' => 'FINALIZED',
-          'status' => 'SUCCESS',
-          'scm' => { 'commit' => 'differentsha' }
-        } }
+        { 'title' => 'PR 123' },
+        {
+          'build' => {
+            'phase' => 'FINALIZED',
+            'status' => 'SUCCESS',
+            'scm' => { 'commit' => 'differentsha' }
+          }
+        }
       ],
       'Job failed' => [
-        'PR 123', {
+        { 'title' => 'PR 123' },
+        {
           'build' => {
             'phase' => 'FINALIZED',
             'status' => 'FAILURE'
-          } }
+          }
+        }
       ],
       'Job failed, but SHAs do not match' => [
-        'PR 123', {
+        { 'title' => 'PR 123' },
+        {
           'build' => {
             'phase' => 'FINALIZED',
             'status' => 'FAILURE',
             'scm' => { 'commit' => 'differentsha' }
-          } }
+          }
+        }
       ],
       'No story number in title' => [
-        'PR no story number', {}
+        { 'title' => 'PR no story number' },
+        {}
       ]
     }
-    @messages = job_and_pull_request_data.map do |example_name, data|
-      pull_request_title, job_attrs = *data
-      pull_request = PullRequestExample.build('title' => pull_request_title)
+    @messages = job_and_pull_request_data
+      .map do |example_name, (pull_request_attrs, job_attrs)|
+
+      pull_request = PullRequestExample.build(pull_request_attrs)
       job = JenkinsJobExample.build(job_attrs) if job_attrs
 
       status_message = StatusMessage.new(pull_request, job)

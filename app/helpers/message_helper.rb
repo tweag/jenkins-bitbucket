@@ -15,12 +15,12 @@ module MessageHelper
     md_image(message.status, image_url(image))
   end
 
-  def checkmark_for_story_number(message)
+  def checkmark_for_story_number_in_title(message)
     if message.title_contains_story_number?
-      checkmark_good(t('messages.pull_request_story_number.good'))
+      checkmark_good(t('messages.title_contains_story_number.good'))
     else
       checkmark_bad(
-        t('messages.pull_request_story_number.bad',
+        t('messages.title_contains_story_number.bad',
           example: STORY_NUMBER_CHECKER)
       )
     end
@@ -31,6 +31,15 @@ module MessageHelper
       checkmark_good(t('messages.shas_match.good'))
     else
       checkmark_bad(t('messages.shas_match.bad'))
+    end
+  end
+
+  def checkmark_for_story_number_in_branch(message)
+    if message.branch_name_contains_story_number?
+      checkmark_good(t('messages.branch_name_contains_story_number.good'))
+    else
+      checkmark_bad(t('messages.branch_name_contains_story_number.bad',
+                      example: STORY_NUMBER_CHECKER))
     end
   end
 

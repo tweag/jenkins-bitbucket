@@ -1,8 +1,11 @@
 en:
   messages:
-    pull_request_story_number:
+    title_contains_story_number:
       good: Pull request title contains story number
       bad: Pull request title does not contain story number (i.e. it does not match `%{example}`)
+    branch_name_contains_story_number:
+      good: Branch name contains story number
+      bad: Branch name does not contain story number (i.e. it does not match `%{example}`)
     shas_match:
       good: Pull request and Jenkins job SHAs are up to date with each other
       bad: Pull request and Jenkins job SHAs do not match. One of them is out of date. Either update this pull request or rerun the Jenkins job.

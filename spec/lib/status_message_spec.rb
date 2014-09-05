@@ -37,6 +37,21 @@ describe StatusMessage do
     end
   end
 
+  describe '#branch_name_contains_story_number?' do
+    subject { status_message.branch_name_contains_story_number?(/\d/) }
+
+    context 'when the branch name contains a story number' do
+      let(:pull_request) { double(PullRequest, branch: 'story/7') }
+      it { is_expected.to be true }
+    end
+
+    context 'when the branch name does not contain a story number' do
+      let(:pull_request) { double(PullRequest, branch: 'my-story') }
+      it { is_expected.to be false }
+    end
+  end
+
+
   describe '#shas_match?' do
     subject { status_message.shas_match? }
 
@@ -58,13 +73,19 @@ describe StatusMessage do
   describe '#ready_to_review?' do
     let(:job) { double(JenkinsJob, status: job_status, sha: job_sha) }
     let(:pull_request) do
-      double(PullRequest, title: pull_request_title, sha: pull_request_sha)
+      double(
+        PullRequest,
+        title:  pull_request_title,
+        sha:    pull_request_sha,
+        branch: pull_request_branch
+      )
     end
 
-    let(:pull_request_title) { 'a1' }
-    let(:pull_request_sha)   { 'a' }
-    let(:job_status)         { 'SUCCESS' }
-    let(:job_sha)            { 'a' }
+    let(:pull_request_title)  { 'a1' }
+    let(:pull_request_branch) { 'a1' }
+    let(:pull_request_sha)    { 'a' }
+    let(:job_status)          { 'SUCCESS' }
+    let(:job_sha)             { 'a' }
 
     context 'when all is well' do
       it { is_expected.to be_ready_to_review }
@@ -82,6 +103,11 @@ describe StatusMessage do
 
     context 'when the title does not contain a story number' do
       let(:pull_request_title) { 'a' }
+      it { is_expected.to_not be_ready_to_review }
+    end
+
+    context 'when the branch does not contain a story number' do
+      let(:pull_request_branch) { 'a' }
       it { is_expected.to_not be_ready_to_review }
     end
   end
