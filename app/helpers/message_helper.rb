@@ -4,26 +4,19 @@ module MessageHelper
                bitbucket_refresh_url(pull_request.id, back_to: pull_request.url)
   end
 
-  def status(job)
-    job.status || job.phase
-  end
-
-  def status_image(job)
-    status_name = status(job)
-    image = case status_name
+  def status_image(message)
+    image = case message.status
             when 'SUCCESS'                        then 'success.png'
             when 'FAILURE', 'UNSTABLE', 'ABORTED' then 'failure.png'
             when 'STARTED'                        then 'working.png'
             else ''
             end
 
-    md_image(status_name, image_url(image))
+    md_image(message.status, image_url(image))
   end
 
-  def checkmark_for_story_number(pull_request)
-    # rubocop:disable Style/CaseEquality
-    # It can be a proc, regexp, or otherwise
-    if STORY_NUMBER_CHECKER === pull_request.title
+  def checkmark_for_story_number(message)
+    if message.title_contains_story_number?
       checkmark_good(t('messages.pull_request_story_number.good'))
     else
       checkmark_bad(
@@ -34,9 +27,7 @@ module MessageHelper
   end
 
   def checkmark_for_shas(message)
-    return unless message[:job] && message[:pull_request]
-
-    if message[:job].sha == message[:pull_request].sha
+    if message.shas_match?
       checkmark_good(t('messages.shas_match.good'))
     else
       checkmark_bad(t('messages.shas_match.bad'))

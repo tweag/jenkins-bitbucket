@@ -1,6 +1,7 @@
 .messages
   h2 Message Examples
 
-  - @messages.each do |example_desc, status_message|
+  - @messages.each do |example_desc, pull_request|
     h3= example_desc
-    code: pre= status_message
+    h4= pull_request[:title]
+    code: pre= pull_request[:description]

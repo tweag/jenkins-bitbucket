@@ -9,9 +9,9 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
 
   let(:pull_request)         { reset_pull_request }
   let(:original_description) { pull_request.description }
-  let(:updated_description) do
-    reload_pull_request(pull_request).description
-  end
+  let(:updated_pull_request) { reload_pull_request(pull_request) }
+  let(:updated_description)  { updated_pull_request.description }
+  let(:updated_title)        { updated_pull_request.title }
 
   def associated_job_exists
     post jenkins_hook_path, JenkinsJobExample.attributes(
@@ -28,6 +28,7 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
       expect(updated_description).to include original_description
       expect(updated_description).to include '* * *'
       expect(updated_description).to include 'No job'
+      expect(updated_title).to match(/✗ /)
     end
   end
 
@@ -39,6 +40,7 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
       expect(updated_description).to include original_description
       expect(updated_description).to include '* * *'
       expect(updated_description).to include 'ABORTED'
+      expect(updated_title).to match(/✗ /)
     end
   end
 

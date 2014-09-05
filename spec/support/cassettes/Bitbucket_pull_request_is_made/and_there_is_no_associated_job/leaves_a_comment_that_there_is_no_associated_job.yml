@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.9.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx/1.5.10
       Date:
-      - Thu, 31 Jul 2014 00:21:58 GMT
+      - Fri, 05 Sep 2014 01:42:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -29,11 +29,11 @@ http_interactions:
       Connection:
       - keep-alive
       X-Render-Time:
-      - '0.0711090564728'
+      - '0.0748529434204'
       Content-Language:
       - en
       X-Request-Count:
-      - '379'
+      - '29'
       X-Served-By:
       - app16
       Vary:
@@ -41,56 +41,107 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Static-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       X-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
     body:
-      encoding: UTF-8
-      string: '{"pagelen": 50, "values": [{"description": "Changed description\n*
-        * * * * * * * * * * * * * *\n# ABORTED on Jenkins\n\n[job-123 on Jenkins](http://www.example.com/job/test-job-for-webhooks)\n\n|\n----------------
-        | ----------------\nPull Request SHA | ca45c14390fa\nJenkins Job  SHA | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\n###\n###\n\n\nBrought
-        to you by [Jenkins-Bitbucket](http://www.example.com/). Feel free to [refresh
-        this message](http://www.example.com//bitbucket/refresh/239)\n", "links":
-        {"decline": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/decline"},
-        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/commits"},
-        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239"},
-        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/comments"},
-        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/merge"},
-        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/239"},
-        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/activity"},
-        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/diff"},
-        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/approve"}},
-        "author": {"username": "jenkins-bitbucket", "display_name": "jenkins-bitbucket
-        jenkins-bitbucket", "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
-        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F6a5c573024ea%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
-        "close_source_branch": false, "title": "My Pull Request PR-123", "destination":
-        {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
-        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
-        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
-        "branch": {"name": "master"}}, "reason": "", "closed_by": null, "source":
-        {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
-        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
-        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
-        "branch": {"name": "my-branch"}}, "state": "OPEN", "created_on": "2014-07-31T00:21:54.509331+00:00",
-        "updated_on": "2014-07-31T00:21:57.156770+00:00", "merge_commit": null, "id":
-        239}], "page": 1, "size": 1}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlbGVuIjogNTAsICJ2YWx1ZXMiOiBbeyJkZXNjcmlwdGlvbiI6ICJU
+        ZXN0IFB1bGwgUmVxdWVzdFxuKiAqICogKiAqICogKiAqICogKiAqICogKiAq
+        ICpcbiMgTm8gam9iIG9uIEplbmtpbnNcblxuQXMgZmFyIGFzIEkgY2FuIHRl
+        bGwsIHRoZXJlIGlzbid0IGEgam9iIG9uIEplbmtpbnMgZm9yIGJyYW5jaCBg
+        bXktYnJhbmNoYC5cblxuVG8gZml4IHRoaXMsIHJ1biBhIGpvYiBvbiBKZW5r
+        aW5zIGZvciBicmFuY2ggYG15LWJyYW5jaGAuXG5cblxuQnJvdWdodCB0byB5
+        b3UgYnkgW0plbmtpbnMtQml0YnVja2V0XShodHRwOi8vd3d3LmV4YW1wbGUu
+        Y29tLykuIEZlZWwgZnJlZSB0byBbcmVmcmVzaCB0aGlzIG1lc3NhZ2VdKGh0
+        dHA6Ly93d3cuZXhhbXBsZS5jb20vYml0YnVja2V0L3JlZnJlc2gvMjQ3P2Jh
+        Y2tfdG89aHR0cHMlM0ElMkYlMkZiaXRidWNrZXQub3JnJTJGamVua2lucy1i
+        aXRidWNrZXQlMkZqZW5raW5zLWJpdGJ1Y2tldCUyRnB1bGwtcmVxdWVzdCUy
+        RjI0NylcbiIsICJsaW5rcyI6IHsiZGVjbGluZSI6IHsiaHJlZiI6ICJodHRw
+        czovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lu
+        cy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3RzLzI0
+        Ny9kZWNsaW5lIn0sICJjb21taXRzIjogeyJocmVmIjogImh0dHBzOi8vYXBp
+        LmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1
+        Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVzdHMvMjQ3L2NvbW1p
+        dHMifSwgInNlbGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0
+        Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtp
+        bnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8yNDcifSwgImNvbW1lbnRzIjog
+        eyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9z
+        aXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9w
+        dWxscmVxdWVzdHMvMjQ3L2NvbW1lbnRzIn0sICJtZXJnZSI6IHsiaHJlZiI6
+        ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMv
+        amVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVl
+        c3RzLzI0Ny9tZXJnZSJ9LCAiaHRtbCI6IHsiaHJlZiI6ICJodHRwczovL2Jp
+        dGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNr
+        ZXQvcHVsbC1yZXF1ZXN0LzI0NyJ9LCAiYWN0aXZpdHkiOiB7ImhyZWYiOiAi
+        aHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2pl
+        bmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0
+        cy8yNDcvYWN0aXZpdHkifSwgImRpZmYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9h
+        cGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0
+        YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8yNDcvZGlm
+        ZiJ9LCAiYXBwcm92ZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNr
+        ZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVu
+        a2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3RzLzI0Ny9hcHByb3ZlIn19LCAi
+        YXV0aG9yIjogeyJ1c2VybmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tldCIsICJk
+        aXNwbGF5X25hbWUiOiAiamVua2lucy1iaXRidWNrZXQgamVua2lucy1iaXRi
+        dWNrZXQiLCAibGlua3MiOiB7InNlbGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9h
+        cGkuYml0YnVja2V0Lm9yZy8yLjAvdXNlcnMvamVua2lucy1iaXRidWNrZXQi
+        fSwgImh0bWwiOiB7ImhyZWYiOiAiaHR0cHM6Ly9iaXRidWNrZXQub3JnL2pl
+        bmtpbnMtYml0YnVja2V0In0sICJhdmF0YXIiOiB7ImhyZWYiOiAiaHR0cHM6
+        Ly9zZWN1cmUuZ3JhdmF0YXIuY29tL2F2YXRhci9kMWRlMDE4MDdmNmIzNjc3
+        MThhMjA3ODQ1ZGZjOGE2ND9kPWh0dHBzJTNBJTJGJTJGZDNvYXhjNHE1azJk
+        NnEuY2xvdWRmcm9udC5uZXQlMkZtJTJGODc0ZjA3N2ZkMjM0JTJGaW1nJTJG
+        ZGVmYXVsdF9hdmF0YXIlMkYzMiUyRnVzZXJfYmx1ZS5wbmcmcz0zMiJ9fX0s
+        ICJjbG9zZV9zb3VyY2VfYnJhbmNoIjogZmFsc2UsICJ0aXRsZSI6ICLinJcg
+        RXhhbXBsZSBwdWxsIHJlcXVlc3QiLCAiZGVzdGluYXRpb24iOiB7ImNvbW1p
+        dCI6IHsiaGFzaCI6ICI3MzdkOWQxNDFjY2IiLCAibGlua3MiOiB7InNlbGYi
+        OiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVw
+        b3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0
+        L2NvbW1pdC83MzdkOWQxNDFjY2IifX19LCAicmVwb3NpdG9yeSI6IHsibGlu
+        a3MiOiB7InNlbGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0
+        Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtp
+        bnMtYml0YnVja2V0In0sICJodG1sIjogeyJocmVmIjogImh0dHBzOi8vYml0
+        YnVja2V0Lm9yZy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tl
+        dCJ9LCAiYXZhdGFyIjogeyJocmVmIjogImh0dHBzOi8vZDNvYXhjNHE1azJk
+        NnEuY2xvdWRmcm9udC5uZXQvbS84NzRmMDc3ZmQyMzQvaW1nL2xhbmd1YWdl
+        LWF2YXRhcnMvZGVmYXVsdF8xNi5wbmcifX0sICJmdWxsX25hbWUiOiAiamVu
+        a2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQiLCAibmFtZSI6ICJq
+        ZW5raW5zLWJpdGJ1Y2tldCJ9LCAiYnJhbmNoIjogeyJuYW1lIjogIm1hc3Rl
+        ciJ9fSwgInJlYXNvbiI6ICIiLCAiY2xvc2VkX2J5IjogbnVsbCwgInNvdXJj
+        ZSI6IHsiY29tbWl0IjogeyJoYXNoIjogImNhNDVjMTQzOTBmYSIsICJsaW5r
+        cyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQu
+        b3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lu
+        cy1iaXRidWNrZXQvY29tbWl0L2NhNDVjMTQzOTBmYSJ9fX0sICJyZXBvc2l0
+        b3J5IjogeyJsaW5rcyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2Fw
+        aS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRi
+        dWNrZXQvamVua2lucy1iaXRidWNrZXQifSwgImh0bWwiOiB7ImhyZWYiOiAi
+        aHR0cHM6Ly9iaXRidWNrZXQub3JnL2plbmtpbnMtYml0YnVja2V0L2plbmtp
+        bnMtYml0YnVja2V0In0sICJhdmF0YXIiOiB7ImhyZWYiOiAiaHR0cHM6Ly9k
+        M29heGM0cTVrMmQ2cS5jbG91ZGZyb250Lm5ldC9tLzg3NGYwNzdmZDIzNC9p
+        bWcvbGFuZ3VhZ2UtYXZhdGFycy9kZWZhdWx0XzE2LnBuZyJ9fSwgImZ1bGxf
+        bmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCIs
+        ICJuYW1lIjogImplbmtpbnMtYml0YnVja2V0In0sICJicmFuY2giOiB7Im5h
+        bWUiOiAibXktYnJhbmNoIn19LCAic3RhdGUiOiAiT1BFTiIsICJjcmVhdGVk
+        X29uIjogIjIwMTQtMDktMDVUMDE6Mzk6MzYuMTk4NDY4KzAwOjAwIiwgInVw
+        ZGF0ZWRfb24iOiAiMjAxNC0wOS0wNVQwMTozOTozNi41NjExMTArMDA6MDAi
+        LCAibWVyZ2VfY29tbWl0IjogbnVsbCwgImlkIjogMjQ3fV0sICJwYWdlIjog
+        MSwgInNpemUiOiAxfQ==
     http_version: 
-  recorded_at: Thu, 31 Jul 2014 00:21:58 GMT
+  recorded_at: Fri, 05 Sep 2014 01:42:21 GMT
 - request:
     method: post
-    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/decline
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/247/decline
     body:
       encoding: UTF-8
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.9.0
       Content-Length:
       - '0'
       Accept-Encoding:
@@ -105,7 +156,7 @@ http_interactions:
       Server:
       - nginx/1.5.10
       Date:
-      - Thu, 31 Jul 2014 00:21:58 GMT
+      - Fri, 05 Sep 2014 01:42:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -113,73 +164,129 @@ http_interactions:
       Connection:
       - keep-alive
       X-Render-Time:
-      - '0.126359939575'
+      - '0.204936981201'
       Content-Language:
       - en
       X-Request-Count:
-      - '485'
+      - '102'
       X-Served-By:
-      - app22
+      - app17
       Vary:
       - Authorization, Accept-Language, Cookie
       X-Frame-Options:
       - SAMEORIGIN
       X-Static-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       X-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
     body:
-      encoding: UTF-8
-      string: '{"description": "Changed description\n* * * * * * * * * * * * * * *\n#
-        ABORTED on Jenkins\n\n[job-123 on Jenkins](http://www.example.com/job/test-job-for-webhooks)\n\n|\n----------------
-        | ----------------\nPull Request SHA | ca45c14390fa\nJenkins Job  SHA | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n\n###\n###\n\n\nBrought
-        to you by [Jenkins-Bitbucket](http://www.example.com/). Feel free to [refresh
-        this message](http://www.example.com//bitbucket/refresh/239)\n", "links":
-        {"decline": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/decline"},
-        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/commits"},
-        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239"},
-        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/comments"},
-        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/merge"},
-        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/239"},
-        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/activity"},
-        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/diff"},
-        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/239/approve"}},
-        "title": "My Pull Request PR-123", "close_source_branch": false, "reviewers":
-        [], "destination": {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href":
-        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
-        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
-        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
-        "branch": {"name": "master"}}, "reason": "", "closed_by": {"username": "jenkins-bitbucket",
-        "display_name": "jenkins-bitbucket jenkins-bitbucket", "links": {"self": {"href":
-        "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"}, "avatar": {"href":
-        "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F6a5c573024ea%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
-        "source": {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
-        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
-        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
-        "branch": {"name": "my-branch"}}, "state": "DECLINED", "author": {"username":
-        "jenkins-bitbucket", "display_name": "jenkins-bitbucket jenkins-bitbucket",
-        "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
-        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F6a5c573024ea%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
-        "created_on": "2014-07-31T00:21:54.509331+00:00", "participants": [], "updated_on":
-        "2014-07-31T00:21:58.504898+00:00", "merge_commit": null, "id": 239}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkZXNjcmlwdGlvbiI6ICJUZXN0IFB1bGwgUmVxdWVzdFxuKiAqICogKiAq
+        ICogKiAqICogKiAqICogKiAqICpcbiMgTm8gam9iIG9uIEplbmtpbnNcblxu
+        QXMgZmFyIGFzIEkgY2FuIHRlbGwsIHRoZXJlIGlzbid0IGEgam9iIG9uIEpl
+        bmtpbnMgZm9yIGJyYW5jaCBgbXktYnJhbmNoYC5cblxuVG8gZml4IHRoaXMs
+        IHJ1biBhIGpvYiBvbiBKZW5raW5zIGZvciBicmFuY2ggYG15LWJyYW5jaGAu
+        XG5cblxuQnJvdWdodCB0byB5b3UgYnkgW0plbmtpbnMtQml0YnVja2V0XSho
+        dHRwOi8vd3d3LmV4YW1wbGUuY29tLykuIEZlZWwgZnJlZSB0byBbcmVmcmVz
+        aCB0aGlzIG1lc3NhZ2VdKGh0dHA6Ly93d3cuZXhhbXBsZS5jb20vYml0YnVj
+        a2V0L3JlZnJlc2gvMjQ3P2JhY2tfdG89aHR0cHMlM0ElMkYlMkZiaXRidWNr
+        ZXQub3JnJTJGamVua2lucy1iaXRidWNrZXQlMkZqZW5raW5zLWJpdGJ1Y2tl
+        dCUyRnB1bGwtcmVxdWVzdCUyRjI0NylcbiIsICJsaW5rcyI6IHsiZGVjbGlu
+        ZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9y
+        ZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNr
+        ZXQvcHVsbHJlcXVlc3RzLzI0Ny9kZWNsaW5lIn0sICJjb21taXRzIjogeyJo
+        cmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRv
+        cmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxs
+        cmVxdWVzdHMvMjQ3L2NvbW1pdHMifSwgInNlbGYiOiB7ImhyZWYiOiAiaHR0
+        cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtp
+        bnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8y
+        NDcifSwgImNvbW1lbnRzIjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1
+        Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9q
+        ZW5raW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVzdHMvMjQ3L2NvbW1lbnRzIn0s
+        ICJtZXJnZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3Jn
+        LzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1i
+        aXRidWNrZXQvcHVsbHJlcXVlc3RzLzI0Ny9tZXJnZSJ9LCAiaHRtbCI6IHsi
+        aHJlZiI6ICJodHRwczovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQvcHVsbC1yZXF1ZXN0LzI0NyJ9LCAiYWN0
+        aXZpdHkiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8y
+        LjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0
+        YnVja2V0L3B1bGxyZXF1ZXN0cy8yNDcvYWN0aXZpdHkifSwgImRpZmYiOiB7
+        ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3Np
+        dG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1
+        bGxyZXF1ZXN0cy8yNDcvZGlmZiJ9LCAiYXBwcm92ZSI6IHsiaHJlZiI6ICJo
+        dHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVu
+        a2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3Rz
+        LzI0Ny9hcHByb3ZlIn19LCAidGl0bGUiOiAi4pyXIEV4YW1wbGUgcHVsbCBy
+        ZXF1ZXN0IiwgImNsb3NlX3NvdXJjZV9icmFuY2giOiBmYWxzZSwgInJldmll
+        d2VycyI6IFtdLCAiZGVzdGluYXRpb24iOiB7ImNvbW1pdCI6IHsiaGFzaCI6
+        ICI3MzdkOWQxNDFjY2IiLCAibGlua3MiOiB7InNlbGYiOiB7ImhyZWYiOiAi
+        aHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2pl
+        bmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L2NvbW1pdC83Mzdk
+        OWQxNDFjY2IifX19LCAicmVwb3NpdG9yeSI6IHsibGlua3MiOiB7InNlbGYi
+        OiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVw
+        b3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0
+        In0sICJodG1sIjogeyJocmVmIjogImh0dHBzOi8vYml0YnVja2V0Lm9yZy9q
+        ZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiYXZhdGFy
+        IjogeyJocmVmIjogImh0dHBzOi8vZDNvYXhjNHE1azJkNnEuY2xvdWRmcm9u
+        dC5uZXQvbS84NzRmMDc3ZmQyMzQvaW1nL2xhbmd1YWdlLWF2YXRhcnMvZGVm
+        YXVsdF8xNi5wbmcifX0sICJmdWxsX25hbWUiOiAiamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQiLCAibmFtZSI6ICJqZW5raW5zLWJpdGJ1
+        Y2tldCJ9LCAiYnJhbmNoIjogeyJuYW1lIjogIm1hc3RlciJ9fSwgInJlYXNv
+        biI6ICIiLCAiY2xvc2VkX2J5IjogeyJ1c2VybmFtZSI6ICJqZW5raW5zLWJp
+        dGJ1Y2tldCIsICJkaXNwbGF5X25hbWUiOiAiamVua2lucy1iaXRidWNrZXQg
+        amVua2lucy1iaXRidWNrZXQiLCAibGlua3MiOiB7InNlbGYiOiB7ImhyZWYi
+        OiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvdXNlcnMvamVua2lu
+        cy1iaXRidWNrZXQifSwgImh0bWwiOiB7ImhyZWYiOiAiaHR0cHM6Ly9iaXRi
+        dWNrZXQub3JnL2plbmtpbnMtYml0YnVja2V0In0sICJhdmF0YXIiOiB7Imhy
+        ZWYiOiAiaHR0cHM6Ly9zZWN1cmUuZ3JhdmF0YXIuY29tL2F2YXRhci9kMWRl
+        MDE4MDdmNmIzNjc3MThhMjA3ODQ1ZGZjOGE2ND9kPWh0dHBzJTNBJTJGJTJG
+        ZDNvYXhjNHE1azJkNnEuY2xvdWRmcm9udC5uZXQlMkZtJTJGODc0ZjA3N2Zk
+        MjM0JTJGaW1nJTJGZGVmYXVsdF9hdmF0YXIlMkYzMiUyRnVzZXJfYmx1ZS5w
+        bmcmcz0zMiJ9fX0sICJzb3VyY2UiOiB7ImNvbW1pdCI6IHsiaGFzaCI6ICJj
+        YTQ1YzE0MzkwZmEiLCAibGlua3MiOiB7InNlbGYiOiB7ImhyZWYiOiAiaHR0
+        cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtp
+        bnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L2NvbW1pdC9jYTQ1YzE0
+        MzkwZmEifX19LCAicmVwb3NpdG9yeSI6IHsibGlua3MiOiB7InNlbGYiOiB7
+        ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3Np
+        dG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0In0s
+        ICJodG1sIjogeyJocmVmIjogImh0dHBzOi8vYml0YnVja2V0Lm9yZy9qZW5r
+        aW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiYXZhdGFyIjog
+        eyJocmVmIjogImh0dHBzOi8vZDNvYXhjNHE1azJkNnEuY2xvdWRmcm9udC5u
+        ZXQvbS84NzRmMDc3ZmQyMzQvaW1nL2xhbmd1YWdlLWF2YXRhcnMvZGVmYXVs
+        dF8xNi5wbmcifX0sICJmdWxsX25hbWUiOiAiamVua2lucy1iaXRidWNrZXQv
+        amVua2lucy1iaXRidWNrZXQiLCAibmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tl
+        dCJ9LCAiYnJhbmNoIjogeyJuYW1lIjogIm15LWJyYW5jaCJ9fSwgInN0YXRl
+        IjogIkRFQ0xJTkVEIiwgImF1dGhvciI6IHsidXNlcm5hbWUiOiAiamVua2lu
+        cy1iaXRidWNrZXQiLCAiZGlzcGxheV9uYW1lIjogImplbmtpbnMtYml0YnVj
+        a2V0IGplbmtpbnMtYml0YnVja2V0IiwgImxpbmtzIjogeyJzZWxmIjogeyJo
+        cmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3VzZXJzL2pl
+        bmtpbnMtYml0YnVja2V0In0sICJodG1sIjogeyJocmVmIjogImh0dHBzOi8v
+        Yml0YnVja2V0Lm9yZy9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiYXZhdGFyIjog
+        eyJocmVmIjogImh0dHBzOi8vc2VjdXJlLmdyYXZhdGFyLmNvbS9hdmF0YXIv
+        ZDFkZTAxODA3ZjZiMzY3NzE4YTIwNzg0NWRmYzhhNjQ/ZD1odHRwcyUzQSUy
+        RiUyRmQzb2F4YzRxNWsyZDZxLmNsb3VkZnJvbnQubmV0JTJGbSUyRjg3NGYw
+        NzdmZDIzNCUyRmltZyUyRmRlZmF1bHRfYXZhdGFyJTJGMzIlMkZ1c2VyX2Js
+        dWUucG5nJnM9MzIifX19LCAiY3JlYXRlZF9vbiI6ICIyMDE0LTA5LTA1VDAx
+        OjM5OjM2LjE5ODQ2OCswMDowMCIsICJwYXJ0aWNpcGFudHMiOiBbXSwgInVw
+        ZGF0ZWRfb24iOiAiMjAxNC0wOS0wNVQwMTo0MjoyMi4xMjU5NTQrMDA6MDAi
+        LCAibWVyZ2VfY29tbWl0IjogbnVsbCwgImlkIjogMjQ3fQ==
     http_version: 
-  recorded_at: Thu, 31 Jul 2014 00:21:58 GMT
+  recorded_at: Fri, 05 Sep 2014 01:42:22 GMT
 - request:
     method: post
     uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests
     body:
       encoding: UTF-8
-      string: '{"source":{"branch":{"name":"my-branch"}},"title":"My Pull Request
-        PR-123","description":"Test Pull Request"}'
+      string: '{"source":{"branch":{"name":"my-branch"}},"title":"Example pull request","description":"Test
+        Pull Request"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.9.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -194,33 +301,33 @@ http_interactions:
       Server:
       - nginx/1.5.10
       Date:
-      - Thu, 31 Jul 2014 00:21:59 GMT
+      - Fri, 05 Sep 2014 01:42:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '2892'
+      - '3109'
       Connection:
       - keep-alive
       Etag:
-      - '"3a517373c4452c7dfebd939b2d23cb2a"'
+      - '"82b763616e7b9598e945dc683c575e5c"'
       X-Render-Time:
-      - '0.24213886261'
+      - '0.233791828156'
       Content-Language:
       - en
       Location:
-      - https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240
+      - https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248
       X-Request-Count:
-      - '346'
+      - '476'
       X-Served-By:
-      - app16
+      - app18
       Vary:
       - Authorization, Accept-Language, Cookie
       X-Frame-Options:
       - SAMEORIGIN
       X-Static-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       X-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
@@ -228,47 +335,50 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"description": "Test Pull Request", "links": {"decline": {"href":
-        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/decline"},
-        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/commits"},
-        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240"},
-        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/comments"},
-        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/merge"},
-        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/240"},
-        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/activity"},
-        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/diff"},
-        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/approve"}},
-        "title": "My Pull Request PR-123", "close_source_branch": false, "reviewers":
+        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248/decline"},
+        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248/commits"},
+        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248/comments"},
+        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248/merge"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/248"},
+        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248/activity"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248/diff"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248/approve"}},
+        "title": "Example pull request", "close_source_branch": false, "reviewers":
         [], "destination": {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href":
         "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
         "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/874f077fd234/img/language-avatars/default_16.png"}},
         "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
         "branch": {"name": "master"}}, "reason": "", "closed_by": null, "source":
         {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
         "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/874f077fd234/img/language-avatars/default_16.png"}},
         "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
         "branch": {"name": "my-branch"}}, "state": "OPEN", "author": {"username":
         "jenkins-bitbucket", "display_name": "jenkins-bitbucket jenkins-bitbucket",
         "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
-        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F6a5c573024ea%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
-        "created_on": "2014-07-31T00:21:58.935141+00:00", "participants": [], "updated_on":
-        "2014-07-31T00:21:58.964602+00:00", "merge_commit": null, "id": 240}'
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket"}, "avatar": {"href":
+        "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F874f077fd234%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "created_on": "2014-09-05T01:42:22.435923+00:00", "participants": [], "updated_on":
+        "2014-09-05T01:42:22.467758+00:00", "merge_commit": null, "id": 248}'
     http_version: 
-  recorded_at: Thu, 31 Jul 2014 00:21:59 GMT
+  recorded_at: Fri, 05 Sep 2014 01:42:22 GMT
 - request:
     method: put
-    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248
     body:
       encoding: UTF-8
-      string: '{"title":"My Pull Request PR-123","description":"Test Pull Request\n*
+      string: '{"title":"✗ Example pull request","description":"Test Pull Request\n*
         * * * * * * * * * * * * * *\n# No job on Jenkins\n\nAs far as I can tell,
-        there isn''t a job on Jenkins for story number 123.\n\nTo fix this, run a
-        job on Jenkins that has \"123\" in the name.\n\n\nBrought to you by [Jenkins-Bitbucket](http://www.example.com/).
-        Feel free to [refresh this message](http://www.example.com//bitbucket/refresh/240)\n"}'
+        there isn''t a job on Jenkins for branch `my-branch`.\n\nTo fix this, run
+        a job on Jenkins for branch `my-branch`.\n\n\nBrought to you by [Jenkins-Bitbucket](http://www.example.com/).
+        Feel free to [refresh this message](http://www.example.com/bitbucket/refresh/248?back_to=https%3A%2F%2Fbitbucket.org%2Fjenkins-bitbucket%2Fjenkins-bitbucket%2Fpull-request%2F248)\n"}'
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.9.0
       Content-Type:
       - application/json
       Accept-Encoding:
@@ -283,7 +393,7 @@ http_interactions:
       Server:
       - nginx/1.5.10
       Date:
-      - Thu, 31 Jul 2014 00:21:59 GMT
+      - Fri, 05 Sep 2014 01:42:22 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -291,69 +401,118 @@ http_interactions:
       Connection:
       - keep-alive
       X-Render-Time:
-      - '0.195381164551'
+      - '0.250586032867'
       Content-Language:
       - en
       X-Request-Count:
-      - '271'
+      - '212'
       X-Served-By:
-      - app22
+      - app15
       Vary:
       - Authorization, Accept-Language, Cookie
       X-Frame-Options:
       - SAMEORIGIN
       X-Static-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       X-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
     body:
-      encoding: UTF-8
-      string: '{"description": "Test Pull Request\n* * * * * * * * * * * * * * *\n#
-        No job on Jenkins\n\nAs far as I can tell, there isn''t a job on Jenkins for
-        story number 123.\n\nTo fix this, run a job on Jenkins that has \"123\" in
-        the name.\n\n\nBrought to you by [Jenkins-Bitbucket](http://www.example.com/).
-        Feel free to [refresh this message](http://www.example.com//bitbucket/refresh/240)\n",
-        "links": {"decline": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/decline"},
-        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/commits"},
-        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240"},
-        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/comments"},
-        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/merge"},
-        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/240"},
-        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/activity"},
-        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/diff"},
-        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/approve"}},
-        "title": "My Pull Request PR-123", "close_source_branch": false, "reviewers":
-        [], "destination": {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href":
-        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
-        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
-        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
-        "branch": {"name": "master"}}, "reason": "", "closed_by": null, "source":
-        {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
-        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
-        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
-        "branch": {"name": "my-branch"}}, "state": "OPEN", "author": {"username":
-        "jenkins-bitbucket", "display_name": "jenkins-bitbucket jenkins-bitbucket",
-        "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
-        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F6a5c573024ea%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
-        "created_on": "2014-07-31T00:21:58.935141+00:00", "participants": [], "updated_on":
-        "2014-07-31T00:21:59.698404+00:00", "merge_commit": null, "id": 240}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkZXNjcmlwdGlvbiI6ICJUZXN0IFB1bGwgUmVxdWVzdFxuKiAqICogKiAq
+        ICogKiAqICogKiAqICogKiAqICpcbiMgTm8gam9iIG9uIEplbmtpbnNcblxu
+        QXMgZmFyIGFzIEkgY2FuIHRlbGwsIHRoZXJlIGlzbid0IGEgam9iIG9uIEpl
+        bmtpbnMgZm9yIGJyYW5jaCBgbXktYnJhbmNoYC5cblxuVG8gZml4IHRoaXMs
+        IHJ1biBhIGpvYiBvbiBKZW5raW5zIGZvciBicmFuY2ggYG15LWJyYW5jaGAu
+        XG5cblxuQnJvdWdodCB0byB5b3UgYnkgW0plbmtpbnMtQml0YnVja2V0XSho
+        dHRwOi8vd3d3LmV4YW1wbGUuY29tLykuIEZlZWwgZnJlZSB0byBbcmVmcmVz
+        aCB0aGlzIG1lc3NhZ2VdKGh0dHA6Ly93d3cuZXhhbXBsZS5jb20vYml0YnVj
+        a2V0L3JlZnJlc2gvMjQ4P2JhY2tfdG89aHR0cHMlM0ElMkYlMkZiaXRidWNr
+        ZXQub3JnJTJGamVua2lucy1iaXRidWNrZXQlMkZqZW5raW5zLWJpdGJ1Y2tl
+        dCUyRnB1bGwtcmVxdWVzdCUyRjI0OClcbiIsICJsaW5rcyI6IHsiZGVjbGlu
+        ZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9y
+        ZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNr
+        ZXQvcHVsbHJlcXVlc3RzLzI0OC9kZWNsaW5lIn0sICJjb21taXRzIjogeyJo
+        cmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRv
+        cmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxs
+        cmVxdWVzdHMvMjQ4L2NvbW1pdHMifSwgInNlbGYiOiB7ImhyZWYiOiAiaHR0
+        cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtp
+        bnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8y
+        NDgifSwgImNvbW1lbnRzIjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1
+        Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9q
+        ZW5raW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVzdHMvMjQ4L2NvbW1lbnRzIn0s
+        ICJtZXJnZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3Jn
+        LzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1i
+        aXRidWNrZXQvcHVsbHJlcXVlc3RzLzI0OC9tZXJnZSJ9LCAiaHRtbCI6IHsi
+        aHJlZiI6ICJodHRwczovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQvcHVsbC1yZXF1ZXN0LzI0OCJ9LCAiYWN0
+        aXZpdHkiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8y
+        LjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0
+        YnVja2V0L3B1bGxyZXF1ZXN0cy8yNDgvYWN0aXZpdHkifSwgImRpZmYiOiB7
+        ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3Np
+        dG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1
+        bGxyZXF1ZXN0cy8yNDgvZGlmZiJ9LCAiYXBwcm92ZSI6IHsiaHJlZiI6ICJo
+        dHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVu
+        a2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3Rz
+        LzI0OC9hcHByb3ZlIn19LCAidGl0bGUiOiAi4pyXIEV4YW1wbGUgcHVsbCBy
+        ZXF1ZXN0IiwgImNsb3NlX3NvdXJjZV9icmFuY2giOiBmYWxzZSwgInJldmll
+        d2VycyI6IFtdLCAiZGVzdGluYXRpb24iOiB7ImNvbW1pdCI6IHsiaGFzaCI6
+        ICI3MzdkOWQxNDFjY2IiLCAibGlua3MiOiB7InNlbGYiOiB7ImhyZWYiOiAi
+        aHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2pl
+        bmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L2NvbW1pdC83Mzdk
+        OWQxNDFjY2IifX19LCAicmVwb3NpdG9yeSI6IHsibGlua3MiOiB7InNlbGYi
+        OiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVw
+        b3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0
+        In0sICJodG1sIjogeyJocmVmIjogImh0dHBzOi8vYml0YnVja2V0Lm9yZy9q
+        ZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiYXZhdGFy
+        IjogeyJocmVmIjogImh0dHBzOi8vZDNvYXhjNHE1azJkNnEuY2xvdWRmcm9u
+        dC5uZXQvbS84NzRmMDc3ZmQyMzQvaW1nL2xhbmd1YWdlLWF2YXRhcnMvZGVm
+        YXVsdF8xNi5wbmcifX0sICJmdWxsX25hbWUiOiAiamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQiLCAibmFtZSI6ICJqZW5raW5zLWJpdGJ1
+        Y2tldCJ9LCAiYnJhbmNoIjogeyJuYW1lIjogIm1hc3RlciJ9fSwgInJlYXNv
+        biI6ICIiLCAiY2xvc2VkX2J5IjogbnVsbCwgInNvdXJjZSI6IHsiY29tbWl0
+        IjogeyJoYXNoIjogImNhNDVjMTQzOTBmYSIsICJsaW5rcyI6IHsic2VsZiI6
+        IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBv
+        c2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQv
+        Y29tbWl0L2NhNDVjMTQzOTBmYSJ9fX0sICJyZXBvc2l0b3J5IjogeyJsaW5r
+        cyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQu
+        b3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lu
+        cy1iaXRidWNrZXQifSwgImh0bWwiOiB7ImhyZWYiOiAiaHR0cHM6Ly9iaXRi
+        dWNrZXQub3JnL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0
+        In0sICJhdmF0YXIiOiB7ImhyZWYiOiAiaHR0cHM6Ly9kM29heGM0cTVrMmQ2
+        cS5jbG91ZGZyb250Lm5ldC9tLzg3NGYwNzdmZDIzNC9pbWcvbGFuZ3VhZ2Ut
+        YXZhdGFycy9kZWZhdWx0XzE2LnBuZyJ9fSwgImZ1bGxfbmFtZSI6ICJqZW5r
+        aW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCIsICJuYW1lIjogImpl
+        bmtpbnMtYml0YnVja2V0In0sICJicmFuY2giOiB7Im5hbWUiOiAibXktYnJh
+        bmNoIn19LCAic3RhdGUiOiAiT1BFTiIsICJhdXRob3IiOiB7InVzZXJuYW1l
+        IjogImplbmtpbnMtYml0YnVja2V0IiwgImRpc3BsYXlfbmFtZSI6ICJqZW5r
+        aW5zLWJpdGJ1Y2tldCBqZW5raW5zLWJpdGJ1Y2tldCIsICJsaW5rcyI6IHsi
+        c2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIu
+        MC91c2Vycy9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiaHRtbCI6IHsiaHJlZiI6
+        ICJodHRwczovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNrZXQifSwg
+        ImF2YXRhciI6IHsiaHJlZiI6ICJodHRwczovL3NlY3VyZS5ncmF2YXRhci5j
+        b20vYXZhdGFyL2QxZGUwMTgwN2Y2YjM2NzcxOGEyMDc4NDVkZmM4YTY0P2Q9
+        aHR0cHMlM0ElMkYlMkZkM29heGM0cTVrMmQ2cS5jbG91ZGZyb250Lm5ldCUy
+        Rm0lMkY4NzRmMDc3ZmQyMzQlMkZpbWclMkZkZWZhdWx0X2F2YXRhciUyRjMy
+        JTJGdXNlcl9ibHVlLnBuZyZzPTMyIn19fSwgImNyZWF0ZWRfb24iOiAiMjAx
+        NC0wOS0wNVQwMTo0MjoyMi40MzU5MjMrMDA6MDAiLCAicGFydGljaXBhbnRz
+        IjogW10sICJ1cGRhdGVkX29uIjogIjIwMTQtMDktMDVUMDE6NDI6MjIuODcz
+        NDk5KzAwOjAwIiwgIm1lcmdlX2NvbW1pdCI6IG51bGwsICJpZCI6IDI0OH0=
     http_version: 
-  recorded_at: Thu, 31 Jul 2014 00:21:59 GMT
+  recorded_at: Fri, 05 Sep 2014 01:42:23 GMT
 - request:
     method: get
-    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/248
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.9
+      - Faraday v0.9.0
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -366,7 +525,7 @@ http_interactions:
       Server:
       - nginx/1.5.10
       Date:
-      - Thu, 31 Jul 2014 00:22:00 GMT
+      - Fri, 05 Sep 2014 01:42:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -374,58 +533,107 @@ http_interactions:
       Connection:
       - keep-alive
       X-Render-Time:
-      - '0.0795719623566'
+      - '0.0542809963226'
       Content-Language:
       - en
       X-Request-Count:
-      - '401'
+      - '244'
       X-Served-By:
-      - app15
+      - app22
       Vary:
       - Authorization, Accept-Language, Cookie
       X-Frame-Options:
       - SAMEORIGIN
       X-Static-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       X-Version:
-      - 6a5c573024ea
+      - 874f077fd234
       Strict-Transport-Security:
       - max-age=31536000
       X-Content-Type-Options:
       - nosniff
     body:
-      encoding: UTF-8
-      string: '{"description": "Test Pull Request\n* * * * * * * * * * * * * * *\n#
-        No job on Jenkins\n\nAs far as I can tell, there isn''t a job on Jenkins for
-        story number 123.\n\nTo fix this, run a job on Jenkins that has \"123\" in
-        the name.\n\n\nBrought to you by [Jenkins-Bitbucket](http://www.example.com/).
-        Feel free to [refresh this message](http://www.example.com//bitbucket/refresh/240)\n",
-        "links": {"decline": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/decline"},
-        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/commits"},
-        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240"},
-        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/comments"},
-        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/merge"},
-        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/240"},
-        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/activity"},
-        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/diff"},
-        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/240/approve"}},
-        "title": "My Pull Request PR-123", "close_source_branch": false, "reviewers":
-        [], "destination": {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href":
-        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
-        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
-        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
-        "branch": {"name": "master"}}, "reason": "", "closed_by": null, "source":
-        {"commit": {"hash": "ca45c14390fa", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/ca45c14390fa"}}},
-        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
-        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/6a5c573024ea/img/language-avatars/default_16.png"}},
-        "full_name": "jenkins-bitbucket/jenkins-bitbucket", "name": "jenkins-bitbucket"},
-        "branch": {"name": "my-branch"}}, "state": "OPEN", "author": {"username":
-        "jenkins-bitbucket", "display_name": "jenkins-bitbucket jenkins-bitbucket",
-        "links": {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
-        "avatar": {"href": "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2F6a5c573024ea%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
-        "created_on": "2014-07-31T00:21:58.935141+00:00", "participants": [], "updated_on":
-        "2014-07-31T00:21:59.698404+00:00", "merge_commit": null, "id": 240}'
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkZXNjcmlwdGlvbiI6ICJUZXN0IFB1bGwgUmVxdWVzdFxuKiAqICogKiAq
+        ICogKiAqICogKiAqICogKiAqICpcbiMgTm8gam9iIG9uIEplbmtpbnNcblxu
+        QXMgZmFyIGFzIEkgY2FuIHRlbGwsIHRoZXJlIGlzbid0IGEgam9iIG9uIEpl
+        bmtpbnMgZm9yIGJyYW5jaCBgbXktYnJhbmNoYC5cblxuVG8gZml4IHRoaXMs
+        IHJ1biBhIGpvYiBvbiBKZW5raW5zIGZvciBicmFuY2ggYG15LWJyYW5jaGAu
+        XG5cblxuQnJvdWdodCB0byB5b3UgYnkgW0plbmtpbnMtQml0YnVja2V0XSho
+        dHRwOi8vd3d3LmV4YW1wbGUuY29tLykuIEZlZWwgZnJlZSB0byBbcmVmcmVz
+        aCB0aGlzIG1lc3NhZ2VdKGh0dHA6Ly93d3cuZXhhbXBsZS5jb20vYml0YnVj
+        a2V0L3JlZnJlc2gvMjQ4P2JhY2tfdG89aHR0cHMlM0ElMkYlMkZiaXRidWNr
+        ZXQub3JnJTJGamVua2lucy1iaXRidWNrZXQlMkZqZW5raW5zLWJpdGJ1Y2tl
+        dCUyRnB1bGwtcmVxdWVzdCUyRjI0OClcbiIsICJsaW5rcyI6IHsiZGVjbGlu
+        ZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9y
+        ZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNr
+        ZXQvcHVsbHJlcXVlc3RzLzI0OC9kZWNsaW5lIn0sICJjb21taXRzIjogeyJo
+        cmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRv
+        cmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxs
+        cmVxdWVzdHMvMjQ4L2NvbW1pdHMifSwgInNlbGYiOiB7ImhyZWYiOiAiaHR0
+        cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtp
+        bnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8y
+        NDgifSwgImNvbW1lbnRzIjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1
+        Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9q
+        ZW5raW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVzdHMvMjQ4L2NvbW1lbnRzIn0s
+        ICJtZXJnZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3Jn
+        LzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1i
+        aXRidWNrZXQvcHVsbHJlcXVlc3RzLzI0OC9tZXJnZSJ9LCAiaHRtbCI6IHsi
+        aHJlZiI6ICJodHRwczovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQvcHVsbC1yZXF1ZXN0LzI0OCJ9LCAiYWN0
+        aXZpdHkiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8y
+        LjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0
+        YnVja2V0L3B1bGxyZXF1ZXN0cy8yNDgvYWN0aXZpdHkifSwgImRpZmYiOiB7
+        ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3Np
+        dG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1
+        bGxyZXF1ZXN0cy8yNDgvZGlmZiJ9LCAiYXBwcm92ZSI6IHsiaHJlZiI6ICJo
+        dHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVu
+        a2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3Rz
+        LzI0OC9hcHByb3ZlIn19LCAidGl0bGUiOiAi4pyXIEV4YW1wbGUgcHVsbCBy
+        ZXF1ZXN0IiwgImNsb3NlX3NvdXJjZV9icmFuY2giOiBmYWxzZSwgInJldmll
+        d2VycyI6IFtdLCAiZGVzdGluYXRpb24iOiB7ImNvbW1pdCI6IHsiaGFzaCI6
+        ICI3MzdkOWQxNDFjY2IiLCAibGlua3MiOiB7InNlbGYiOiB7ImhyZWYiOiAi
+        aHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2pl
+        bmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L2NvbW1pdC83Mzdk
+        OWQxNDFjY2IifX19LCAicmVwb3NpdG9yeSI6IHsibGlua3MiOiB7InNlbGYi
+        OiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVw
+        b3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0
+        In0sICJodG1sIjogeyJocmVmIjogImh0dHBzOi8vYml0YnVja2V0Lm9yZy9q
+        ZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiYXZhdGFy
+        IjogeyJocmVmIjogImh0dHBzOi8vZDNvYXhjNHE1azJkNnEuY2xvdWRmcm9u
+        dC5uZXQvbS84NzRmMDc3ZmQyMzQvaW1nL2xhbmd1YWdlLWF2YXRhcnMvZGVm
+        YXVsdF8xNi5wbmcifX0sICJmdWxsX25hbWUiOiAiamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQiLCAibmFtZSI6ICJqZW5raW5zLWJpdGJ1
+        Y2tldCJ9LCAiYnJhbmNoIjogeyJuYW1lIjogIm1hc3RlciJ9fSwgInJlYXNv
+        biI6ICIiLCAiY2xvc2VkX2J5IjogbnVsbCwgInNvdXJjZSI6IHsiY29tbWl0
+        IjogeyJoYXNoIjogImNhNDVjMTQzOTBmYSIsICJsaW5rcyI6IHsic2VsZiI6
+        IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBv
+        c2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQv
+        Y29tbWl0L2NhNDVjMTQzOTBmYSJ9fX0sICJyZXBvc2l0b3J5IjogeyJsaW5r
+        cyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQu
+        b3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lu
+        cy1iaXRidWNrZXQifSwgImh0bWwiOiB7ImhyZWYiOiAiaHR0cHM6Ly9iaXRi
+        dWNrZXQub3JnL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0
+        In0sICJhdmF0YXIiOiB7ImhyZWYiOiAiaHR0cHM6Ly9kM29heGM0cTVrMmQ2
+        cS5jbG91ZGZyb250Lm5ldC9tLzg3NGYwNzdmZDIzNC9pbWcvbGFuZ3VhZ2Ut
+        YXZhdGFycy9kZWZhdWx0XzE2LnBuZyJ9fSwgImZ1bGxfbmFtZSI6ICJqZW5r
+        aW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCIsICJuYW1lIjogImpl
+        bmtpbnMtYml0YnVja2V0In0sICJicmFuY2giOiB7Im5hbWUiOiAibXktYnJh
+        bmNoIn19LCAic3RhdGUiOiAiT1BFTiIsICJhdXRob3IiOiB7InVzZXJuYW1l
+        IjogImplbmtpbnMtYml0YnVja2V0IiwgImRpc3BsYXlfbmFtZSI6ICJqZW5r
+        aW5zLWJpdGJ1Y2tldCBqZW5raW5zLWJpdGJ1Y2tldCIsICJsaW5rcyI6IHsi
+        c2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIu
+        MC91c2Vycy9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiaHRtbCI6IHsiaHJlZiI6
+        ICJodHRwczovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNrZXQifSwg
+        ImF2YXRhciI6IHsiaHJlZiI6ICJodHRwczovL3NlY3VyZS5ncmF2YXRhci5j
+        b20vYXZhdGFyL2QxZGUwMTgwN2Y2YjM2NzcxOGEyMDc4NDVkZmM4YTY0P2Q9
+        aHR0cHMlM0ElMkYlMkZkM29heGM0cTVrMmQ2cS5jbG91ZGZyb250Lm5ldCUy
+        Rm0lMkY4NzRmMDc3ZmQyMzQlMkZpbWclMkZkZWZhdWx0X2F2YXRhciUyRjMy
+        JTJGdXNlcl9ibHVlLnBuZyZzPTMyIn19fSwgImNyZWF0ZWRfb24iOiAiMjAx
+        NC0wOS0wNVQwMTo0MjoyMi40MzU5MjMrMDA6MDAiLCAicGFydGljaXBhbnRz
+        IjogW10sICJ1cGRhdGVkX29uIjogIjIwMTQtMDktMDVUMDE6NDI6MjIuODcz
+        NDk5KzAwOjAwIiwgIm1lcmdlX2NvbW1pdCI6IG51bGwsICJpZCI6IDI0OH0=
     http_version: 
-  recorded_at: Thu, 31 Jul 2014 00:22:00 GMT
+  recorded_at: Fri, 05 Sep 2014 01:42:23 GMT
 recorded_with: VCR 2.9.2

@@ -37,7 +37,8 @@ class PullRequestAdjuster
   end
 
   def update_pull_request_with_job_status(pull_request, job)
-    adjusted_pull_request = message_adjuster.call(pull_request, job)
+    status_message = StatusMessage.new(pull_request, job)
+    adjusted_pull_request = message_adjuster.call(status_message)
     repo.update_pull_request \
       pull_request.id,
       adjusted_pull_request.fetch(:title),

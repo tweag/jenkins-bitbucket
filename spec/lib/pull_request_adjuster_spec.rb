@@ -18,7 +18,7 @@ describe PullRequestAdjuster do
 
   before do
     allow(message_adjuster).to receive(:call)
-      .with(pull_request, job).and_return(
+      .with(StatusMessage.new(pull_request, job)).and_return(
         title:       'adjusted title',
         description: 'adjusted description'
       )
