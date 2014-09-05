@@ -8,4 +8,8 @@ class StatusMessage < Struct.new(:pull_request, :job)
     # It can be a proc, regexp, or otherwise
     STORY_NUMBER_CHECKER === pull_request.title
   end
+
+  def shas_match?
+    job.sha == pull_request.sha
+  end
 end

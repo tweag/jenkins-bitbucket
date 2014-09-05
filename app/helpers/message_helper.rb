@@ -27,9 +27,7 @@ module MessageHelper
   end
 
   def checkmark_for_shas(message)
-    return unless message[:job] && message[:pull_request]
-
-    if message[:job].sha == message[:pull_request].sha
+    if message.shas_match?
       checkmark_good(t('messages.shas_match.good'))
     else
       checkmark_bad(t('messages.shas_match.bad'))
