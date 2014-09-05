@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe PullRequestAdjuster do
   subject do
     described_class.new(client,

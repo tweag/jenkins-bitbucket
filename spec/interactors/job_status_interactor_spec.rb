@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe JobStatusInteractor do
   describe '.call' do
     subject { described_class.new(jenkins: job_store, bitbucket: bitbucket) }

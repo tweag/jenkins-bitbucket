@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe JenkinsJob, type: :request do
   describe '.store' do
     let(:job) do

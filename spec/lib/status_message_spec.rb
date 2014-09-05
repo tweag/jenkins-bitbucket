@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe StatusMessage do
   subject(:status_message) { described_class.new(pull_request, job) }
 

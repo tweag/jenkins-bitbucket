@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe Util do
   describe '#normalize_sha' do
     subject { described_class.normalize_sha(sha) }

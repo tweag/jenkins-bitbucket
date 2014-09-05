@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe 'Bitbucket pull request is made', type: :request, vcr: true do
   before { decline_all_pull_requests }
 

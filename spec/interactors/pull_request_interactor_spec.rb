@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe PullRequestInteractor do
   describe '.call' do
     subject { described_class.new(bitbucket: bitbucket) }

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe PullRequestMessageAdjuster do
   let(:message_adjuster) do
     described_class.new(

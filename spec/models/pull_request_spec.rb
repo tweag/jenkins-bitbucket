@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe PullRequest, type: :model do
   subject { described_class.new(PullRequestExample.attributes(attrs)) }
 

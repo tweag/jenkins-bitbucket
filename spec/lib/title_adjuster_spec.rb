@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe TitleAdjuster do
   subject { title_adjuster.call(message) }
 

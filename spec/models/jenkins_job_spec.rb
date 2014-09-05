@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe JenkinsJob, type: :model do
   subject { described_class.new_from_jenkins(params) }
 

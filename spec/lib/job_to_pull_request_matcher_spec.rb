@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe JobToPullRequestMatcher do
   describe '#normalize_identifier' do
     subject { described_class.normalize_identifier(identifier) }

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe 'Jenkins job changes state', type: :request, vcr: true do
   let(:url) { 'http://example.com/jenkins/jobs/42' }
 
