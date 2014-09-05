@@ -1,6 +1,6 @@
 class StatusMessage < Struct.new(:pull_request, :job)
   def status
-    job.status || job.phase
+    job && (job.status || job.phase)
   end
 
   def title_contains_story_number?(checker = STORY_NUMBER_CHECKER)
@@ -11,5 +11,11 @@ class StatusMessage < Struct.new(:pull_request, :job)
 
   def shas_match?
     job.sha == pull_request.sha
+  end
+
+  def ready_to_review?
+    status == 'PASSING' &&
+      title_contains_story_number? &&
+      shas_match?
   end
 end

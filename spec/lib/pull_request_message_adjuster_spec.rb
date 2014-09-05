@@ -3,8 +3,11 @@ require 'spec_helper'
 describe PullRequestMessageAdjuster do
   let(:message_adjuster) do
     described_class.new(
-      separator: 'xxx',
-      renderer:  proc { |message| message.job.name }
+      separator:      'xxx',
+      renderer:       proc { |message| message.job.name },
+      title_adjuster: proc do |message|
+        "ADJUSTED #{message.pull_request.title}"
+      end
     )
   end
 
@@ -17,11 +20,12 @@ describe PullRequestMessageAdjuster do
       double(title: 'original title', description: original_description)
     end
 
+    let(:original_description) { '' }
+
+    its([:title]) { is_expected.to eq 'ADJUSTED original title' }
+
     context 'when a status is not already in the message' do
       let(:original_description) { 'my pull request' }
-
-      its([:title]) { is_expected.to eq 'original title' }
-
       its([:description]) do
         is_expected.to eq "my pull request\nxxx\nTHE-JOB-NAME"
       end
@@ -29,8 +33,6 @@ describe PullRequestMessageAdjuster do
 
     context 'when a status is already in the message' do
       let(:original_description) { "my pull request\nxxx\nOLD STATUS" }
-
-      its([:title]) { is_expected.to eq 'original title' }
 
       its([:description]) do
         is_expected.to eq "my pull request\nxxx\nTHE-JOB-NAME"

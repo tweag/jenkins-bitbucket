@@ -28,6 +28,7 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
       expect(updated_description).to include original_description
       expect(updated_description).to include '* * *'
       expect(updated_description).to include 'No job'
+      expect(updated_title).to match(/✗ /)
     end
   end
 
@@ -39,6 +40,7 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
       expect(updated_description).to include original_description
       expect(updated_description).to include '* * *'
       expect(updated_description).to include 'ABORTED'
+      expect(updated_title).to match(/✗ /)
     end
   end
 

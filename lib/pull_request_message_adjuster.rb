@@ -1,11 +1,15 @@
 class PullRequestMessageAdjuster
   DEFAULT_SEPARATOR = '* * * * * * * * * * * * * * *'
 
-  attr_accessor :separator, :renderer
+  attr_accessor :separator, :title_adjuster, :renderer
 
-  def initialize(separator: DEFAULT_SEPARATOR, renderer:)
-    self.separator = separator
-    self.renderer  = renderer
+  def initialize(
+    separator:      DEFAULT_SEPARATOR,
+    title_adjuster: TitleAdjuster.new,
+    renderer:)
+    self.separator      = separator
+    self.title_adjuster = title_adjuster
+    self.renderer       = renderer
   end
 
   def call(status_message)
@@ -33,6 +37,6 @@ class PullRequestMessageAdjuster
   end
 
   def adjust_title(status_message)
-    status_message.pull_request.title
+    title_adjuster.call(status_message)
   end
 end
