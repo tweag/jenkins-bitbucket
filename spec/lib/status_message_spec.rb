@@ -51,7 +51,6 @@ describe StatusMessage do
     end
   end
 
-
   describe '#shas_match?' do
     subject { status_message.shas_match? }
 
