@@ -30,6 +30,6 @@ module MessageHelper
   end
 
   def checkmark_bad(string)
-    ':x: ' + string
+    ':x:        ' + string
   end
 end
