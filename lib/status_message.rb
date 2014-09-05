@@ -14,7 +14,7 @@ class StatusMessage < Struct.new(:pull_request, :job)
   end
 
   def ready_to_review?
-    status == 'PASSING' &&
+    status == 'SUCCESS' &&
       title_contains_story_number? &&
       shas_match?
   end

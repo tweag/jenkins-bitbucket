@@ -63,7 +63,7 @@ describe StatusMessage do
 
     let(:pull_request_title) { 'a1' }
     let(:pull_request_sha)   { 'a' }
-    let(:job_status)         { 'PASSING' }
+    let(:job_status)         { 'SUCCESS' }
     let(:job_sha)            { 'a' }
 
     context 'when all is well' do
