@@ -15,10 +15,8 @@ module MessageHelper
     md_image(message.status, image_url(image))
   end
 
-  def checkmark_for_story_number(pull_request)
-    # rubocop:disable Style/CaseEquality
-    # It can be a proc, regexp, or otherwise
-    if STORY_NUMBER_CHECKER === pull_request.title
+  def checkmark_for_story_number(message)
+    if message.title_contains_story_number?
       checkmark_good(t('messages.pull_request_story_number.good'))
     else
       checkmark_bad(
