@@ -14,7 +14,7 @@ class PullRequestMessageAdjuster
       description: [
         description_without_status(status_message.pull_request.description),
         separator,
-        renderer.call(status_message.pull_request, status_message.job)
+        renderer.call(status_message)
       ].join("\n")
     }
   end

@@ -1,13 +1,8 @@
 class StatusMessageRenderer < Struct.new(:renderer)
-  def call(pull_request, job)
+  def call(message)
     renderer.render_to_string(
       'messages/message.markdown',
-      locals: {
-        message: {
-          pull_request: pull_request,
-          job:          job
-        }
-      },
+      locals: { message: message },
       layout: 'message.markdown'
     )
   end

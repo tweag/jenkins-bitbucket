@@ -4,20 +4,15 @@ module MessageHelper
                bitbucket_refresh_url(pull_request.id, back_to: pull_request.url)
   end
 
-  def status(job)
-    job.status || job.phase
-  end
-
-  def status_image(job)
-    status_name = status(job)
-    image = case status_name
+  def status_image(message)
+    image = case message.status
             when 'SUCCESS'                        then 'success.png'
             when 'FAILURE', 'UNSTABLE', 'ABORTED' then 'failure.png'
             when 'STARTED'                        then 'working.png'
             else ''
             end
 
-    md_image(status_name, image_url(image))
+    md_image(message.status, image_url(image))
   end
 
   def checkmark_for_story_number(pull_request)
