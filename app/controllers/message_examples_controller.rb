@@ -52,8 +52,8 @@ class MessageExamplesController < ApplicationController
       job = JenkinsJobExample.build(job_attrs) if job_attrs
 
       status_message = StatusMessage.new(pull_request, job)
-      status_message_text = status_message_renderer.call(status_message)
-      [example_name, status_message_text]
+      adjusted_pull_request = message_adjuster.call(status_message)
+      [example_name, adjusted_pull_request]
     end
   end
   # rubocop:enable Style/MethodLength
