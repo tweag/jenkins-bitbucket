@@ -506,4 +506,57 @@ http_interactions:
         "2014-07-31T00:22:02.523905+00:00", "merge_commit": null, "id": 241}'
     http_version: 
   recorded_at: Thu, 31 Jul 2014 00:22:03 GMT
+- request:
+    method: get
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/241/commits?pagelen=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Sat, 06 Sep 2014 19:21:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.0845658779144'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '222'
+      X-Served-By:
+      - app16
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - aa48ba0f8ff0
+      X-Version:
+      - 0ce8ed5e03b2
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"pagelen": 100, "values": [], "page": 1}'
+    http_version: 
+  recorded_at: Sat, 06 Sep 2014 19:21:44 GMT
 recorded_with: VCR 2.9.2

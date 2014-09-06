@@ -68,7 +68,7 @@ class MessageExamplesController < ApplicationController
       pull_request = PullRequestExample.build(pull_request_attrs)
       job = JenkinsJobExample.build(job_attrs) if job_attrs
 
-      status_message = StatusMessage.new(pull_request, job)
+      status_message = StatusMessage.new(pull_request, job, [])
       adjusted_pull_request = message_adjuster.call(status_message)
       [example_name, adjusted_pull_request]
     end

@@ -9,3 +9,6 @@ en:
     shas_match:
       good: Pull request and Jenkins job SHAs are up to date with each other
       bad: Pull request and Jenkins job SHAs do not match. One of them is out of date. Either update this pull request or rerun the Jenkins job.
+    no_wip_commits:
+      good: Pull request does not contain any WIP commits
+      bad: Pull request contains WIP commits

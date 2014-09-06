@@ -14,7 +14,6 @@ class BitbucketClient
   MAX_PULL_REQUEST_PAGE_LENGTH = 50
   MAX_COMMITS_PAGE_LENGTH      = 100
 
-
   def initialize
     @conn = Faraday.new(url: 'https://api.bitbucket.org') do |faraday|
       faraday.request :basic_auth, user, password
@@ -54,8 +53,9 @@ class BitbucketClient
   end
 
   def commits(pull_request)
-    response = get(pull_request.links.commits.href + "?pagelen=#{MAX_COMMITS_PAGE_LENGTH}")
-    response['values']
+    href = pull_request.links.commits.href
+    url = "#{href}?pagelen=#{MAX_COMMITS_PAGE_LENGTH}"
+    get(url)['values']
   end
 
   private

@@ -704,4 +704,73 @@ http_interactions:
         ICJtZXJnZV9jb21taXQiOiBudWxsLCAiaWQiOiAyNDl9
     http_version: 
   recorded_at: Fri, 05 Sep 2014 01:42:47 GMT
+- request:
+    method: get
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/249/commits?pagelen=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Sat, 06 Sep 2014 19:21:41 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.0890290737152'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '354'
+      X-Served-By:
+      - app17
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - aa48ba0f8ff0
+      X-Version:
+      - 0ce8ed5e03b2
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"pagelen": 100, "values": [{"hash": "3bbb2bfba48958867ad00ed2ccace5bd51f81b40",
+        "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/3bbb2bfba48958867ad00ed2ccace5bd51f81b40"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/3bbb2bfba48958867ad00ed2ccace5bd51f81b40/comments"},
+        "patch": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/patch/3bbb2bfba48958867ad00ed2ccace5bd51f81b40"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/commits/3bbb2bfba48958867ad00ed2ccace5bd51f81b40"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/diff/3bbb2bfba48958867ad00ed2ccace5bd51f81b40"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/3bbb2bfba48958867ad00ed2ccace5bd51f81b40/approve"}},
+        "repository": {"full_name": "jenkins-bitbucket/jenkins-bitbucket", "links":
+        {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/aa48ba0f8ff0/img/language-avatars/default_16.png"}},
+        "name": "jenkins-bitbucket"}, "author": {"raw": "Mike Nicholaides <mike.nicholaides@gmail.com>"},
+        "parents": [{"hash": "737d9d141ccb166b50d79df0e005acc5d88b3201", "links":
+        {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb166b50d79df0e005acc5d88b3201"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/commits/737d9d141ccb166b50d79df0e005acc5d88b3201"}}}],
+        "date": "2014-09-05T13:38:06+00:00", "message": "MY-BRANCH\n\nThese are the
+        changes that I''m making to my branch\n"}], "page": 1, "size": 1}'
+    http_version: 
+  recorded_at: Sat, 06 Sep 2014 19:21:41 GMT
 recorded_with: VCR 2.9.2

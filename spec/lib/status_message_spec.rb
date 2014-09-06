@@ -1,8 +1,9 @@
 describe StatusMessage do
-  subject(:status_message) { described_class.new(pull_request, job) }
+  subject(:status_message) { described_class.new(pull_request, job, commits) }
 
   let(:pull_request) { double }
   let(:job)          { double }
+  let(:commits)      { [] }
 
   describe '#status' do
     context 'when there is no job' do
@@ -67,6 +68,28 @@ describe StatusMessage do
     end
   end
 
+  describe '#no_wip_commits?' do
+    context 'when one of the commits is a wip commit' do
+      let(:commits) do
+        [
+          { 'message' => 'normal' },
+          { 'message' => 'a Wip commit' }
+        ]
+      end
+      it { is_expected.to_not be_no_wip_commits }
+    end
+
+    context 'when none of the commits are wip commits' do
+      let(:commits) { [{ 'message' => 'normal commit' }] }
+      it { is_expected.to be_no_wip_commits }
+    end
+
+    context 'when there are no commits' do
+      let(:commits) { [] }
+      it { is_expected.to be_no_wip_commits }
+    end
+  end
+
   describe '#ready_to_review?' do
     let(:job) { double(JenkinsJob, status: job_status, sha: job_sha) }
     let(:pull_request) do
@@ -105,6 +128,11 @@ describe StatusMessage do
 
     context 'when the branch does not contain a story number' do
       let(:pull_request_branch) { 'a' }
+      it { is_expected.to_not be_ready_to_review }
+    end
+
+    context 'when one of the commits is a wip commit' do
+      let(:commits) { [{ 'message' => 'WIP' }] }
       it { is_expected.to_not be_ready_to_review }
     end
   end

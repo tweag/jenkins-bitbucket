@@ -9,14 +9,17 @@ describe PullRequestAdjuster do
   let(:message_adjuster) { double }
   let(:pull_requests)    {}
   let(:job_store)        { {} }
+  let(:commits)          { double }
 
   let(:client) do
     double(pull_requests: pull_requests, update_pull_request: nil)
   end
 
   before do
+    allow(client).to receive(:commits).with(pull_request).and_return(commits)
+
     allow(message_adjuster).to receive(:call)
-      .with(StatusMessage.new(pull_request, job)).and_return(
+      .with(StatusMessage.new(pull_request, job, commits)).and_return(
         title:       'adjusted title',
         description: 'adjusted description'
       )
