@@ -1,5 +1,5 @@
 class MessageExamplesController < ApplicationController
-  # rubocop:disable Style/MethodLength
+  # rubocop:disable Metrics/MethodLength
   def index
     job_and_pull_request_data = {
       'No job' => [
@@ -73,5 +73,5 @@ class MessageExamplesController < ApplicationController
       [example_name, adjusted_pull_request]
     end
   end
-  # rubocop:enable Style/MethodLength
+  # rubocop:enable Metrics/MethodLength
 end
