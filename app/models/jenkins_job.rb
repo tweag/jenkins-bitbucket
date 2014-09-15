@@ -58,6 +58,14 @@ class JenkinsJob < ActiveRecord::Base
     status || phase
   end
 
+  def started?
+    build_status == 'STARTED'
+  end
+
+  def success?
+    build_status == 'SUCCESS'
+  end
+
   private
 
   def build(*args)

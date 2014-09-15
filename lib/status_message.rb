@@ -24,11 +24,11 @@ class StatusMessage < Struct.new(:pull_request, :job, :commits)
   end
 
   def ready_to_review_assuming_it_passes?
-    status == 'STARTED' && well_formed_pull_request?
+    started? && well_formed_pull_request?
   end
 
   def ready_to_review?
-    status == 'SUCCESS' &&
+    success? &&
       well_formed_pull_request? &&
       shas_match?
   end
@@ -37,5 +37,15 @@ class StatusMessage < Struct.new(:pull_request, :job, :commits)
     title_contains_story_number? &&
       branch_name_contains_story_number? &&
       no_wip_commits?
+  end
+
+  private
+
+  def started?
+    job && job.started?
+  end
+
+  def success?
+    job && job.success?
   end
 end

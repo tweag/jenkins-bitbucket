@@ -86,7 +86,10 @@ describe StatusMessage do
   end
 
   describe '#ready_to_review?' do
-    let(:job) { double(JenkinsJob, build_status: job_status, sha: job_sha) }
+    let(:job) do
+      double(JenkinsJob, started?: false, success?: success?, sha: job_sha)
+    end
+
     let(:pull_request) do
       double(
         PullRequest,
@@ -99,15 +102,15 @@ describe StatusMessage do
     let(:pull_request_title)  { 'a1' }
     let(:pull_request_branch) { 'a1' }
     let(:pull_request_sha)    { 'a' }
-    let(:job_status)          { 'SUCCESS' }
+    let(:success?)            { true }
     let(:job_sha)             { 'a' }
 
     context 'when all is well' do
       it { is_expected.to be_ready_to_review }
     end
 
-    context 'when the job is not passing' do
-      let(:job_status) { 'ABORTED' }
+    context 'when the job is not started' do
+      let(:success?) { false }
       it { is_expected.to_not be_ready_to_review }
     end
 
@@ -133,7 +136,10 @@ describe StatusMessage do
   end
 
   describe '#ready_to_review_assuming_it_passes?' do
-    let(:job) { double(JenkinsJob, build_status: job_status, sha: job_sha) }
+    let(:job) do
+      double(JenkinsJob, success?: false, started?: started?, sha: job_sha)
+    end
+
     let(:pull_request) do
       double(
         PullRequest,
@@ -146,15 +152,15 @@ describe StatusMessage do
     let(:pull_request_title)  { 'a1' }
     let(:pull_request_branch) { 'a1' }
     let(:pull_request_sha)    { 'a' }
-    let(:job_status)          { 'STARTED' }
+    let(:started?)            { true }
     let(:job_sha)             { 'a' }
 
     context 'when all is well' do
       it { is_expected.to be_ready_to_review_assuming_it_passes }
     end
 
-    context 'when the job is not passing' do
-      let(:job_status) { 'ABORTED' }
+    context 'when the job is running' do
+      let(:started?) { false }
       it { is_expected.to_not be_ready_to_review_assuming_it_passes }
     end
 
