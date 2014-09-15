@@ -1,5 +1,5 @@
 <%=
-  if message[:job]
+  if message.job
     render 'messages/job_status.markdown', message: message
   else
     render 'messages/no_job.markdown', message: message
