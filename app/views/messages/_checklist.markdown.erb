@@ -1,4 +1,4 @@
-<% if message.job %>
+<% if message.job? %>
 * <%= checkmark_for :shas_match, message %>
 <% end %>
 * <%= checkmark_for :title_contains_story_number, message %>

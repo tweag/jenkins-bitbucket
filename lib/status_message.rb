@@ -1,7 +1,7 @@
 # rubocop:disable Style/CaseEquality
 class StatusMessage < Struct.new(:pull_request, :job, :commits)
   def status
-    job && job.build_status
+    job.build_status
   end
 
   def title_contains_story_number?(checker = STORY_NUMBER_CHECKER)
@@ -39,13 +39,35 @@ class StatusMessage < Struct.new(:pull_request, :job, :commits)
       no_wip_commits?
   end
 
+  def job?
+    self[:job]
+  end
+
+  def job
+    super || NullJob.new
+  end
+
+  class NullJob
+    def build_status
+    end
+
+    def success?
+    end
+
+    def started?
+    end
+
+    def sha
+    end
+  end
+
   private
 
   def started?
-    job && job.started?
+    job.started?
   end
 
   def success?
-    job && job.success?
+    job.success?
   end
 end
