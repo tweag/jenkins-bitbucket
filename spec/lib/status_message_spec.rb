@@ -12,13 +12,8 @@ describe StatusMessage do
     end
 
     context 'when the job has a status' do
-      let(:job) { double(status: 'the-status') }
+      let(:job) { double(build_status: 'the-status') }
       its(:status) { is_expected.to eq 'the-status' }
-    end
-
-    context 'when the job has no status' do
-      let(:job) { double(status: nil, phase: 'the-phase') }
-      its(:status) { is_expected.to eq 'the-phase' }
     end
   end
 
@@ -91,7 +86,7 @@ describe StatusMessage do
   end
 
   describe '#ready_to_review?' do
-    let(:job) { double(JenkinsJob, status: job_status, sha: job_sha) }
+    let(:job) { double(JenkinsJob, build_status: job_status, sha: job_sha) }
     let(:pull_request) do
       double(
         PullRequest,
@@ -138,7 +133,7 @@ describe StatusMessage do
   end
 
   describe '#ready_to_review_assuming_it_passes?' do
-    let(:job) { double(JenkinsJob, status: job_status, sha: job_sha) }
+    let(:job) { double(JenkinsJob, build_status: job_status, sha: job_sha) }
     let(:pull_request) do
       double(
         PullRequest,

@@ -46,4 +46,21 @@ describe JenkinsJob, type: :model do
 
     its(:status) { is_expected.to be nil }
   end
+
+  describe '#build_status' do
+    context 'when the job has a status' do
+      subject do
+        JenkinsJobExample.build('build' => { 'status' => 'the-status' })
+      end
+      its(:build_status) { is_expected.to eq 'the-status' }
+    end
+
+    context 'when the job has no status' do
+      subject do
+        JenkinsJobExample.build(
+          'build' => { 'status' => nil, 'phase' => 'the-phase' })
+      end
+      its(:build_status) { is_expected.to eq 'the-phase' }
+    end
+  end
 end

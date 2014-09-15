@@ -1,7 +1,7 @@
 # rubocop:disable Style/CaseEquality
 class StatusMessage < Struct.new(:pull_request, :job, :commits)
   def status
-    job && (job.status || job.phase)
+    job && job.build_status
   end
 
   def title_contains_story_number?(checker = STORY_NUMBER_CHECKER)

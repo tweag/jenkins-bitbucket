@@ -54,6 +54,10 @@ class JenkinsJob < ActiveRecord::Base
     data.as_json(*args)
   end
 
+  def build_status
+    status || phase
+  end
+
   private
 
   def build(*args)
