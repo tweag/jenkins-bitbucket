@@ -17,6 +17,7 @@ gem 'memoist'
 gem 'puma'
 
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 group :production do
   gem 'rack-timeout'
