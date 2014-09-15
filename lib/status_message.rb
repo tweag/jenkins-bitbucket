@@ -23,11 +23,19 @@ class StatusMessage < Struct.new(:pull_request, :job, :commits)
     messages.grep(/\bWIP\b/i).empty?
   end
 
+  def ready_to_review_assuming_it_passes?
+    status == 'STARTED' && well_formed_pull_request?
+  end
+
   def ready_to_review?
     status == 'SUCCESS' &&
-      title_contains_story_number? &&
-      branch_name_contains_story_number? &&
-      no_wip_commits? &&
+      well_formed_pull_request? &&
       shas_match?
+  end
+
+  def well_formed_pull_request?
+    title_contains_story_number? &&
+      branch_name_contains_story_number? &&
+      no_wip_commits?
   end
 end
