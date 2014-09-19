@@ -1,0 +1,19 @@
+#!/bin/bash
+
+log () {
+  echo
+  echo "** $@"
+}
+
+set -e
+
+log "Installing bundler"
+gem install bundler --no-ri --no-rdoc
+
+log "Setting up the development database. create | schema load | seed"
+bundle exec rake db:setup
+log "Setting up the test database. create | schema load | seed"
+RAILS_ENV=test bundle exec rake db:setup
+
+log "Running tests"
+bundle exec rake
