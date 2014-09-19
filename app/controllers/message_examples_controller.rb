@@ -60,15 +60,23 @@ class MessageExamplesController < ApplicationController
       'No story number in title' => [
         { 'title' => 'PR no story number' },
         {}
+      ],
+      'Wip commits' => [
+        { 'title' => 'PR 123' },
+        {},
+        [{ 'message' => "WIP commit" }]
       ]
     }
     @messages = job_and_pull_request_data
-      .map do |example_name, (pull_request_attrs, job_attrs)|
+      .map do |example_name, (pull_request_attrs, job_attrs, commits)|
 
       pull_request = PullRequestExample.build(pull_request_attrs)
       job = JenkinsJobExample.build(job_attrs) if job_attrs
+      commits ||= [
+        { 'message' => "Some commit\n\nAnd this is the body\nThis is it" }
+      ]
 
-      status_message = StatusMessage.new(pull_request, job, [])
+      status_message = StatusMessage.new(pull_request, job, commits)
       adjusted_pull_request = message_adjuster.call(status_message)
       [example_name, adjusted_pull_request]
     end
