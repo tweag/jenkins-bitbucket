@@ -1,10 +1,13 @@
 language: ruby
-
 rvm:
-  - 2.1.2
-
+- 2.1.2
 before_script:
-  - bundle exec rake db:setup
-
+- bundle exec rake db:setup
 addons:
-  postgresql: "9.3"
+  postgresql: '9.3'
+deploy:
+  provider: heroku
+  api_key:
+    secure: GpF04a1iEMZBPXSTUqJiyojVDmrtBb+J8mlkTZbBtZv4OU3jU2ZBxa5eIwgznx6GadSbHj1By4ZJYiIbvODqHwU91lCPBALR5ejV4WJc9uY/j+ixiWoObImazCruhop3I6vOxy9iIPPjyU6j5raMJkFfCH23A2n61KVy/y6AV9E=
+  app: cebachus-jenkins-bitbucket
+  on: master
