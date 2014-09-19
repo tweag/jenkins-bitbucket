@@ -7,3 +7,11 @@
 -%>
 
 <%= render 'messages/checklist.markdown', message: message -%>
+
+## Commits
+
+<%- message.commits.each do |commit| -%>
+<%= code(commit['message']) %>
+
+---
+<%- end -%>

@@ -6,4 +6,8 @@ module MarkdownHelper
   def md_image(*args)
     '!' + md_link_to(*args)
   end
+
+  def code(text)
+    text.gsub(/^/, '    ').html_safe
+  end
 end

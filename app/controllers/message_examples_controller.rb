@@ -73,7 +73,7 @@ class MessageExamplesController < ApplicationController
       pull_request = PullRequestExample.build(pull_request_attrs)
       job = JenkinsJobExample.build(job_attrs) if job_attrs
       commits ||= [
-        { 'message' => "Some commit\n\nAnd this is the body\nThis is it" }
+        { 'message' => "Some commit\n\n& this is the body\nThis is it" }
       ]
 
       status_message = StatusMessage.new(pull_request, job, commits)
