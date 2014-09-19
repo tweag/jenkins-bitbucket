@@ -49,8 +49,9 @@ class PullRequestAdjuster
 
     repo.update_pull_request \
       pull_request.id,
-      adjusted_pull_request.fetch(:title),
-      adjusted_pull_request.fetch(:description)
+      title:               adjusted_pull_request.fetch(:title),
+      description:         adjusted_pull_request.fetch(:description),
+      close_source_branch: true
   end
   private :update_pull_request_with_job_status
 end

@@ -43,4 +43,11 @@ describe 'Bitbucket pull request is made', type: :request, vcr: true do
       expect(updated_title).to match(/✗ /)
     end
   end
+
+  it 'sets closes_source_branch to true' do
+    pull_request_notification_of(pull_request)
+    updated_pull_request = reload_pull_request(pull_request)
+
+    expect(updated_pull_request['close_source_branch']).to eq(true)
+  end
 end
