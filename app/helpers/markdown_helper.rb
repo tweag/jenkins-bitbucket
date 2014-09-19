@@ -7,7 +7,7 @@ module MarkdownHelper
     '!' + md_link_to(*args)
   end
 
-  def quote(text)
-    text.gsub(/^/, '> ').html_safe
+  def commit(text)
+    "### #{text}".gsub(/^/, '> ').html_safe
   end
 end
