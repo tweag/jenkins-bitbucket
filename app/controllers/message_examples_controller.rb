@@ -64,7 +64,7 @@ class MessageExamplesController < ApplicationController
       'Wip commits' => [
         { 'title' => 'PR 123' },
         {},
-        [{ 'message' => "WIP commit" }]
+        [{ 'message' => 'WIP commit' }]
       ]
     }
     @messages = job_and_pull_request_data
