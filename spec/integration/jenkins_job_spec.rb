@@ -1,4 +1,4 @@
-describe JenkinsJob, type: :request do
+describe JenkinsJob do
   describe '.store' do
     let(:job) do
       JenkinsJobExample.build(
@@ -43,7 +43,7 @@ describe JenkinsJob, type: :request do
   end
 
   describe '.[]' do
-    context "when a job with that identifier doesn't exist" do
+    context 'when a job with that identifier does not exist' do
       subject { described_class['my-branch'] }
       it { is_expected.to be nil }
     end

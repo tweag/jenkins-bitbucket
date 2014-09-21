@@ -9,14 +9,16 @@ describe 'Jenkins job changes state', type: :request, vcr: true do
 
   context 'and there is a pull request' do
     before { decline_all_pull_requests }
-    let!(:original_pull_request) { reset_pull_request }
+    let!(:pull_request) { reset_pull_request }
+
     let(:updated_description) do
-      reload_pull_request(original_pull_request).description
+      reload_pull_request(pull_request).description
     end
 
     context 'and there is no jenkins status in it' do
       it 'leaves a comment on it' do
         job_changes_state 'SUCCESS'
+
         expect(updated_description).to include '* * *'
         expect(updated_description).to include 'SUCCESS'
         expect(updated_description).to include url

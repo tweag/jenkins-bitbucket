@@ -7,6 +7,9 @@ log () {
 
 set -e
 
+log "Installing dependencies"
+brew install phantomjs
+
 log "Installing bundler"
 gem install bundler --no-ri --no-rdoc
 

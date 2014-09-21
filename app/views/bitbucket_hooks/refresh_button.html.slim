@@ -1,6 +1,7 @@
-| Refreshing...
-
 = form_tag nil, method: :post
   input type='hidden' name='back_to' value=(params[:back_to] || request.referer)
+  noscript: button Submit
+
 javascript:
   document.forms[0].submit()
+  document.write('Refreshing...')
