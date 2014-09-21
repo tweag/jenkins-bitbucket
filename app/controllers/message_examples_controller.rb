@@ -68,7 +68,8 @@ class MessageExamplesController < ApplicationController
 
       pull_request_attrs = example[:pull_request] || { 'title' => 'PR 123' }
 
-      commits = example[:commits] || [{ 'message' => "Some commit\n\n& this is the body\nThis is it" }]
+      commits = example[:commits] ||
+        [{ 'message' => "Some commit\n\n& this is the body\nThis is it" }]
 
       pull_request = PullRequestExample.build(pull_request_attrs)
       if example[:ebedded_data]
