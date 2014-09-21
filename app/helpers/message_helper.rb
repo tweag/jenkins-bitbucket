@@ -32,4 +32,8 @@ module MessageHelper
   def checkmark_bad(string)
     ':x:        ' + string
   end
+
+  def data(message)
+    EmbeddedData.dump(message.pull_request.embedded_data).html_safe
+  end
 end

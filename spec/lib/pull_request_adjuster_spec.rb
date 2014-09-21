@@ -104,4 +104,5 @@ describe PullRequestAdjuster do
 
   describe '#update_status_from_pull_request_id'
   describe '#update_statuses_for_all_pull_requests'
+  describe '#set_automerge_for_pull_request'
 end

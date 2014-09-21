@@ -1,5 +1,6 @@
 = form_tag nil, method: :post
   input type='hidden' name='back_to' value=(params[:back_to] || request.referer)
+  input type='hidden' name='turn' value=params[:turn]
   noscript: button Submit
 
 javascript:

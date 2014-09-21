@@ -16,4 +16,8 @@ class PullRequestInteractor
   def refresh_all
     @bitbucket.update_statuses_for_all_pull_requests
   end
+
+  def automerge(id, turn)
+    @bitbucket.set_automerge_for_pull_request(id, turn == 'on')
+  end
 end

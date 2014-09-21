@@ -36,6 +36,12 @@ class PullRequestAdjuster
     end
   end
 
+  def set_automerge_for_pull_request(id, on_or_off)
+    pull_request = repo.pull_request(id)
+    pull_request.embedded_data['automerge?'] = on_or_off
+    update_status_from_pull_request pull_request
+  end
+
   def update_pull_request_with_job_status(pull_request, job)
     commits = repo.commits(pull_request)
     status_message = StatusMessage.new(pull_request, job, commits)

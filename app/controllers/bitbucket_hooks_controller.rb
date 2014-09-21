@@ -24,7 +24,18 @@ class BitbucketHooksController < ApplicationController
     redirect_to :back
   end
 
+  def automerge
+    pull_request_interactor.automerge params[:id], params[:turn]
+
+    flash['success'] = 'Toggled automerge on pull request'
+    redirect_to(params[:back_to] || :back)
+  end
+
   def refresh_button
-    render layout: false
+    render 'shared/button', layout: false
+  end
+
+  def automerge_button
+    render 'shared/button', layout: false
   end
 end

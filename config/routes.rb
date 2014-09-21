@@ -14,6 +14,11 @@ Rails.application.routes.draw do
 
       post '/', to: 'bitbucket_hooks#refresh_all', as: :bitbucket_refresh_all
     end
+
+    scope :automerge do
+      post '/:id', to: 'bitbucket_hooks#automerge', as: :bitbucket_automerge
+      get  '/:id', to: 'bitbucket_hooks#automerge_button'
+    end
   end
 
   resources :message_examples, only: :index
