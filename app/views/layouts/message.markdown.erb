@@ -1,12 +1,12 @@
 <% if message.pull_request.embedded_data['automerge?'] -%>
 
 If you are reading this, you can merge this pull request if it's ready.
-<%= md_link_to "[toggle]", bitbucket_automerge_url(message.pull_request.id, turn: :off) %>
+<%= automerge_link(message.pull_request, :off) %>
 
 <% else %>
 
 The pull request author will merge this when it's ready.
-<%= md_link_to "[toggle]", bitbucket_automerge_url(message.pull_request.id, turn: :on) %>
+<%= automerge_link(message.pull_request, :on) %>
 
 <% end %>
 

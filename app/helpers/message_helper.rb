@@ -4,6 +4,11 @@ module MessageHelper
                bitbucket_refresh_url(pull_request.id, back_to: pull_request.url)
   end
 
+  def automerge_link(pull_request, on_or_off)
+    md_link_to "[toggle]",
+      bitbucket_automerge_url(pull_request.id, turn: on_or_off, back_to: pull_request.url)
+  end
+
   def status_image(message)
     image = case message.status
             when 'SUCCESS'                        then 'success.png'
