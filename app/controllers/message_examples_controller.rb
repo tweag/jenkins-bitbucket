@@ -1,5 +1,6 @@
 class MessageExamplesController < ApplicationController
   # rubocop:disable Metrics/MethodLength
+  # rubocop:disable Metrics/AbcSize
   def index
     job_and_pull_request_data = {
       'No job' => {
@@ -64,12 +65,14 @@ class MessageExamplesController < ApplicationController
       }
     }
     @messages = job_and_pull_request_data
-      .map do |example_name, example|
+                .map do |example_name, example|
 
       pull_request_attrs = example[:pull_request] || { 'title' => 'PR 123' }
 
       commits = example[:commits] ||
-        [{ 'message' => "Some commit\n\n& this is the body\nThis is it" }]
+                [{
+                  'message' => "Some commit\n\n& this is the body\nThis is it"
+                }]
 
       pull_request = PullRequestExample.build(pull_request_attrs)
       if example[:ebedded_data]
@@ -83,5 +86,6 @@ class MessageExamplesController < ApplicationController
       [example_name, adjusted_pull_request]
     end
   end
+  # rubocop:enable Metrics/AbcSize
   # rubocop:enable Metrics/MethodLength
 end
