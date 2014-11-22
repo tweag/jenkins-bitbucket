@@ -198,7 +198,7 @@ DEPENDENCIES
   pry-rails
   puma
   rack-timeout
-  rails (~> 4.1.6)
+  rails (~> 4.1.7)
   rails_12factor
   rspec-its
   rspec-rails
