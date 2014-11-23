@@ -53,7 +53,7 @@ describe PullRequestAdjuster do
         subject.update_status job
 
         expect(client).to have_received(:update_pull_request)
-          .with(42, 'adjusted title', 'adjusted description')
+          .with(42, hash_including(description: 'adjusted description'))
       end
     end
 
@@ -78,27 +78,13 @@ describe PullRequestAdjuster do
   describe '#update_status_from_pull_request' do
     let(:pull_request) { double(id: 42, identifier: 'my-branch') }
     let(:job_store) { { 'my-branch' => job } }
+    let(:job) { double }
 
-    context 'when there is no matching job' do
-      let(:job) {}
+    it 'updates the status of the pull request' do
+      subject.update_status_from_pull_request pull_request
 
-      it 'updates the status of the pull request' do
-        subject.update_status_from_pull_request pull_request
-
-        expect(client).to have_received(:update_pull_request)
-          .with(42, 'adjusted title', 'adjusted description')
-      end
-    end
-
-    context 'when there is a matching job' do
-      let(:job) { double }
-
-      it 'updates the status of the pull request' do
-        subject.update_status_from_pull_request pull_request
-
-        expect(client).to have_received(:update_pull_request)
-          .with(42, 'adjusted title', 'adjusted description')
-      end
+      expect(client).to have_received(:update_pull_request)
+        .with(42, hash_including(close_source_branch: true))
     end
   end
 

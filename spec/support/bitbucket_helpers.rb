@@ -28,8 +28,8 @@ module BitbucketHelpers
   def update_pull_request_description(pull_request, new_description)
     bitbucket.update_pull_request(
       pull_request.id,
-      pull_request.title,
-      new_description
+      title:       pull_request.title,
+      description: new_description
     )
   end
 end
