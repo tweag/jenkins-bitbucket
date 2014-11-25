@@ -62,12 +62,21 @@ class MessageExamplesController < ApplicationController
       },
       'Automerge on' => {
         ebedded_data: { 'automerge?' => true }
+      },
+      'No image in message' => {
+        pull_request: {
+          'description' => 'No image here'
+        }
       }
     }
     @messages = job_and_pull_request_data
                 .map do |example_name, example|
 
-      pull_request_attrs = example[:pull_request] || { 'title' => 'PR 123' }
+      pull_request_attrs = example[:pull_request] || {}
+      pull_request_attrs['title'] ||= 'PR 123'
+      pull_request_attrs['description'] ||=
+        "Here is my PR ! \n" \
+        '![alt text](https://example.com/image.png)'
 
       commits = example[:commits] ||
                 [{

@@ -12,3 +12,6 @@ en:
     no_wip_commits:
       good: Pull request does not contain any WIP commits
       bad: Pull request contains WIP commits
+    description_contains_image:
+      good: Pull request description contains image or screenshot
+      bad: Pull request description does not contain image or screenshot

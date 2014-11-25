@@ -85,6 +85,24 @@ describe StatusMessage do
     end
   end
 
+  describe '#description_contains_image?' do
+    subject { status_message.description_contains_image? }
+    let(:pull_request) { double(description: description) }
+
+    context 'when the description contains an image' do
+      let(:description) do
+        '![some alt text](http://prompt.works/some-image.webm)'
+      end
+      it { is_expected.to be_truthy }
+    end
+    context 'when the description does not contain an image' do
+      let(:description) do
+        '[some link text](http://prompt.works/some-image.webm)'
+      end
+      it { is_expected.to be_falsy }
+    end
+  end
+
   describe '#ready_to_review?' do
     let(:job) do
       double(JenkinsJob, started?: false, success?: success?, sha: job_sha)
@@ -93,17 +111,19 @@ describe StatusMessage do
     let(:pull_request) do
       double(
         PullRequest,
-        title:  pull_request_title,
-        sha:    pull_request_sha,
-        branch: pull_request_branch
+        title:       pull_request_title,
+        sha:         pull_request_sha,
+        branch:      pull_request_branch,
+        description: pull_request_description
       )
     end
 
-    let(:pull_request_title)  { 'a1' }
-    let(:pull_request_branch) { 'a1' }
-    let(:pull_request_sha)    { 'a' }
-    let(:success?)            { true }
-    let(:job_sha)             { 'a' }
+    let(:pull_request_title)       { 'a1' }
+    let(:pull_request_branch)      { 'a1' }
+    let(:pull_request_sha)         { 'a' }
+    let(:pull_request_description) { '![alt](http://url)' }
+    let(:success?)                 { true }
+    let(:job_sha)                  { 'a' }
 
     context 'when all is well' do
       it { is_expected.to be_ready_to_review }
@@ -133,6 +153,11 @@ describe StatusMessage do
       let(:commits) { [{ 'message' => 'WIP' }] }
       it { is_expected.to_not be_ready_to_review }
     end
+
+    context 'when the description does not contain an image' do
+      let(:pull_request_description) { 'no image' }
+      it { is_expected.to_not be_ready_to_review }
+    end
   end
 
   describe '#ready_to_review_assuming_it_passes?' do
@@ -143,17 +168,19 @@ describe StatusMessage do
     let(:pull_request) do
       double(
         PullRequest,
-        title:  pull_request_title,
-        sha:    pull_request_sha,
-        branch: pull_request_branch
+        title:       pull_request_title,
+        sha:         pull_request_sha,
+        branch:      pull_request_branch,
+        description: pull_request_description
       )
     end
 
-    let(:pull_request_title)  { 'a1' }
-    let(:pull_request_branch) { 'a1' }
-    let(:pull_request_sha)    { 'a' }
-    let(:started?)            { true }
-    let(:job_sha)             { 'a' }
+    let(:pull_request_title)       { 'a1' }
+    let(:pull_request_branch)      { 'a1' }
+    let(:pull_request_sha)         { 'a' }
+    let(:pull_request_description) { '![alt](http://url)' }
+    let(:started?)                 { true }
+    let(:job_sha)                  { 'a' }
 
     context 'when all is well' do
       it { is_expected.to be_ready_to_review_assuming_it_passes }
@@ -181,6 +208,11 @@ describe StatusMessage do
 
     context 'when one of the commits is a wip commit' do
       let(:commits) { [{ 'message' => 'WIP' }] }
+      it { is_expected.to_not be_ready_to_review_assuming_it_passes }
+    end
+
+    context 'when the description does not contain an image' do
+      let(:pull_request_description) { 'no image' }
       it { is_expected.to_not be_ready_to_review_assuming_it_passes }
     end
   end
