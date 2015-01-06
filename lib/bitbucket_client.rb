@@ -33,6 +33,14 @@ class BitbucketClient
     build_pull_request(pull_request_attrs)
   end
 
+  def create_pull_request(params)
+    pull_request_attrs = post(
+      pull_requests_path,
+      params
+    )
+    build_pull_request(pull_request_attrs)
+  end
+
   def update_pull_request(id, update_pull_request_values)
     put(pull_request_path(id), update_pull_request_values)
   end

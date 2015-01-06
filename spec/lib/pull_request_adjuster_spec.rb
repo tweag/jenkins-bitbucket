@@ -23,6 +23,9 @@ describe PullRequestAdjuster do
         title:       'adjusted title',
         description: 'adjusted description'
       )
+
+    allow(message_adjuster).to receive(:description_without_status)
+      .and_return(nil)
   end
 
   describe '#update_status' do
@@ -76,7 +79,9 @@ describe PullRequestAdjuster do
   end
 
   describe '#update_status_from_pull_request' do
-    let(:pull_request) { double(id: 42, identifier: 'my-branch') }
+    let(:pull_request) do
+      double(id: 42, identifier: 'my-branch', description: nil)
+    end
     let(:job_store) { { 'my-branch' => job } }
     let(:job) { double }
 

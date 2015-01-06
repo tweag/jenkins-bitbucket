@@ -21,7 +21,8 @@ class PullRequestMessageAdjuster
 
   def adjust_description(status_message)
     status_message.pull_request.description =
-      description_without_status(status_message.pull_request.description)
+      description_without_status(status_message.original_description)
+
     [
       status_message.pull_request.description,
       separator,
