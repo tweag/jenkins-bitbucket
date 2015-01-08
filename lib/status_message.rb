@@ -1,5 +1,8 @@
 # rubocop:disable Style/CaseEquality
-class StatusMessage < Struct.new(:pull_request, :job, :commits)
+class StatusMessage < Struct.new(:pull_request,
+                                 :job,
+                                 :commits,
+                                 :original_description)
   def status
     job && job.build_status
   end
@@ -24,7 +27,7 @@ class StatusMessage < Struct.new(:pull_request, :job, :commits)
   end
 
   def description_contains_image?
-    pull_request.description =~ /!\[/
+    original_description =~ /!\[/
   end
 
   def ready_to_review_assuming_it_passes?

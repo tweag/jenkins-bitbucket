@@ -1,9 +1,12 @@
 describe StatusMessage do
-  subject(:status_message) { described_class.new(pull_request, job, commits) }
+  subject(:status_message) do
+    described_class.new(pull_request, job, commits, original_description)
+  end
 
-  let(:pull_request) { double }
-  let(:job)          { double }
-  let(:commits)      { [] }
+  let(:pull_request)         { double }
+  let(:job)                  { double }
+  let(:commits)              { [] }
+  let(:original_description) { '' }
 
   describe '#status' do
     context 'when there is no job' do
@@ -87,16 +90,15 @@ describe StatusMessage do
 
   describe '#description_contains_image?' do
     subject { status_message.description_contains_image? }
-    let(:pull_request) { double(description: description) }
 
     context 'when the description contains an image' do
-      let(:description) do
+      let(:original_description) do
         '![some alt text](http://prompt.works/some-image.webm)'
       end
       it { is_expected.to be_truthy }
     end
     context 'when the description does not contain an image' do
-      let(:description) do
+      let(:original_description) do
         '[some link text](http://prompt.works/some-image.webm)'
       end
       it { is_expected.to be_falsy }
@@ -111,19 +113,18 @@ describe StatusMessage do
     let(:pull_request) do
       double(
         PullRequest,
-        title:       pull_request_title,
-        sha:         pull_request_sha,
-        branch:      pull_request_branch,
-        description: pull_request_description
+        title:  pull_request_title,
+        sha:    pull_request_sha,
+        branch: pull_request_branch
       )
     end
 
-    let(:pull_request_title)       { 'a1' }
-    let(:pull_request_branch)      { 'a1' }
-    let(:pull_request_sha)         { 'a' }
-    let(:pull_request_description) { '![alt](http://url)' }
-    let(:success?)                 { true }
-    let(:job_sha)                  { 'a' }
+    let(:original_description) { '![alt](http://url)' }
+    let(:pull_request_title)   { 'a1' }
+    let(:pull_request_branch)  { 'a1' }
+    let(:pull_request_sha)     { 'a' }
+    let(:success?)             { true }
+    let(:job_sha)              { 'a' }
 
     context 'when all is well' do
       it { is_expected.to be_ready_to_review }
@@ -155,7 +156,7 @@ describe StatusMessage do
     end
 
     context 'when the description does not contain an image' do
-      let(:pull_request_description) { 'no image' }
+      let(:original_description) { 'no image' }
       it { is_expected.to_not be_ready_to_review }
     end
   end
@@ -168,19 +169,18 @@ describe StatusMessage do
     let(:pull_request) do
       double(
         PullRequest,
-        title:       pull_request_title,
-        sha:         pull_request_sha,
-        branch:      pull_request_branch,
-        description: pull_request_description
+        title:  pull_request_title,
+        sha:    pull_request_sha,
+        branch: pull_request_branch
       )
     end
 
-    let(:pull_request_title)       { 'a1' }
-    let(:pull_request_branch)      { 'a1' }
-    let(:pull_request_sha)         { 'a' }
-    let(:pull_request_description) { '![alt](http://url)' }
-    let(:started?)                 { true }
-    let(:job_sha)                  { 'a' }
+    let(:original_description) { '![alt](http://url)' }
+    let(:pull_request_title)   { 'a1' }
+    let(:pull_request_branch)  { 'a1' }
+    let(:pull_request_sha)     { 'a' }
+    let(:started?)             { true }
+    let(:job_sha)              { 'a' }
 
     context 'when all is well' do
       it { is_expected.to be_ready_to_review_assuming_it_passes }
@@ -212,7 +212,7 @@ describe StatusMessage do
     end
 
     context 'when the description does not contain an image' do
-      let(:pull_request_description) { 'no image' }
+      let(:original_description) { 'no image' }
       it { is_expected.to_not be_ready_to_review_assuming_it_passes }
     end
   end

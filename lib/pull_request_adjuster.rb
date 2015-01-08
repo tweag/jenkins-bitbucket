@@ -42,9 +42,9 @@ class PullRequestAdjuster
     update_status_from_pull_request pull_request
   end
 
+  # Rubocop
   def update_pull_request_with_job_status(pull_request, job)
-    commits = repo.commits(pull_request)
-    status_message = StatusMessage.new(pull_request, job, commits)
+    status_message = build_status_message(pull_request, job)
     adjusted_pull_request = message_adjuster.call(status_message)
 
     repo.update_pull_request \
@@ -53,5 +53,16 @@ class PullRequestAdjuster
       description:         adjusted_pull_request.fetch(:description),
       close_source_branch: true
   end
-  private :update_pull_request_with_job_status
+
+  def build_status_message(pull_request, job)
+    commits = repo.commits(pull_request)
+    original_description = \
+      message_adjuster.description_without_status(pull_request.description)
+    StatusMessage.new(pull_request,
+                      job,
+                      commits,
+                      original_description)
+  end
+
+  private :update_pull_request_with_job_status, :build_status_message
 end

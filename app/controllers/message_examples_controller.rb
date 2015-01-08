@@ -90,7 +90,11 @@ class MessageExamplesController < ApplicationController
 
       job = JenkinsJobExample.build(example[:job]) if example[:job]
 
-      status_message = StatusMessage.new(pull_request, job, commits)
+      original_description = \
+        message_adjuster.description_without_status(pull_request.description)
+
+      status_message = \
+        StatusMessage.new(pull_request, job, commits, original_description)
       adjusted_pull_request = message_adjuster.call(status_message)
       [example_name, adjusted_pull_request]
     end

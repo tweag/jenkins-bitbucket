@@ -12,15 +12,17 @@ describe PullRequestMessageAdjuster do
 
   describe '#call' do
     subject(:adjusted_message) do
-      message_adjuster.call(StatusMessage.new(pull_request, job))
+      status_message = StatusMessage.new(pull_request,
+                                         job,
+                                         [],
+                                         original_description)
+      message_adjuster.call(status_message)
     end
 
     let(:job) { JenkinsJobExample.build('name' => 'THE-JOB-NAME') }
 
     let(:pull_request) do
-      PullRequest.new(
-        title: 'original title', description: original_description
-      )
+      PullRequest.new(title: 'original title')
     end
 
     let(:original_description) { '' }

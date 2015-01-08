@@ -4,6 +4,7 @@ module BitbucketHelpers
   end
 
   delegate :reset_pull_request, to: :bitbucket
+  delegate :create_pull_request, to: :bitbucket
 
   def decline_all_pull_requests
     bitbucket.pull_requests.each do |pull_request|
