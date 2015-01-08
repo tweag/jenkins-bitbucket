@@ -1,0 +1,1 @@
+IMAGE_REQUIRED = ENV['IMAGE_REQUIRED'] == 'true'

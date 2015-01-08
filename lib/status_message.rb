@@ -1,8 +1,9 @@
 # rubocop:disable Style/CaseEquality
-class StatusMessage < Struct.new(:pull_request,
-                                 :job,
-                                 :commits,
-                                 :original_description)
+StatusMessage = Struct.new(:pull_request,
+                           :job,
+                           :commits,
+                           :original_description) do
+
   def status
     job && job.build_status
   end
@@ -26,7 +27,8 @@ class StatusMessage < Struct.new(:pull_request,
     messages.grep(/\bWIP\b/i).empty?
   end
 
-  def description_contains_image?
+  def no_missing_image?
+    return true unless IMAGE_REQUIRED
     original_description =~ /!\[/
   end
 
@@ -36,15 +38,15 @@ class StatusMessage < Struct.new(:pull_request,
 
   def ready_to_review?
     success? &&
-      well_formed_pull_request? &&
-      shas_match?
+    well_formed_pull_request? &&
+    shas_match?
   end
 
   def well_formed_pull_request?
     title_contains_story_number? &&
-      branch_name_contains_story_number? &&
-      no_wip_commits? &&
-      description_contains_image?
+    branch_name_contains_story_number? &&
+    no_wip_commits? &&
+    no_missing_image?
   end
 
   private
