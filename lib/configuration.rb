@@ -11,10 +11,12 @@ class Configuration
   end
 
   def self.from_env(env)
-    options = {}
-    env.each do |key, value|
-      options[key.downcase.to_sym] = value
+    new(downcase_hash_keys(env))
+  end
+
+  def self.downcase_hash_keys(hash)
+    hash.each_with_object({}) do |(key, value), new_hash|
+      new_hash[key.downcase] = value
     end
-    new(options)
   end
 end
