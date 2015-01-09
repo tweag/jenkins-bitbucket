@@ -12,6 +12,7 @@ gem 'hashie'
 gem 'slim-rails'
 gem 'memoist'
 gem 'puma'
+gem 'virtus'
 
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'

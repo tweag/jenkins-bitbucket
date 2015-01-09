@@ -8,12 +8,12 @@ StatusMessage = Struct.new(:pull_request,
     job && job.build_status
   end
 
-  def title_contains_story_number?(checker = STORY_NUMBER_CHECKER)
+  def title_contains_story_number?(checker = config.story_number_checker)
     # It can be a proc, regexp, or otherwise
     checker === pull_request.title
   end
 
-  def branch_name_contains_story_number?(checker = STORY_NUMBER_CHECKER)
+  def branch_name_contains_story_number?(checker = config.story_number_checker)
     # It can be a proc, regexp, or otherwise
     checker === pull_request.branch
   end
