@@ -94,7 +94,7 @@ describe StatusMessage do
     it { is_expected.to be_truthy }
 
     context 'when images are required' do
-      before { suppress_warnings { IMAGE_REQUIRED = true } }
+      before { Configuration.instance.image_required = true }
 
       context 'and the description contains an image' do
         let(:original_description) do

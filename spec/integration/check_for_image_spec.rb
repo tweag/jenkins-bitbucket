@@ -34,7 +34,7 @@ describe 'Jenkins job changes state', type: :request, vcr: true do
   end
 
   context 'when images are required' do
-    before { suppress_warnings { IMAGE_REQUIRED = true } }
+    before { Configuration.instance.image_required = true }
 
     it 'is marked as failing' do
       pull_request = create_pull_request 'Hi no image'

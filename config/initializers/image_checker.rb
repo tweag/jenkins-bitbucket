@@ -1,1 +1,1 @@
-IMAGE_REQUIRED = ENV['IMAGE_REQUIRED'] == 'true'
+Configuration.instance.image_required = ENV['IMAGE_REQUIRED'] == 'true'

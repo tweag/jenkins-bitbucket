@@ -28,7 +28,7 @@ StatusMessage = Struct.new(:pull_request,
   end
 
   def no_missing_image?
-    return true unless IMAGE_REQUIRED
+    return true unless config.image_required
     original_description =~ /!\[/
   end
 
@@ -57,5 +57,9 @@ StatusMessage = Struct.new(:pull_request,
 
   def success?
     job && job.success?
+  end
+
+  def config
+    Configuration.instance
   end
 end
