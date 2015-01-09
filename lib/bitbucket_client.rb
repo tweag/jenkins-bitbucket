@@ -66,6 +66,13 @@ class BitbucketClient
     get(url)['values']
   end
 
+  def diff(pull_request)
+    diff_href = pull_request.links.diff.href
+    response = @conn.get(diff_href, accept: 'text/plain')
+    diff_redirect = response.headers['Location']
+    @conn.get(diff_redirect, accept: 'text/plain').body
+  end
+
   private
 
   def build_pull_request(*args)

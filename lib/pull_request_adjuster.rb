@@ -58,10 +58,12 @@ class PullRequestAdjuster
     commits = repo.commits(pull_request)
     original_description = \
       message_adjuster.description_without_status(pull_request.description)
+    diff = repo.diff(pull_request)
     StatusMessage.new(pull_request,
                       job,
                       commits,
-                      original_description)
+                      original_description,
+                      diff)
   end
 
   private :update_pull_request_with_job_status, :build_status_message

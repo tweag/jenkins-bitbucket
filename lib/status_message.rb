@@ -2,7 +2,8 @@
 StatusMessage = Struct.new(:pull_request,
                            :job,
                            :commits,
-                           :original_description) do
+                           :original_description,
+                           :diff) do
 
   def status
     job && job.build_status
@@ -30,6 +31,10 @@ StatusMessage = Struct.new(:pull_request,
   def no_missing_image?
     return true unless config.image_required
     original_description =~ /!\[/
+  end
+
+  def no_merge_conflicts?
+    !(diff =~ /\<{7}.*\={7}.*\>{7}/m)
   end
 
   def ready_to_review_assuming_it_passes?
