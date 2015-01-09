@@ -26,16 +26,16 @@ describe 'Jenkins job changes state', type: :request, vcr: true do
     reload_pull_request(pull_request).title
   end
 
-  context 'when everything is passing' do
-    it 'is marked as passing' do
-      pull_request = create_pull_request 'Hi ![image](http://google.com)'
+  it 'is marked as passing' do
+    pull_request = create_pull_request 'Hi no image'
 
-      job_changes_state
-      expect(updated_title(pull_request)).to match(/✔︎/)
-    end
+    job_changes_state
+    expect(updated_title(pull_request)).to match(/✔︎/)
   end
 
-  context 'when there is no image' do
+  context 'when images are required' do
+    before { Configuration.instance.image_required = true }
+
     it 'is marked as failing' do
       pull_request = create_pull_request 'Hi no image'
 
@@ -44,6 +44,15 @@ describe 'Jenkins job changes state', type: :request, vcr: true do
 
       job_changes_state
       expect(updated_title(pull_request)).to match(/✗/)
+    end
+
+    context 'with an image' do
+      it 'is marked as passing' do
+        pull_request = create_pull_request 'Hi ![image](http://google.com)'
+
+        job_changes_state
+        expect(updated_title(pull_request)).to match(/✔︎/)
+      end
     end
   end
 end

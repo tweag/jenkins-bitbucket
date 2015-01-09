@@ -16,7 +16,9 @@ class MessageExamplesController < ApplicationController
         pull_request: {
           'title' => 'PR 123',
           'source' => {
-            'branch' => { 'name' => "story/#{STORY_NUMBER_EXAMPLE}" }
+            'branch' => {
+              'name' => "story/#{::Configuration.instance.story_number_example}"
+            }
           }
         },
         job:          {

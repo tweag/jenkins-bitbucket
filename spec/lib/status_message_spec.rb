@@ -88,20 +88,27 @@ describe StatusMessage do
     end
   end
 
-  describe '#description_contains_image?' do
-    subject { status_message.description_contains_image? }
+  describe '#no_missing_image?' do
+    subject { status_message.no_missing_image? }
 
-    context 'when the description contains an image' do
-      let(:original_description) do
-        '![some alt text](http://prompt.works/some-image.webm)'
+    it { is_expected.to be_truthy }
+
+    context 'when images are required' do
+      before { Configuration.instance.image_required = true }
+
+      context 'and the description contains an image' do
+        let(:original_description) do
+          '![some alt text](http://prompt.works/some-image.webm)'
+        end
+        it { is_expected.to be_truthy }
       end
-      it { is_expected.to be_truthy }
-    end
-    context 'when the description does not contain an image' do
-      let(:original_description) do
-        '[some link text](http://prompt.works/some-image.webm)'
+
+      context 'and the description does not contain an image' do
+        let(:original_description) do
+          '[some link text](http://prompt.works/some-image.webm)'
+        end
+        it { is_expected.to be_falsy }
       end
-      it { is_expected.to be_falsy }
     end
   end
 
@@ -157,7 +164,7 @@ describe StatusMessage do
 
     context 'when the description does not contain an image' do
       let(:original_description) { 'no image' }
-      it { is_expected.to_not be_ready_to_review }
+      it { is_expected.to be_ready_to_review }
     end
   end
 
@@ -213,7 +220,7 @@ describe StatusMessage do
 
     context 'when the description does not contain an image' do
       let(:original_description) { 'no image' }
-      it { is_expected.to_not be_ready_to_review_assuming_it_passes }
+      it { is_expected.to be_ready_to_review_assuming_it_passes }
     end
   end
 end

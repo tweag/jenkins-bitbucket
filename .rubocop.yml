@@ -21,6 +21,9 @@ Style/AlignHash:
 Style/Encoding:
   EnforcedStyle: when_needed
 
+Style/TrivialAccessors:
+  Enabled: false
+
 RSpec/DescribeClass:
   Enabled: false
 

@@ -28,7 +28,10 @@ module MessageHelper
       checkmark_good(t("messages.#{property}.good"))
     else
       checkmark_bad(
-        t("messages.#{property}.bad", example: STORY_NUMBER_CHECKER)
+        t(
+          "messages.#{property}.bad",
+          example: Configuration.instance.story_number_example
+        )
       )
     end
   end

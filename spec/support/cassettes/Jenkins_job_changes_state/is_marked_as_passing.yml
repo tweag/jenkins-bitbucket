@@ -1,0 +1,877 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests?pagelen=50
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Thu, 08 Jan 2015 20:41:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.0564029216766'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '334'
+      X-Served-By:
+      - app22
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - cb1af862a18d
+      X-Version:
+      - 00253276c67c
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJwYWdlbGVuIjogNTAsICJ2YWx1ZXMiOiBbeyJkZXNjcmlwdGlvbiI6ICJI
+        aSAhW2ltYWdlXShodHRwOi8vZ29vZ2xlLmNvbSlcbiogKiAqICogKiAqICog
+        KiAqICogKiAqICogKiAqXG5cblRoZSBwdWxsIHJlcXVlc3QgYXV0aG9yIHdp
+        bGwgbWVyZ2UgdGhpcyB3aGVuIGl0J3MgcmVhZHkuXG5bW3RvZ2dsZV1dKGh0
+        dHA6Ly93d3cuZXhhbXBsZS5jb20vYml0YnVja2V0L2F1dG9tZXJnZS8zNDc/
+        YmFja190bz1odHRwcyUzQSUyRiUyRmJpdGJ1Y2tldC5vcmclMkZqZW5raW5z
+        LWJpdGJ1Y2tldCUyRmplbmtpbnMtYml0YnVja2V0JTJGcHVsbC1yZXF1ZXN0
+        JTJGMzQ3JmFtcDt0dXJuPW9uKVxuXG5cblxuIyAhW1NVQ0NFU1NdKGh0dHA6
+        Ly93d3cuZXhhbXBsZS5jb20vYXNzZXRzL3N1Y2Nlc3MucG5nKSBTVUNDRVNT
+        IG9uIEplbmtpbnNcblxuW3Rlc3Qtam9iLWZvci13ZWJob29rcy0xMjMgb24g
+        SmVua2luc10oaHR0cDovL2V4YW1wbGUuY29tL2plbmtpbnMvam9icy80Milc
+        blxuKiA6dGh1bWJzdXA6IFB1bGwgcmVxdWVzdCBhbmQgSmVua2lucyBqb2Ig
+        U0hBcyBhcmUgdXAgdG8gZGF0ZSB3aXRoIGVhY2ggb3RoZXJcbiogOnRodW1i
+        c3VwOiBQdWxsIHJlcXVlc3QgdGl0bGUgY29udGFpbnMgc3RvcnkgbnVtYmVy
+        XG4qIDp0aHVtYnN1cDogQnJhbmNoIG5hbWUgY29udGFpbnMgc3RvcnkgbnVt
+        YmVyXG4qIDp0aHVtYnN1cDogUHVsbCByZXF1ZXN0IGRvZXMgbm90IGNvbnRh
+        aW4gYW55IFdJUCBjb21taXRzXG4qIDp0aHVtYnN1cDogUHVsbCByZXF1ZXN0
+        IGRlc2NyaXB0aW9uIGNvbnRhaW5zIGltYWdlIG9yIHNjcmVlbnNob3Rcblxu
+        IyMgQ29tbWl0c1xuXG4+ICMjIyBNWS1CUkFOQ0hcbj4gXG4+IFRoZXNlIGFy
+        ZSB0aGUgY2hhbmdlcyB0aGF0IEknbSBtYWtpbmcgdG8gbXkgYnJhbmNoXG5c
+        biMjI1xuXG4jIyNcblxuX0Jyb3VnaHQgdG8geW91IGJ5IFtKZW5raW5zLUJp
+        dGJ1Y2tldF0oaHR0cDovL3d3dy5leGFtcGxlLmNvbS8pLiBGZWVsIGZyZWUg
+        dG8gW3JlZnJlc2ggdGhpcyBtZXNzYWdlXShodHRwOi8vd3d3LmV4YW1wbGUu
+        Y29tL2JpdGJ1Y2tldC9yZWZyZXNoLzM0Nz9iYWNrX3RvPWh0dHBzJTNBJTJG
+        JTJGYml0YnVja2V0Lm9yZyUyRmplbmtpbnMtYml0YnVja2V0JTJGamVua2lu
+        cy1iaXRidWNrZXQlMkZwdWxsLXJlcXVlc3QlMkYzNDcpX1xuXG5bZGF0YV06
+        IHtcImF1dG9tZXJnZT9cIjpmYWxzZX1cbiIsICJsaW5rcyI6IHsiZGVjbGlu
+        ZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9y
+        ZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNr
+        ZXQvcHVsbHJlcXVlc3RzLzM0Ny9kZWNsaW5lIn0sICJjb21taXRzIjogeyJo
+        cmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRv
+        cmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxs
+        cmVxdWVzdHMvMzQ3L2NvbW1pdHMifSwgInNlbGYiOiB7ImhyZWYiOiAiaHR0
+        cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtp
+        bnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8z
+        NDcifSwgImNvbW1lbnRzIjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1
+        Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9q
+        ZW5raW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVzdHMvMzQ3L2NvbW1lbnRzIn0s
+        ICJtZXJnZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3Jn
+        LzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1i
+        aXRidWNrZXQvcHVsbHJlcXVlc3RzLzM0Ny9tZXJnZSJ9LCAiaHRtbCI6IHsi
+        aHJlZiI6ICJodHRwczovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQvcHVsbC1yZXF1ZXN0LzM0NyJ9LCAiYWN0
+        aXZpdHkiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8y
+        LjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0
+        YnVja2V0L3B1bGxyZXF1ZXN0cy8zNDcvYWN0aXZpdHkifSwgImRpZmYiOiB7
+        ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3Np
+        dG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1
+        bGxyZXF1ZXN0cy8zNDcvZGlmZiJ9LCAiYXBwcm92ZSI6IHsiaHJlZiI6ICJo
+        dHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVu
+        a2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3Rz
+        LzM0Ny9hcHByb3ZlIn19LCAiYXV0aG9yIjogeyJ1c2VybmFtZSI6ICJqZW5r
+        aW5zLWJpdGJ1Y2tldCIsICJkaXNwbGF5X25hbWUiOiAiamVua2lucy1iaXRi
+        dWNrZXQgamVua2lucy1iaXRidWNrZXQiLCAidXVpZCI6ICJ7YzM1MzJhMjAt
+        ZjA1Ny00ZTQ5LWExZDEtMThlYzU1MGIzYjExfSIsICJsaW5rcyI6IHsic2Vs
+        ZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC91
+        c2Vycy9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiaHRtbCI6IHsiaHJlZiI6ICJo
+        dHRwczovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNrZXQifSwgImF2
+        YXRhciI6IHsiaHJlZiI6ICJodHRwczovL3NlY3VyZS5ncmF2YXRhci5jb20v
+        YXZhdGFyL2QxZGUwMTgwN2Y2YjM2NzcxOGEyMDc4NDVkZmM4YTY0P2Q9aHR0
+        cHMlM0ElMkYlMkZkM29heGM0cTVrMmQ2cS5jbG91ZGZyb250Lm5ldCUyRm0l
+        MkZjYjFhZjg2MmExOGQlMkZpbWclMkZkZWZhdWx0X2F2YXRhciUyRjMyJTJG
+        dXNlcl9ibHVlLnBuZyZzPTMyIn19fSwgImNsb3NlX3NvdXJjZV9icmFuY2gi
+        OiB0cnVlLCAidGl0bGUiOiAi4pyU77iOIEV4YW1wbGUgcHVsbCByZXF1ZXN0
+        IDEyMyIsICJkZXN0aW5hdGlvbiI6IHsiY29tbWl0IjogeyJoYXNoIjogIjcz
+        N2Q5ZDE0MWNjYiIsICJsaW5rcyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRw
+        czovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lu
+        cy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvY29tbWl0LzczN2Q5ZDE0
+        MWNjYiJ9fX0sICJyZXBvc2l0b3J5IjogeyJsaW5rcyI6IHsic2VsZiI6IHsi
+        aHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0
+        b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQifSwg
+        Imh0bWwiOiB7ImhyZWYiOiAiaHR0cHM6Ly9iaXRidWNrZXQub3JnL2plbmtp
+        bnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0In0sICJhdmF0YXIiOiB7
+        ImhyZWYiOiAiaHR0cHM6Ly9kM29heGM0cTVrMmQ2cS5jbG91ZGZyb250Lm5l
+        dC9tL2NiMWFmODYyYTE4ZC9pbWcvbGFuZ3VhZ2UtYXZhdGFycy9kZWZhdWx0
+        XzE2LnBuZyJ9fSwgInV1aWQiOiAiezdkOTE0M2IwLTg1ZGUtNDc0Yy04NDdh
+        LTE1ZjNjOTAwYzgyZH0iLCAiZnVsbF9uYW1lIjogImplbmtpbnMtYml0YnVj
+        a2V0L2plbmtpbnMtYml0YnVja2V0IiwgIm5hbWUiOiAiamVua2lucy1iaXRi
+        dWNrZXQifSwgImJyYW5jaCI6IHsibmFtZSI6ICJtYXN0ZXIifX0sICJyZWFz
+        b24iOiAiIiwgImNsb3NlZF9ieSI6IG51bGwsICJzb3VyY2UiOiB7ImNvbW1p
+        dCI6IHsiaGFzaCI6ICIzYmJiMmJmYmE0ODkiLCAibGlua3MiOiB7InNlbGYi
+        OiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVw
+        b3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0
+        L2NvbW1pdC8zYmJiMmJmYmE0ODkifX19LCAicmVwb3NpdG9yeSI6IHsibGlu
+        a3MiOiB7InNlbGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0
+        Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtp
+        bnMtYml0YnVja2V0In0sICJodG1sIjogeyJocmVmIjogImh0dHBzOi8vYml0
+        YnVja2V0Lm9yZy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tl
+        dCJ9LCAiYXZhdGFyIjogeyJocmVmIjogImh0dHBzOi8vZDNvYXhjNHE1azJk
+        NnEuY2xvdWRmcm9udC5uZXQvbS9jYjFhZjg2MmExOGQvaW1nL2xhbmd1YWdl
+        LWF2YXRhcnMvZGVmYXVsdF8xNi5wbmcifX0sICJ1dWlkIjogIns3ZDkxNDNi
+        MC04NWRlLTQ3NGMtODQ3YS0xNWYzYzkwMGM4MmR9IiwgImZ1bGxfbmFtZSI6
+        ICJqZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCIsICJuYW1l
+        IjogImplbmtpbnMtYml0YnVja2V0In0sICJicmFuY2giOiB7Im5hbWUiOiAi
+        bXktYnJhbmNoLTEyMyJ9fSwgInN0YXRlIjogIk9QRU4iLCAiY3JlYXRlZF9v
+        biI6ICIyMDE1LTAxLTA4VDIwOjM5OjI1LjU4MjM1OCswMDowMCIsICJ1cGRh
+        dGVkX29uIjogIjIwMTUtMDEtMDhUMjA6Mzk6MjYuNjg5NTM2KzAwOjAwIiwg
+        Im1lcmdlX2NvbW1pdCI6IG51bGwsICJpZCI6IDM0N31dLCAicGFnZSI6IDEs
+        ICJzaXplIjogMX0=
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 20:41:47 GMT
+- request:
+    method: post
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/347/decline
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Thu, 08 Jan 2015 20:41:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.146246910095'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '238'
+      X-Served-By:
+      - app19
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - cb1af862a18d
+      X-Version:
+      - 00253276c67c
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkZXNjcmlwdGlvbiI6ICJIaSAhW2ltYWdlXShodHRwOi8vZ29vZ2xlLmNv
+        bSlcbiogKiAqICogKiAqICogKiAqICogKiAqICogKiAqXG5cblRoZSBwdWxs
+        IHJlcXVlc3QgYXV0aG9yIHdpbGwgbWVyZ2UgdGhpcyB3aGVuIGl0J3MgcmVh
+        ZHkuXG5bW3RvZ2dsZV1dKGh0dHA6Ly93d3cuZXhhbXBsZS5jb20vYml0YnVj
+        a2V0L2F1dG9tZXJnZS8zNDc/YmFja190bz1odHRwcyUzQSUyRiUyRmJpdGJ1
+        Y2tldC5vcmclMkZqZW5raW5zLWJpdGJ1Y2tldCUyRmplbmtpbnMtYml0YnVj
+        a2V0JTJGcHVsbC1yZXF1ZXN0JTJGMzQ3JmFtcDt0dXJuPW9uKVxuXG5cblxu
+        IyAhW1NVQ0NFU1NdKGh0dHA6Ly93d3cuZXhhbXBsZS5jb20vYXNzZXRzL3N1
+        Y2Nlc3MucG5nKSBTVUNDRVNTIG9uIEplbmtpbnNcblxuW3Rlc3Qtam9iLWZv
+        ci13ZWJob29rcy0xMjMgb24gSmVua2luc10oaHR0cDovL2V4YW1wbGUuY29t
+        L2plbmtpbnMvam9icy80MilcblxuKiA6dGh1bWJzdXA6IFB1bGwgcmVxdWVz
+        dCBhbmQgSmVua2lucyBqb2IgU0hBcyBhcmUgdXAgdG8gZGF0ZSB3aXRoIGVh
+        Y2ggb3RoZXJcbiogOnRodW1ic3VwOiBQdWxsIHJlcXVlc3QgdGl0bGUgY29u
+        dGFpbnMgc3RvcnkgbnVtYmVyXG4qIDp0aHVtYnN1cDogQnJhbmNoIG5hbWUg
+        Y29udGFpbnMgc3RvcnkgbnVtYmVyXG4qIDp0aHVtYnN1cDogUHVsbCByZXF1
+        ZXN0IGRvZXMgbm90IGNvbnRhaW4gYW55IFdJUCBjb21taXRzXG4qIDp0aHVt
+        YnN1cDogUHVsbCByZXF1ZXN0IGRlc2NyaXB0aW9uIGNvbnRhaW5zIGltYWdl
+        IG9yIHNjcmVlbnNob3RcblxuIyMgQ29tbWl0c1xuXG4+ICMjIyBNWS1CUkFO
+        Q0hcbj4gXG4+IFRoZXNlIGFyZSB0aGUgY2hhbmdlcyB0aGF0IEknbSBtYWtp
+        bmcgdG8gbXkgYnJhbmNoXG5cbiMjI1xuXG4jIyNcblxuX0Jyb3VnaHQgdG8g
+        eW91IGJ5IFtKZW5raW5zLUJpdGJ1Y2tldF0oaHR0cDovL3d3dy5leGFtcGxl
+        LmNvbS8pLiBGZWVsIGZyZWUgdG8gW3JlZnJlc2ggdGhpcyBtZXNzYWdlXSho
+        dHRwOi8vd3d3LmV4YW1wbGUuY29tL2JpdGJ1Y2tldC9yZWZyZXNoLzM0Nz9i
+        YWNrX3RvPWh0dHBzJTNBJTJGJTJGYml0YnVja2V0Lm9yZyUyRmplbmtpbnMt
+        Yml0YnVja2V0JTJGamVua2lucy1iaXRidWNrZXQlMkZwdWxsLXJlcXVlc3Ql
+        MkYzNDcpX1xuXG5bZGF0YV06IHtcImF1dG9tZXJnZT9cIjpmYWxzZX1cbiIs
+        ICJsaW5rcyI6IHsiZGVjbGluZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5i
+        aXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3RzLzM0Ny9kZWNsaW5l
+        In0sICJjb21taXRzIjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tl
+        dC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5r
+        aW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVzdHMvMzQ3L2NvbW1pdHMifSwgInNl
+        bGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAv
+        cmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVj
+        a2V0L3B1bGxyZXF1ZXN0cy8zNDcifSwgImNvbW1lbnRzIjogeyJocmVmIjog
+        Imh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9q
+        ZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVz
+        dHMvMzQ3L2NvbW1lbnRzIn0sICJtZXJnZSI6IHsiaHJlZiI6ICJodHRwczov
+        L2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1i
+        aXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3RzLzM0Ny9t
+        ZXJnZSJ9LCAiaHRtbCI6IHsiaHJlZiI6ICJodHRwczovL2JpdGJ1Y2tldC5v
+        cmcvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbC1y
+        ZXF1ZXN0LzM0NyJ9LCAiYWN0aXZpdHkiOiB7ImhyZWYiOiAiaHR0cHM6Ly9h
+        cGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0
+        YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8zNDcvYWN0
+        aXZpdHkifSwgImRpZmYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVj
+        a2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2pl
+        bmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8zNDcvZGlmZiJ9LCAiYXBw
+        cm92ZSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIu
+        MC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRi
+        dWNrZXQvcHVsbHJlcXVlc3RzLzM0Ny9hcHByb3ZlIn19LCAidGl0bGUiOiAi
+        4pyU77iOIEV4YW1wbGUgcHVsbCByZXF1ZXN0IDEyMyIsICJjbG9zZV9zb3Vy
+        Y2VfYnJhbmNoIjogZmFsc2UsICJyZXZpZXdlcnMiOiBbXSwgImRlc3RpbmF0
+        aW9uIjogeyJjb21taXQiOiB7Imhhc2giOiAiNzM3ZDlkMTQxY2NiIiwgImxp
+        bmtzIjogeyJzZWxmIjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tl
+        dC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5r
+        aW5zLWJpdGJ1Y2tldC9jb21taXQvNzM3ZDlkMTQxY2NiIn19fSwgInJlcG9z
+        aXRvcnkiOiB7ImxpbmtzIjogeyJzZWxmIjogeyJocmVmIjogImh0dHBzOi8v
+        YXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJp
+        dGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiaHRtbCI6IHsiaHJlZiI6
+        ICJodHRwczovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNrZXQvamVu
+        a2lucy1iaXRidWNrZXQifSwgImF2YXRhciI6IHsiaHJlZiI6ICJodHRwczov
+        L2Qzb2F4YzRxNWsyZDZxLmNsb3VkZnJvbnQubmV0L20vY2IxYWY4NjJhMThk
+        L2ltZy9sYW5ndWFnZS1hdmF0YXJzL2RlZmF1bHRfMTYucG5nIn19LCAidXVp
+        ZCI6ICJ7N2Q5MTQzYjAtODVkZS00NzRjLTg0N2EtMTVmM2M5MDBjODJkfSIs
+        ICJmdWxsX25hbWUiOiAiamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRi
+        dWNrZXQiLCAibmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tldCJ9LCAiYnJhbmNo
+        IjogeyJuYW1lIjogIm1hc3RlciJ9fSwgInJlYXNvbiI6ICIiLCAiY2xvc2Vk
+        X2J5IjogeyJ1c2VybmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tldCIsICJkaXNw
+        bGF5X25hbWUiOiAiamVua2lucy1iaXRidWNrZXQgamVua2lucy1iaXRidWNr
+        ZXQiLCAidXVpZCI6ICJ7YzM1MzJhMjAtZjA1Ny00ZTQ5LWExZDEtMThlYzU1
+        MGIzYjExfSIsICJsaW5rcyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRwczov
+        L2FwaS5iaXRidWNrZXQub3JnLzIuMC91c2Vycy9qZW5raW5zLWJpdGJ1Y2tl
+        dCJ9LCAiaHRtbCI6IHsiaHJlZiI6ICJodHRwczovL2JpdGJ1Y2tldC5vcmcv
+        amVua2lucy1iaXRidWNrZXQifSwgImF2YXRhciI6IHsiaHJlZiI6ICJodHRw
+        czovL3NlY3VyZS5ncmF2YXRhci5jb20vYXZhdGFyL2QxZGUwMTgwN2Y2YjM2
+        NzcxOGEyMDc4NDVkZmM4YTY0P2Q9aHR0cHMlM0ElMkYlMkZkM29heGM0cTVr
+        MmQ2cS5jbG91ZGZyb250Lm5ldCUyRm0lMkZjYjFhZjg2MmExOGQlMkZpbWcl
+        MkZkZWZhdWx0X2F2YXRhciUyRjMyJTJGdXNlcl9ibHVlLnBuZyZzPTMyIn19
+        fSwgInNvdXJjZSI6IHsiY29tbWl0IjogeyJoYXNoIjogIjNiYmIyYmZiYTQ4
+        OSIsICJsaW5rcyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5i
+        aXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNr
+        ZXQvamVua2lucy1iaXRidWNrZXQvY29tbWl0LzNiYmIyYmZiYTQ4OSJ9fX0s
+        ICJyZXBvc2l0b3J5IjogeyJsaW5rcyI6IHsic2VsZiI6IHsiaHJlZiI6ICJo
+        dHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVu
+        a2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQifSwgImh0bWwiOiB7
+        ImhyZWYiOiAiaHR0cHM6Ly9iaXRidWNrZXQub3JnL2plbmtpbnMtYml0YnVj
+        a2V0L2plbmtpbnMtYml0YnVja2V0In0sICJhdmF0YXIiOiB7ImhyZWYiOiAi
+        aHR0cHM6Ly9kM29heGM0cTVrMmQ2cS5jbG91ZGZyb250Lm5ldC9tL2NiMWFm
+        ODYyYTE4ZC9pbWcvbGFuZ3VhZ2UtYXZhdGFycy9kZWZhdWx0XzE2LnBuZyJ9
+        fSwgInV1aWQiOiAiezdkOTE0M2IwLTg1ZGUtNDc0Yy04NDdhLTE1ZjNjOTAw
+        YzgyZH0iLCAiZnVsbF9uYW1lIjogImplbmtpbnMtYml0YnVja2V0L2plbmtp
+        bnMtYml0YnVja2V0IiwgIm5hbWUiOiAiamVua2lucy1iaXRidWNrZXQifSwg
+        ImJyYW5jaCI6IHsibmFtZSI6ICJteS1icmFuY2gtMTIzIn19LCAic3RhdGUi
+        OiAiREVDTElORUQiLCAiYXV0aG9yIjogeyJ1c2VybmFtZSI6ICJqZW5raW5z
+        LWJpdGJ1Y2tldCIsICJkaXNwbGF5X25hbWUiOiAiamVua2lucy1iaXRidWNr
+        ZXQgamVua2lucy1iaXRidWNrZXQiLCAidXVpZCI6ICJ7YzM1MzJhMjAtZjA1
+        Ny00ZTQ5LWExZDEtMThlYzU1MGIzYjExfSIsICJsaW5rcyI6IHsic2VsZiI6
+        IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC91c2Vy
+        cy9qZW5raW5zLWJpdGJ1Y2tldCJ9LCAiaHRtbCI6IHsiaHJlZiI6ICJodHRw
+        czovL2JpdGJ1Y2tldC5vcmcvamVua2lucy1iaXRidWNrZXQifSwgImF2YXRh
+        ciI6IHsiaHJlZiI6ICJodHRwczovL3NlY3VyZS5ncmF2YXRhci5jb20vYXZh
+        dGFyL2QxZGUwMTgwN2Y2YjM2NzcxOGEyMDc4NDVkZmM4YTY0P2Q9aHR0cHMl
+        M0ElMkYlMkZkM29heGM0cTVrMmQ2cS5jbG91ZGZyb250Lm5ldCUyRm0lMkZj
+        YjFhZjg2MmExOGQlMkZpbWclMkZkZWZhdWx0X2F2YXRhciUyRjMyJTJGdXNl
+        cl9ibHVlLnBuZyZzPTMyIn19fSwgImNyZWF0ZWRfb24iOiAiMjAxNS0wMS0w
+        OFQyMDozOToyNS41ODIzNTgrMDA6MDAiLCAicGFydGljaXBhbnRzIjogW10s
+        ICJ1cGRhdGVkX29uIjogIjIwMTUtMDEtMDhUMjA6NDE6NDcuNDc5ODY2KzAw
+        OjAwIiwgIm1lcmdlX2NvbW1pdCI6IG51bGwsICJpZCI6IDM0N30=
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 20:41:47 GMT
+- request:
+    method: post
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests
+    body:
+      encoding: UTF-8
+      string: '{"source":{"branch":{"name":"my-branch-123"}},"title":"Example pull
+        request 123","description":"Hi no image"}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 201
+      message: CREATED
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Thu, 08 Jan 2015 20:41:47 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '3261'
+      Connection:
+      - keep-alive
+      Etag:
+      - '"fe4ec19fdd2f85f16865eac1c8ea5e35"'
+      X-Render-Time:
+      - '0.251543998718'
+      Content-Language:
+      - en
+      Location:
+      - https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348
+      X-Request-Count:
+      - '51'
+      X-Served-By:
+      - app19
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - cb1af862a18d
+      X-Version:
+      - 00253276c67c
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: UTF-8
+      string: '{"description": "Hi no image", "links": {"decline": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/decline"},
+        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/commits"},
+        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/comments"},
+        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/merge"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/348"},
+        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/activity"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/diff"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/approve"}},
+        "title": "Example pull request 123", "close_source_branch": false, "reviewers":
+        [], "destination": {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href":
+        "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/cb1af862a18d/img/language-avatars/default_16.png"}},
+        "uuid": "{7d9143b0-85de-474c-847a-15f3c900c82d}", "full_name": "jenkins-bitbucket/jenkins-bitbucket",
+        "name": "jenkins-bitbucket"}, "branch": {"name": "master"}}, "reason": "",
+        "closed_by": null, "source": {"commit": {"hash": "3bbb2bfba489", "links":
+        {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/3bbb2bfba489"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/cb1af862a18d/img/language-avatars/default_16.png"}},
+        "uuid": "{7d9143b0-85de-474c-847a-15f3c900c82d}", "full_name": "jenkins-bitbucket/jenkins-bitbucket",
+        "name": "jenkins-bitbucket"}, "branch": {"name": "my-branch-123"}}, "state":
+        "OPEN", "author": {"username": "jenkins-bitbucket", "display_name": "jenkins-bitbucket
+        jenkins-bitbucket", "uuid": "{c3532a20-f057-4e49-a1d1-18ec550b3b11}", "links":
+        {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket"}, "avatar": {"href":
+        "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fcb1af862a18d%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "created_on": "2015-01-08T20:41:47.826653+00:00", "participants": [], "updated_on":
+        "2015-01-08T20:41:47.850325+00:00", "merge_commit": null, "id": 348}'
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 20:41:48 GMT
+- request:
+    method: get
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests?pagelen=50
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Thu, 08 Jan 2015 20:41:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.0458400249481'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '168'
+      X-Served-By:
+      - app22
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - cb1af862a18d
+      X-Version:
+      - 00253276c67c
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagelen": 50, "values": [{"description": "Hi no image", "links":
+        {"decline": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/decline"},
+        "commits": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/commits"},
+        "self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/comments"},
+        "merge": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/merge"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/pull-request/348"},
+        "activity": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/activity"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/diff"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/approve"}},
+        "author": {"username": "jenkins-bitbucket", "display_name": "jenkins-bitbucket
+        jenkins-bitbucket", "uuid": "{c3532a20-f057-4e49-a1d1-18ec550b3b11}", "links":
+        {"self": {"href": "https://api.bitbucket.org/2.0/users/jenkins-bitbucket"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket"}, "avatar": {"href":
+        "https://secure.gravatar.com/avatar/d1de01807f6b367718a207845dfc8a64?d=https%3A%2F%2Fd3oaxc4q5k2d6q.cloudfront.net%2Fm%2Fcb1af862a18d%2Fimg%2Fdefault_avatar%2F32%2Fuser_blue.png&s=32"}}},
+        "close_source_branch": false, "title": "Example pull request 123", "destination":
+        {"commit": {"hash": "737d9d141ccb", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/cb1af862a18d/img/language-avatars/default_16.png"}},
+        "uuid": "{7d9143b0-85de-474c-847a-15f3c900c82d}", "full_name": "jenkins-bitbucket/jenkins-bitbucket",
+        "name": "jenkins-bitbucket"}, "branch": {"name": "master"}}, "reason": "",
+        "closed_by": null, "source": {"commit": {"hash": "3bbb2bfba489", "links":
+        {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/3bbb2bfba489"}}},
+        "repository": {"links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/cb1af862a18d/img/language-avatars/default_16.png"}},
+        "uuid": "{7d9143b0-85de-474c-847a-15f3c900c82d}", "full_name": "jenkins-bitbucket/jenkins-bitbucket",
+        "name": "jenkins-bitbucket"}, "branch": {"name": "my-branch-123"}}, "state":
+        "OPEN", "created_on": "2015-01-08T20:41:47.826653+00:00", "updated_on": "2015-01-08T20:41:47.850325+00:00",
+        "merge_commit": null, "id": 348}], "page": 1, "size": 1}'
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 20:41:48 GMT
+- request:
+    method: get
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348/commits?pagelen=100
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Thu, 08 Jan 2015 20:41:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.11026597023'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '44'
+      X-Served-By:
+      - app22
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - cb1af862a18d
+      X-Version:
+      - 00253276c67c
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: '{"pagelen": 100, "values": [{"hash": "3bbb2bfba48958867ad00ed2ccace5bd51f81b40",
+        "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/3bbb2bfba48958867ad00ed2ccace5bd51f81b40"},
+        "comments": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/3bbb2bfba48958867ad00ed2ccace5bd51f81b40/comments"},
+        "patch": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/patch/3bbb2bfba48958867ad00ed2ccace5bd51f81b40"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/commits/3bbb2bfba48958867ad00ed2ccace5bd51f81b40"},
+        "diff": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/diff/3bbb2bfba48958867ad00ed2ccace5bd51f81b40"},
+        "approve": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/3bbb2bfba48958867ad00ed2ccace5bd51f81b40/approve"}},
+        "repository": {"full_name": "jenkins-bitbucket/jenkins-bitbucket", "uuid":
+        "{7d9143b0-85de-474c-847a-15f3c900c82d}", "links": {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket"},
+        "avatar": {"href": "https://d3oaxc4q5k2d6q.cloudfront.net/m/cb1af862a18d/img/language-avatars/default_16.png"}},
+        "name": "jenkins-bitbucket"}, "author": {"raw": "Mike Nicholaides <mike.nicholaides@gmail.com>"},
+        "parents": [{"hash": "737d9d141ccb166b50d79df0e005acc5d88b3201", "links":
+        {"self": {"href": "https://api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/commit/737d9d141ccb166b50d79df0e005acc5d88b3201"},
+        "html": {"href": "https://bitbucket.org/jenkins-bitbucket/jenkins-bitbucket/commits/737d9d141ccb166b50d79df0e005acc5d88b3201"}}}],
+        "date": "2014-09-05T13:38:06+00:00", "message": "MY-BRANCH\n\nThese are the
+        changes that I''m making to my branch\n"}], "page": 1, "size": 1}'
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 20:41:48 GMT
+- request:
+    method: put
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348
+    body:
+      encoding: UTF-8
+      string: '{"title":"✔︎ Example pull request 123","description":"Hi no image\n*
+        * * * * * * * * * * * * * *\n\nThe pull request author will merge this when
+        it''s ready.\n[[toggle]](http://www.example.com/bitbucket/automerge/348?back_to=https%3A%2F%2Fbitbucket.org%2Fjenkins-bitbucket%2Fjenkins-bitbucket%2Fpull-request%2F348&amp;turn=on)\n\n\n\n#
+        ![SUCCESS](http://www.example.com/assets/success.png) SUCCESS on Jenkins\n\n[test-job-for-webhooks-123
+        on Jenkins](http://example.com/jenkins/jobs/42)\n\n* :thumbsup: Pull request
+        and Jenkins job SHAs are up to date with each other\n* :thumbsup: Pull request
+        title contains story number\n* :thumbsup: Branch name contains story number\n*
+        :thumbsup: Pull request does not contain any WIP commits\n* :thumbsup: Pull
+        request description contains image or screenshot\n\n## Commits\n\n> ### MY-BRANCH\n>
+        \n> These are the changes that I''m making to my branch\n\n###\n\n###\n\n_Brought
+        to you by [Jenkins-Bitbucket](http://www.example.com/). Feel free to [refresh
+        this message](http://www.example.com/bitbucket/refresh/348?back_to=https%3A%2F%2Fbitbucket.org%2Fjenkins-bitbucket%2Fjenkins-bitbucket%2Fpull-request%2F348)_\n\n[data]:
+        {\"automerge?\":false}\n","close_source_branch":true}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Thu, 08 Jan 2015 20:41:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.488316059113'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '483'
+      X-Served-By:
+      - app15
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - cb1af862a18d
+      X-Version:
+      - 00253276c67c
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkZXNjcmlwdGlvbiI6ICJIaSBubyBpbWFnZVxuKiAqICogKiAqICogKiAq
+        ICogKiAqICogKiAqICpcblxuVGhlIHB1bGwgcmVxdWVzdCBhdXRob3Igd2ls
+        bCBtZXJnZSB0aGlzIHdoZW4gaXQncyByZWFkeS5cbltbdG9nZ2xlXV0oaHR0
+        cDovL3d3dy5leGFtcGxlLmNvbS9iaXRidWNrZXQvYXV0b21lcmdlLzM0OD9i
+        YWNrX3RvPWh0dHBzJTNBJTJGJTJGYml0YnVja2V0Lm9yZyUyRmplbmtpbnMt
+        Yml0YnVja2V0JTJGamVua2lucy1iaXRidWNrZXQlMkZwdWxsLXJlcXVlc3Ql
+        MkYzNDgmYW1wO3R1cm49b24pXG5cblxuXG4jICFbU1VDQ0VTU10oaHR0cDov
+        L3d3dy5leGFtcGxlLmNvbS9hc3NldHMvc3VjY2Vzcy5wbmcpIFNVQ0NFU1Mg
+        b24gSmVua2luc1xuXG5bdGVzdC1qb2ItZm9yLXdlYmhvb2tzLTEyMyBvbiBK
+        ZW5raW5zXShodHRwOi8vZXhhbXBsZS5jb20vamVua2lucy9qb2JzLzQyKVxu
+        XG4qIDp0aHVtYnN1cDogUHVsbCByZXF1ZXN0IGFuZCBKZW5raW5zIGpvYiBT
+        SEFzIGFyZSB1cCB0byBkYXRlIHdpdGggZWFjaCBvdGhlclxuKiA6dGh1bWJz
+        dXA6IFB1bGwgcmVxdWVzdCB0aXRsZSBjb250YWlucyBzdG9yeSBudW1iZXJc
+        biogOnRodW1ic3VwOiBCcmFuY2ggbmFtZSBjb250YWlucyBzdG9yeSBudW1i
+        ZXJcbiogOnRodW1ic3VwOiBQdWxsIHJlcXVlc3QgZG9lcyBub3QgY29udGFp
+        biBhbnkgV0lQIGNvbW1pdHNcbiogOnRodW1ic3VwOiBQdWxsIHJlcXVlc3Qg
+        ZGVzY3JpcHRpb24gY29udGFpbnMgaW1hZ2Ugb3Igc2NyZWVuc2hvdFxuXG4j
+        IyBDb21taXRzXG5cbj4gIyMjIE1ZLUJSQU5DSFxuPiBcbj4gVGhlc2UgYXJl
+        IHRoZSBjaGFuZ2VzIHRoYXQgSSdtIG1ha2luZyB0byBteSBicmFuY2hcblxu
+        IyMjXG5cbiMjI1xuXG5fQnJvdWdodCB0byB5b3UgYnkgW0plbmtpbnMtQml0
+        YnVja2V0XShodHRwOi8vd3d3LmV4YW1wbGUuY29tLykuIEZlZWwgZnJlZSB0
+        byBbcmVmcmVzaCB0aGlzIG1lc3NhZ2VdKGh0dHA6Ly93d3cuZXhhbXBsZS5j
+        b20vYml0YnVja2V0L3JlZnJlc2gvMzQ4P2JhY2tfdG89aHR0cHMlM0ElMkYl
+        MkZiaXRidWNrZXQub3JnJTJGamVua2lucy1iaXRidWNrZXQlMkZqZW5raW5z
+        LWJpdGJ1Y2tldCUyRnB1bGwtcmVxdWVzdCUyRjM0OClfXG5cbltkYXRhXTog
+        e1wiYXV0b21lcmdlP1wiOmZhbHNlfVxuIiwgImxpbmtzIjogeyJkZWNsaW5l
+        IjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3Jl
+        cG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tl
+        dC9wdWxscmVxdWVzdHMvMzQ4L2RlY2xpbmUifSwgImNvbW1pdHMiOiB7Imhy
+        ZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9y
+        aWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxy
+        ZXF1ZXN0cy8zNDgvY29tbWl0cyJ9LCAic2VsZiI6IHsiaHJlZiI6ICJodHRw
+        czovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lu
+        cy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3RzLzM0
+        OCJ9LCAiY29tbWVudHMiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVj
+        a2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2pl
+        bmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8zNDgvY29tbWVudHMifSwg
+        Im1lcmdlIjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcv
+        Mi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJp
+        dGJ1Y2tldC9wdWxscmVxdWVzdHMvMzQ4L21lcmdlIn0sICJodG1sIjogeyJo
+        cmVmIjogImh0dHBzOi8vYml0YnVja2V0Lm9yZy9qZW5raW5zLWJpdGJ1Y2tl
+        dC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxsLXJlcXVlc3QvMzQ4In0sICJhY3Rp
+        dml0eSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIu
+        MC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRi
+        dWNrZXQvcHVsbHJlcXVlc3RzLzM0OC9hY3Rpdml0eSJ9LCAiZGlmZiI6IHsi
+        aHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0
+        b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVs
+        bHJlcXVlc3RzLzM0OC9kaWZmIn0sICJhcHByb3ZlIjogeyJocmVmIjogImh0
+        dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5r
+        aW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVzdHMv
+        MzQ4L2FwcHJvdmUifX0sICJ0aXRsZSI6ICLinJTvuI4gRXhhbXBsZSBwdWxs
+        IHJlcXVlc3QgMTIzIiwgImNsb3NlX3NvdXJjZV9icmFuY2giOiB0cnVlLCAi
+        cmV2aWV3ZXJzIjogW10sICJkZXN0aW5hdGlvbiI6IHsiY29tbWl0IjogeyJo
+        YXNoIjogIjczN2Q5ZDE0MWNjYiIsICJsaW5rcyI6IHsic2VsZiI6IHsiaHJl
+        ZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3Jp
+        ZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvY29tbWl0
+        LzczN2Q5ZDE0MWNjYiJ9fX0sICJyZXBvc2l0b3J5IjogeyJsaW5rcyI6IHsi
+        c2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIu
+        MC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRi
+        dWNrZXQifSwgImh0bWwiOiB7ImhyZWYiOiAiaHR0cHM6Ly9iaXRidWNrZXQu
+        b3JnL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0In0sICJh
+        dmF0YXIiOiB7ImhyZWYiOiAiaHR0cHM6Ly9kM29heGM0cTVrMmQ2cS5jbG91
+        ZGZyb250Lm5ldC9tL2NiMWFmODYyYTE4ZC9pbWcvbGFuZ3VhZ2UtYXZhdGFy
+        cy9kZWZhdWx0XzE2LnBuZyJ9fSwgInV1aWQiOiAiezdkOTE0M2IwLTg1ZGUt
+        NDc0Yy04NDdhLTE1ZjNjOTAwYzgyZH0iLCAiZnVsbF9uYW1lIjogImplbmtp
+        bnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0IiwgIm5hbWUiOiAiamVu
+        a2lucy1iaXRidWNrZXQifSwgImJyYW5jaCI6IHsibmFtZSI6ICJtYXN0ZXIi
+        fX0sICJyZWFzb24iOiAiIiwgImNsb3NlZF9ieSI6IG51bGwsICJzb3VyY2Ui
+        OiB7ImNvbW1pdCI6IHsiaGFzaCI6ICIzYmJiMmJmYmE0ODkiLCAibGlua3Mi
+        OiB7InNlbGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9y
+        Zy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMt
+        Yml0YnVja2V0L2NvbW1pdC8zYmJiMmJmYmE0ODkifX19LCAicmVwb3NpdG9y
+        eSI6IHsibGlua3MiOiB7InNlbGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGku
+        Yml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVj
+        a2V0L2plbmtpbnMtYml0YnVja2V0In0sICJodG1sIjogeyJocmVmIjogImh0
+        dHBzOi8vYml0YnVja2V0Lm9yZy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5z
+        LWJpdGJ1Y2tldCJ9LCAiYXZhdGFyIjogeyJocmVmIjogImh0dHBzOi8vZDNv
+        YXhjNHE1azJkNnEuY2xvdWRmcm9udC5uZXQvbS9jYjFhZjg2MmExOGQvaW1n
+        L2xhbmd1YWdlLWF2YXRhcnMvZGVmYXVsdF8xNi5wbmcifX0sICJ1dWlkIjog
+        Ins3ZDkxNDNiMC04NWRlLTQ3NGMtODQ3YS0xNWYzYzkwMGM4MmR9IiwgImZ1
+        bGxfbmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tl
+        dCIsICJuYW1lIjogImplbmtpbnMtYml0YnVja2V0In0sICJicmFuY2giOiB7
+        Im5hbWUiOiAibXktYnJhbmNoLTEyMyJ9fSwgInN0YXRlIjogIk9QRU4iLCAi
+        YXV0aG9yIjogeyJ1c2VybmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tldCIsICJk
+        aXNwbGF5X25hbWUiOiAiamVua2lucy1iaXRidWNrZXQgamVua2lucy1iaXRi
+        dWNrZXQiLCAidXVpZCI6ICJ7YzM1MzJhMjAtZjA1Ny00ZTQ5LWExZDEtMThl
+        YzU1MGIzYjExfSIsICJsaW5rcyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRw
+        czovL2FwaS5iaXRidWNrZXQub3JnLzIuMC91c2Vycy9qZW5raW5zLWJpdGJ1
+        Y2tldCJ9LCAiaHRtbCI6IHsiaHJlZiI6ICJodHRwczovL2JpdGJ1Y2tldC5v
+        cmcvamVua2lucy1iaXRidWNrZXQifSwgImF2YXRhciI6IHsiaHJlZiI6ICJo
+        dHRwczovL3NlY3VyZS5ncmF2YXRhci5jb20vYXZhdGFyL2QxZGUwMTgwN2Y2
+        YjM2NzcxOGEyMDc4NDVkZmM4YTY0P2Q9aHR0cHMlM0ElMkYlMkZkM29heGM0
+        cTVrMmQ2cS5jbG91ZGZyb250Lm5ldCUyRm0lMkZjYjFhZjg2MmExOGQlMkZp
+        bWclMkZkZWZhdWx0X2F2YXRhciUyRjMyJTJGdXNlcl9ibHVlLnBuZyZzPTMy
+        In19fSwgImNyZWF0ZWRfb24iOiAiMjAxNS0wMS0wOFQyMDo0MTo0Ny44MjY2
+        NTMrMDA6MDAiLCAicGFydGljaXBhbnRzIjogW10sICJ1cGRhdGVkX29uIjog
+        IjIwMTUtMDEtMDhUMjA6NDE6NDkuMjc4ODAzKzAwOjAwIiwgIm1lcmdlX2Nv
+        bW1pdCI6IG51bGwsICJpZCI6IDM0OH0=
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 20:41:49 GMT
+- request:
+    method: get
+    uri: https://jenkins-bitbucket:NXTUpRQGeJMokuQAnQcWqnGbvsMsAqn9DwqcFGTseNaGJWLCy3@api.bitbucket.org/2.0/repositories/jenkins-bitbucket/jenkins-bitbucket/pullrequests/348
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.5.10
+      Date:
+      - Thu, 08 Jan 2015 20:41:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Render-Time:
+      - '0.0838119983673'
+      Content-Language:
+      - en
+      X-Request-Count:
+      - '334'
+      X-Served-By:
+      - app18
+      Vary:
+      - Authorization, Accept-Language, Cookie
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Static-Version:
+      - cb1af862a18d
+      X-Version:
+      - 00253276c67c
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJkZXNjcmlwdGlvbiI6ICJIaSBubyBpbWFnZVxuKiAqICogKiAqICogKiAq
+        ICogKiAqICogKiAqICpcblxuVGhlIHB1bGwgcmVxdWVzdCBhdXRob3Igd2ls
+        bCBtZXJnZSB0aGlzIHdoZW4gaXQncyByZWFkeS5cbltbdG9nZ2xlXV0oaHR0
+        cDovL3d3dy5leGFtcGxlLmNvbS9iaXRidWNrZXQvYXV0b21lcmdlLzM0OD9i
+        YWNrX3RvPWh0dHBzJTNBJTJGJTJGYml0YnVja2V0Lm9yZyUyRmplbmtpbnMt
+        Yml0YnVja2V0JTJGamVua2lucy1iaXRidWNrZXQlMkZwdWxsLXJlcXVlc3Ql
+        MkYzNDgmYW1wO3R1cm49b24pXG5cblxuXG4jICFbU1VDQ0VTU10oaHR0cDov
+        L3d3dy5leGFtcGxlLmNvbS9hc3NldHMvc3VjY2Vzcy5wbmcpIFNVQ0NFU1Mg
+        b24gSmVua2luc1xuXG5bdGVzdC1qb2ItZm9yLXdlYmhvb2tzLTEyMyBvbiBK
+        ZW5raW5zXShodHRwOi8vZXhhbXBsZS5jb20vamVua2lucy9qb2JzLzQyKVxu
+        XG4qIDp0aHVtYnN1cDogUHVsbCByZXF1ZXN0IGFuZCBKZW5raW5zIGpvYiBT
+        SEFzIGFyZSB1cCB0byBkYXRlIHdpdGggZWFjaCBvdGhlclxuKiA6dGh1bWJz
+        dXA6IFB1bGwgcmVxdWVzdCB0aXRsZSBjb250YWlucyBzdG9yeSBudW1iZXJc
+        biogOnRodW1ic3VwOiBCcmFuY2ggbmFtZSBjb250YWlucyBzdG9yeSBudW1i
+        ZXJcbiogOnRodW1ic3VwOiBQdWxsIHJlcXVlc3QgZG9lcyBub3QgY29udGFp
+        biBhbnkgV0lQIGNvbW1pdHNcbiogOnRodW1ic3VwOiBQdWxsIHJlcXVlc3Qg
+        ZGVzY3JpcHRpb24gY29udGFpbnMgaW1hZ2Ugb3Igc2NyZWVuc2hvdFxuXG4j
+        IyBDb21taXRzXG5cbj4gIyMjIE1ZLUJSQU5DSFxuPiBcbj4gVGhlc2UgYXJl
+        IHRoZSBjaGFuZ2VzIHRoYXQgSSdtIG1ha2luZyB0byBteSBicmFuY2hcblxu
+        IyMjXG5cbiMjI1xuXG5fQnJvdWdodCB0byB5b3UgYnkgW0plbmtpbnMtQml0
+        YnVja2V0XShodHRwOi8vd3d3LmV4YW1wbGUuY29tLykuIEZlZWwgZnJlZSB0
+        byBbcmVmcmVzaCB0aGlzIG1lc3NhZ2VdKGh0dHA6Ly93d3cuZXhhbXBsZS5j
+        b20vYml0YnVja2V0L3JlZnJlc2gvMzQ4P2JhY2tfdG89aHR0cHMlM0ElMkYl
+        MkZiaXRidWNrZXQub3JnJTJGamVua2lucy1iaXRidWNrZXQlMkZqZW5raW5z
+        LWJpdGJ1Y2tldCUyRnB1bGwtcmVxdWVzdCUyRjM0OClfXG5cbltkYXRhXTog
+        e1wiYXV0b21lcmdlP1wiOmZhbHNlfVxuIiwgImxpbmtzIjogeyJkZWNsaW5l
+        IjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3Jl
+        cG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tl
+        dC9wdWxscmVxdWVzdHMvMzQ4L2RlY2xpbmUifSwgImNvbW1pdHMiOiB7Imhy
+        ZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9y
+        aWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0L3B1bGxy
+        ZXF1ZXN0cy8zNDgvY29tbWl0cyJ9LCAic2VsZiI6IHsiaHJlZiI6ICJodHRw
+        czovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3JpZXMvamVua2lu
+        cy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVsbHJlcXVlc3RzLzM0
+        OCJ9LCAiY29tbWVudHMiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVj
+        a2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2pl
+        bmtpbnMtYml0YnVja2V0L3B1bGxyZXF1ZXN0cy8zNDgvY29tbWVudHMifSwg
+        Im1lcmdlIjogeyJocmVmIjogImh0dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcv
+        Mi4wL3JlcG9zaXRvcmllcy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJp
+        dGJ1Y2tldC9wdWxscmVxdWVzdHMvMzQ4L21lcmdlIn0sICJodG1sIjogeyJo
+        cmVmIjogImh0dHBzOi8vYml0YnVja2V0Lm9yZy9qZW5raW5zLWJpdGJ1Y2tl
+        dC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxsLXJlcXVlc3QvMzQ4In0sICJhY3Rp
+        dml0eSI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIu
+        MC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRi
+        dWNrZXQvcHVsbHJlcXVlc3RzLzM0OC9hY3Rpdml0eSJ9LCAiZGlmZiI6IHsi
+        aHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0
+        b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvcHVs
+        bHJlcXVlc3RzLzM0OC9kaWZmIn0sICJhcHByb3ZlIjogeyJocmVmIjogImh0
+        dHBzOi8vYXBpLmJpdGJ1Y2tldC5vcmcvMi4wL3JlcG9zaXRvcmllcy9qZW5r
+        aW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tldC9wdWxscmVxdWVzdHMv
+        MzQ4L2FwcHJvdmUifX0sICJ0aXRsZSI6ICLinJTvuI4gRXhhbXBsZSBwdWxs
+        IHJlcXVlc3QgMTIzIiwgImNsb3NlX3NvdXJjZV9icmFuY2giOiB0cnVlLCAi
+        cmV2aWV3ZXJzIjogW10sICJkZXN0aW5hdGlvbiI6IHsiY29tbWl0IjogeyJo
+        YXNoIjogIjczN2Q5ZDE0MWNjYiIsICJsaW5rcyI6IHsic2VsZiI6IHsiaHJl
+        ZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIuMC9yZXBvc2l0b3Jp
+        ZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRidWNrZXQvY29tbWl0
+        LzczN2Q5ZDE0MWNjYiJ9fX0sICJyZXBvc2l0b3J5IjogeyJsaW5rcyI6IHsi
+        c2VsZiI6IHsiaHJlZiI6ICJodHRwczovL2FwaS5iaXRidWNrZXQub3JnLzIu
+        MC9yZXBvc2l0b3JpZXMvamVua2lucy1iaXRidWNrZXQvamVua2lucy1iaXRi
+        dWNrZXQifSwgImh0bWwiOiB7ImhyZWYiOiAiaHR0cHM6Ly9iaXRidWNrZXQu
+        b3JnL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0In0sICJh
+        dmF0YXIiOiB7ImhyZWYiOiAiaHR0cHM6Ly9kM29heGM0cTVrMmQ2cS5jbG91
+        ZGZyb250Lm5ldC9tL2NiMWFmODYyYTE4ZC9pbWcvbGFuZ3VhZ2UtYXZhdGFy
+        cy9kZWZhdWx0XzE2LnBuZyJ9fSwgInV1aWQiOiAiezdkOTE0M2IwLTg1ZGUt
+        NDc0Yy04NDdhLTE1ZjNjOTAwYzgyZH0iLCAiZnVsbF9uYW1lIjogImplbmtp
+        bnMtYml0YnVja2V0L2plbmtpbnMtYml0YnVja2V0IiwgIm5hbWUiOiAiamVu
+        a2lucy1iaXRidWNrZXQifSwgImJyYW5jaCI6IHsibmFtZSI6ICJtYXN0ZXIi
+        fX0sICJyZWFzb24iOiAiIiwgImNsb3NlZF9ieSI6IG51bGwsICJzb3VyY2Ui
+        OiB7ImNvbW1pdCI6IHsiaGFzaCI6ICIzYmJiMmJmYmE0ODkiLCAibGlua3Mi
+        OiB7InNlbGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGkuYml0YnVja2V0Lm9y
+        Zy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVja2V0L2plbmtpbnMt
+        Yml0YnVja2V0L2NvbW1pdC8zYmJiMmJmYmE0ODkifX19LCAicmVwb3NpdG9y
+        eSI6IHsibGlua3MiOiB7InNlbGYiOiB7ImhyZWYiOiAiaHR0cHM6Ly9hcGku
+        Yml0YnVja2V0Lm9yZy8yLjAvcmVwb3NpdG9yaWVzL2plbmtpbnMtYml0YnVj
+        a2V0L2plbmtpbnMtYml0YnVja2V0In0sICJodG1sIjogeyJocmVmIjogImh0
+        dHBzOi8vYml0YnVja2V0Lm9yZy9qZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5z
+        LWJpdGJ1Y2tldCJ9LCAiYXZhdGFyIjogeyJocmVmIjogImh0dHBzOi8vZDNv
+        YXhjNHE1azJkNnEuY2xvdWRmcm9udC5uZXQvbS9jYjFhZjg2MmExOGQvaW1n
+        L2xhbmd1YWdlLWF2YXRhcnMvZGVmYXVsdF8xNi5wbmcifX0sICJ1dWlkIjog
+        Ins3ZDkxNDNiMC04NWRlLTQ3NGMtODQ3YS0xNWYzYzkwMGM4MmR9IiwgImZ1
+        bGxfbmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tldC9qZW5raW5zLWJpdGJ1Y2tl
+        dCIsICJuYW1lIjogImplbmtpbnMtYml0YnVja2V0In0sICJicmFuY2giOiB7
+        Im5hbWUiOiAibXktYnJhbmNoLTEyMyJ9fSwgInN0YXRlIjogIk9QRU4iLCAi
+        YXV0aG9yIjogeyJ1c2VybmFtZSI6ICJqZW5raW5zLWJpdGJ1Y2tldCIsICJk
+        aXNwbGF5X25hbWUiOiAiamVua2lucy1iaXRidWNrZXQgamVua2lucy1iaXRi
+        dWNrZXQiLCAidXVpZCI6ICJ7YzM1MzJhMjAtZjA1Ny00ZTQ5LWExZDEtMThl
+        YzU1MGIzYjExfSIsICJsaW5rcyI6IHsic2VsZiI6IHsiaHJlZiI6ICJodHRw
+        czovL2FwaS5iaXRidWNrZXQub3JnLzIuMC91c2Vycy9qZW5raW5zLWJpdGJ1
+        Y2tldCJ9LCAiaHRtbCI6IHsiaHJlZiI6ICJodHRwczovL2JpdGJ1Y2tldC5v
+        cmcvamVua2lucy1iaXRidWNrZXQifSwgImF2YXRhciI6IHsiaHJlZiI6ICJo
+        dHRwczovL3NlY3VyZS5ncmF2YXRhci5jb20vYXZhdGFyL2QxZGUwMTgwN2Y2
+        YjM2NzcxOGEyMDc4NDVkZmM4YTY0P2Q9aHR0cHMlM0ElMkYlMkZkM29heGM0
+        cTVrMmQ2cS5jbG91ZGZyb250Lm5ldCUyRm0lMkZjYjFhZjg2MmExOGQlMkZp
+        bWclMkZkZWZhdWx0X2F2YXRhciUyRjMyJTJGdXNlcl9ibHVlLnBuZyZzPTMy
+        In19fSwgImNyZWF0ZWRfb24iOiAiMjAxNS0wMS0wOFQyMDo0MTo0Ny44MjY2
+        NTMrMDA6MDAiLCAicGFydGljaXBhbnRzIjogW10sICJ1cGRhdGVkX29uIjog
+        IjIwMTUtMDEtMDhUMjA6NDE6NDkuMjc4ODAzKzAwOjAwIiwgIm1lcmdlX2Nv
+        bW1pdCI6IG51bGwsICJpZCI6IDM0OH0=
+    http_version: 
+  recorded_at: Thu, 08 Jan 2015 20:41:49 GMT
+recorded_with: VCR 2.9.3
