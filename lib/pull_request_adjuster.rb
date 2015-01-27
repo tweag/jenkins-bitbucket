@@ -51,6 +51,7 @@ class PullRequestAdjuster
       pull_request.id,
       title:               adjusted_pull_request.fetch(:title),
       description:         adjusted_pull_request.fetch(:description),
+      reviewers:           pull_request.reviewers,
       close_source_branch: true
   end
 
