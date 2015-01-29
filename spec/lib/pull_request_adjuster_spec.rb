@@ -40,7 +40,8 @@ describe PullRequestAdjuster do
         double(
           id:          42,
           identifier:  'mybranch',
-          description: 'this is my pull request'
+          description: 'this is my pull request',
+          reviewers:   ['reviewer']
         )
       end
 
@@ -50,6 +51,13 @@ describe PullRequestAdjuster do
           pull_request,
           double(id: 3, identifier: 666)
         ]
+      end
+
+      it 'does not overwrite existing reviewers' do
+        subject.update_status job
+
+        expect(client).to have_received(:update_pull_request)
+          .with(42, hash_including(reviewers: ['reviewer']))
       end
 
       it 'updates the pull request description with the status' do
@@ -80,7 +88,7 @@ describe PullRequestAdjuster do
 
   describe '#update_status_from_pull_request' do
     let(:pull_request) do
-      double(id: 42, identifier: 'my-branch', description: nil)
+      double(id: 42, identifier: 'my-branch', description: nil, reviewers: [])
     end
     let(:job_store) { { 'my-branch' => job } }
     let(:job) { double }
